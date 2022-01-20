@@ -1,5 +1,8 @@
 package it.unical.ingsw.onthebeach.model;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Lido {
 
 	private String nome;
@@ -13,6 +16,19 @@ public class Lido {
 	
 	public Lido() {}
 	
+	public Lido(String nome, String posizione, String numero, String email, String descrizione, byte[] foto,
+			int numeroOmbrelloni, String usernameGestore) {
+		super();
+		this.nome = nome;
+		this.posizione = posizione;
+		this.numero = numero;
+		this.email = email;
+		this.descrizione = descrizione;
+		this.foto = foto;
+		this.numeroOmbrelloni = numeroOmbrelloni;
+		this.usernameGestore = usernameGestore;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -75,5 +91,30 @@ public class Lido {
 	
 	public void setUsernameGestore(String usernameGestore) {
 		this.usernameGestore = usernameGestore;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(foto);
+		result = prime * result
+				+ Objects.hash(descrizione, email, nome, numero, numeroOmbrelloni, posizione, usernameGestore);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Lido other = (Lido) obj;
+		return Objects.equals(descrizione, other.descrizione) && Objects.equals(email, other.email)
+				&& Arrays.equals(foto, other.foto) && Objects.equals(nome, other.nome)
+				&& Objects.equals(numero, other.numero) && numeroOmbrelloni == other.numeroOmbrelloni
+				&& Objects.equals(posizione, other.posizione) && Objects.equals(usernameGestore, other.usernameGestore);
 	}
 }
