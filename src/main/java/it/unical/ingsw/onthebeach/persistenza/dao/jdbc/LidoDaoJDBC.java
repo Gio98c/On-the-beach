@@ -10,7 +10,7 @@ import java.util.List;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
 
-public class LidoDaoJDBC implements LidoDao{
+public class LidoDaoJDBC implements LidoDao {
 
    Connection conn;
    
