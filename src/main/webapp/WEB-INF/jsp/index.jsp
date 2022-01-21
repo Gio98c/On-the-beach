@@ -242,7 +242,7 @@
 							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>El Sombrero</h3>
-						<p class="product-price"><span>1 giorno</span> 25$ </p>
+						<p class="product-price"><span>1 giorno</span> 25€ </p>
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
