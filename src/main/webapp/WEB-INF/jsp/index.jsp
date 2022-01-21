@@ -69,7 +69,7 @@
 										<li><a href="index.jsp">Slider Home</a></li>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li>
+								<li><a href="about.html">Ciao</a></li>
 								<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.jsp">404 page</a></li>
