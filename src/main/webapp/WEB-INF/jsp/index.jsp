@@ -201,8 +201,8 @@
 							<i class="fas fa-phone-volume"></i>
 						</div>
 						<div class="content">
-							<h3>24/7 Support</h3>
-							<p>Get support all day</p>
+							<h3>24/7 Supporto</h3>
+							<p>Supporto disponibile ogni giorno</p>
 						</div>
 					</div>
 				</div>
