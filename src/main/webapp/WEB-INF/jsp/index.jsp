@@ -93,9 +93,10 @@
 								</li>-->
 								<li>
 									<div class="header-icons">
+										<!--<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-bag"></i></a>-->
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
-								</li>-
+								</li>
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -356,19 +357,19 @@
 				<div class="col-lg-12">
 					<div class="logo-carousel-inner">
 						<div class="single-logo-item">
-							<img src="assets/img/company-logos/1.png" alt="">
+							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="assets/img/company-logos/2.png" alt="">
+							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="assets/img/company-logos/3.png" alt="">
+							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="assets/img/company-logos/4.png" alt="">
+							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="assets/img/company-logos/5.png" alt="">
+							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -384,13 +385,14 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Siamo un gruppo di 4 studenti che hanno realizzato questo sito per un progetto universitario </p>
+						<p>Siamo un gruppo di 4 studenti che hanno realizzato questo sito per un progetto universitario.</p>
+					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Resta in contatto</h2>
+						<h2 class="widget-title">Resta in Contatto</h2>
 						<ul>
-							<li>Italia, Calabria, Rende, Via Majorana 21.</li>
+							<li>Calabria, Rende, Via Majorana 21</li>
 							<li>support@onthebeach.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
@@ -400,17 +402,17 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pagine</h2>
 						<ul>
-							<li><a href="index.jsp">Home</a></li>
-							<li><a href="servizi.html">About</a></li>
-							<li><a href="contatti.html">Contact</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Contatti</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
-						<h2 class="widget-title">Iscriviti</h2>
+						<h2 class="widget-title">Subscribe</h2>
 						<p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
-						<form action="index.jsp">
+						<form action="index.html">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -426,7 +428,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="https://imransdesign.com/">Unical</a>,  All Rights Reserved.
+					<p>Copyrights &copy; 2021 - <a href="https://informatica.unical.it/">Unical</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
