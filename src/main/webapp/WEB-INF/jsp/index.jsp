@@ -142,11 +142,11 @@
 					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh & Organic</p>
-								<h1>Delicious Seasonal Fruits</h1>
+								<p class="subtitle">Per un soggiorno speciale</p>
+								<h1>Stabilimenti Balneari</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.html" class="boxed-btn">Ricerca</a>
+									<a href="contact.html" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
@@ -161,11 +161,11 @@
 					<div class="col-lg-10 offset-lg-1 text-center">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh Everyday</p>
-								<h1>100% Organic Collection</h1>
+								<p class="subtitle">Per una prenotazione 100& sicura</p>
+								<h1>Controlla le nostre recensioni</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.html" class="boxed-btn">Visita Lidi</a>
+									<a href="contact.html" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
@@ -180,11 +180,11 @@
 					<div class="col-lg-10 offset-lg-1 text-right">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Mega Sale Going On!</p>
-								<h1>Get December Discount</h1>
+								<p class="subtitle">*SOLO* per proprietari di stabilimenti balneari</p>
+								<h1>Inserisci un nuovo lido</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.html" class="boxed-btn">Richiedi Form</a>
+									<a href="contact.html" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
