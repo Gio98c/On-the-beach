@@ -1,5 +1,5 @@
 package it.unical.ingsw.onthebeach.persistenza.dao;
 
-public class RecensioneDao {
+public interface RecensioneDao {
 
 }
