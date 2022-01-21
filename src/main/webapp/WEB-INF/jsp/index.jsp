@@ -219,7 +219,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
-						<h3><span class="orange-text">I</span> nostri</span>Stabilimenti</span>Balneari</h3>
+						<h3><span class="orange-text">I nostri Stabilimenti Balneari</span></h3>
 						<p>Per la tua vacanza ideale, in sicurezza, nei nostri migliori stabilimenti balneari.</p>
 					</div>
 				</div>
@@ -229,7 +229,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>San Domenico</h3>
 						<p class="product-price"><span>1 giorno</span> 30€ </p>
@@ -239,7 +239,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>El Sombrero</h3>
 						<p class="product-price"><span>1 giorno</span> 25$ </p>
@@ -249,9 +249,9 @@
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
-						<h3>Lemon</h3>
+						<h3>Spox</h3>
 						<p class="product-price"><span>1 giorno</span> 35€</p>
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
@@ -384,15 +384,14 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
+						<p>Siamo un gruppo di 4 studenti che hanno realizzato questo sito per un progetto universitario </p>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
+						<h2 class="widget-title">Resta in contatto</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>Italia, Calabria, Rende, Via Majorana 21.</li>
+							<li>support@onthebeach.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
@@ -402,17 +401,15 @@
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="index.jsp">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="servizi.html">About</a></li>
+							<li><a href="contatti.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<h2 class="widget-title">Iscriviti</h2>
+						<p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
 						<form action="index.jsp">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -429,8 +426,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
-						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					<p>Copyrights &copy; 2021 - <a href="https://imransdesign.com/">Unical</a>,  All Rights Reserved.<br>
+
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
