@@ -139,7 +139,7 @@
 								<p class="subtitle">Per un soggiorno speciale</p>
 								<h1>Stabilimenti Balneari</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Ricerca</a>
+									<a href="shop.html" class="boxed-btn">Prenota ora</a>
 									<a href="contact.html" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
@@ -194,17 +194,7 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					<div class="list-box d-flex align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-shipping-fast"></i>
-						</div>
-						<div class="content">
-							<h3>Free Shipping</h3>
-							<p>When order over $75</p>
-						</div>
-					</div>
-				</div>
+
 				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
@@ -216,17 +206,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="list-box d-flex justify-content-start align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-sync"></i>
-						</div>
-						<div class="content">
-							<h3>Refund</h3>
-							<p>Get refund within 3 days!</p>
-						</div>
-					</div>
-				</div>
+
 			</div>
 
 		</div>
