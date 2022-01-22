@@ -55,7 +55,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.jsp">
-								<img src="${pageContext.request.contextPath }/resources/assets/img/logo1.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
