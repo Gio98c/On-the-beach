@@ -118,7 +118,7 @@
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
 							<h3>Cerca per:</h3>
-							<input type="text" placeholder="Parole chiave">
+							<input type="text" placeholder="Parola chiave">
 							<button type="submit">Cerca <i class="fas fa-search"></i></button>
 						</div>
 					</div>
