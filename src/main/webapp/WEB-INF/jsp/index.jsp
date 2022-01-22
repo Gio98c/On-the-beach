@@ -263,16 +263,16 @@
 	<!-- end product section -->
 
 	<!-- cart banner section -->
-	<section class="cart-banner pt-100 pb-100">
+	<section class="cart-banner pt-200 pb-200">
     	<div class="container">
         	<div class="row clearfix">
             	<!--Image Column-->
             	<div class="image-column col-lg-6">
                 	<div class="image">
                     	<div class="price-box">
-                        	<div class="inner-price">
+							<div class="inner-price">
 
-                            </div>
+							</div>
                         </div>
                     	<img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt="">
                     </div>
