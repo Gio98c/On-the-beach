@@ -271,12 +271,10 @@
                 	<div class="image">
                     	<div class="price-box">
                         	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per kg
-                                </span>
+
                             </div>
                         </div>
-                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox2.jpg" alt="">
+                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
