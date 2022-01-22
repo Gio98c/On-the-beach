@@ -14,7 +14,7 @@
 	<title>On The Beach</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/logo.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
 								</li>-->
 								<li>
 									<div class="header-icons">
-										<!--<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-bag"></i></a>-->
+										<a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
