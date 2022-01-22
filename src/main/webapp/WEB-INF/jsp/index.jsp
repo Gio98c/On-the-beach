@@ -399,7 +399,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a> href="https://informatica.unical.it/"Unical</a>,  All Rights Reserved.
+					<p>Copyrights &copy; 2022 - <a href="https://informatica.unical.it/">Unical</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
