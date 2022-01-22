@@ -269,12 +269,9 @@
             	<!--Image Column-->
             	<div class="image-column col-lg-6">
                 	<div class="image">
-                    	<div class="price-box">
 							<div class="inner-price">
-
 							</div>
-                        </div>
-                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt="">
+                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox2.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
@@ -282,8 +279,6 @@
 					<h3><span class="orange-text">Lido</span> del mese</h3>
                     <h4>SPOX</h4>
                     <div class="text">Descrizione lido</div>
-                    <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
                 	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
