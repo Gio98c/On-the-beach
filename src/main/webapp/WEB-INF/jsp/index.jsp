@@ -230,7 +230,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>San Domenico</h3>
 						<p class="product-price"><span>1 giorno</span> 30€ </p>
@@ -240,7 +240,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>El Sombrero</h3>
 						<p class="product-price"><span>1 giorno</span> 25€ </p>
@@ -250,7 +250,7 @@
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
 						<h3>Spox</h3>
 						<p class="product-price"><span>1 giorno</span> 35€</p>
@@ -276,7 +276,7 @@
                                 </span>
                             </div>
                         </div>
-                    	<img src="assets/img/a.jpg" alt="">
+                    	<img src="${pageContext.request.contextPath }/resources/assets/img/a.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
@@ -315,7 +315,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar2.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>David Niph <span>Local shop owner</span></h3>
@@ -350,33 +350,6 @@
 	
 
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end logo carousel -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -428,18 +401,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 - <a href="https://informatica.unical.it/">Unical</a>,  All Rights Reserved.
+					<p>Copyrights &copy; 2021 - <a> href="https://informatica.unical.it/"Unical</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-						</ul>
+
 					</div>
 				</div>
 			</div>
