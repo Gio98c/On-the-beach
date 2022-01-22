@@ -230,7 +230,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/san-domenico.jpg" alt=""></a>
 						</div>
 						<h3>San Domenico</h3>
 						<p class="product-price"><span>1 giorno</span> 30€ </p>
@@ -240,7 +240,7 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/el-sombrero.jpg" alt=""></a>
 						</div>
 						<h3>El Sombrero</h3>
 						<p class="product-price"><span>1 giorno</span> 25€ </p>
@@ -250,7 +250,7 @@
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt=""></a>
 						</div>
 						<h3>Spox</h3>
 						<p class="product-price"><span>1 giorno</span> 35€</p>
@@ -276,7 +276,7 @@
                                 </span>
                             </div>
                         </div>
-                    	<img src="${pageContext.request.contextPath }/resources/assets/img/a.jpg" alt="">
+                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox2.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
