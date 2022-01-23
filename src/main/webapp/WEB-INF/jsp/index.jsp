@@ -14,7 +14,7 @@
 	<title>On The Beach</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.jsp">
-								<img src="assets/img/logo.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -63,14 +63,9 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="index.jsp">Static Home</a></li>
-										<li><a href="index.jsp">Slider Home</a></li>
-									</ul>
-								</li>
-								<li><a href="about.html">Ciao</a></li>
-								<li><a href="#">Pages</a>
+								<li class="current-list-item"><a href="#">Home</a></li>
+								<li><a href="shop">Prenota Qui</a></li>
+								<!--<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.jsp">404 page</a></li>
 										<li><a href="about.html">About</a></li>
@@ -86,19 +81,19 @@
 										<li><a href="news.html">News</a></li>
 										<li><a href="single-news.html">Single News</a></li>
 									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
+								</li>-->
+								<li><a href="contact.html">Contatti</a></li>
+								<!--<li><a href="shop.html">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="shop.html">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
 										<li><a href="cart.html">Cart</a></li>
 									</ul>
-								</li>
+								</li>-->
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -122,9 +117,9 @@
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<h3>Cerca per:</h3>
+							<input type="text" placeholder="Parola chiave">
+							<button type="submit">Cerca <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -145,7 +140,7 @@
 								<p class="subtitle">Per un soggiorno speciale</p>
 								<h1>Stabilimenti Balneari</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Ricerca</a>
+									<a href="shop.html" class="boxed-btn">Prenota ora</a>
 									<a href="contact.html" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
@@ -161,7 +156,7 @@
 					<div class="col-lg-10 offset-lg-1 text-center">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Per una prenotazione 100& sicura</p>
+								<p class="subtitle">Per una prenotazione 100% sicura</p>
 								<h1>Controlla le nostre recensioni</h1>
 								<div class="hero-btns">
 									<a href="shop.html" class="boxed-btn">Visita Lidi</a>
@@ -200,39 +195,19 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					<div class="list-box d-flex align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-shipping-fast"></i>
-						</div>
-						<div class="content">
-							<h3>Free Shipping</h3>
-							<p>When order over $75</p>
-						</div>
-					</div>
-				</div>
+
 				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-phone-volume"></i>
 						</div>
 						<div class="content">
-							<h3>24/7 Support</h3>
-							<p>Get support all day</p>
+							<h3>24/7 Supporto</h3>
+							<p>Supporto disponibile ogni giorno</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="list-box d-flex justify-content-start align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-sync"></i>
-						</div>
-						<div class="content">
-							<h3>Refund</h3>
-							<p>Get refund within 3 days!</p>
-						</div>
-					</div>
-				</div>
+
 			</div>
 
 		</div>
@@ -245,8 +220,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<h3><span class="orange-text">I nostri Stabilimenti Balneari</span></h3>
+						<p>Per la tua vacanza ideale, in sicurezza, nei nostri migliori stabilimenti balneari.</p>
 					</div>
 				</div>
 			</div>
@@ -255,31 +230,31 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/san-domenico.jpg" alt=""></a>
 						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>San Domenico</h3>
+						<p class="product-price"><span>1 giorno</span> 30€ </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/el-sombrero.jpg" alt=""></a>
 						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>El Sombrero</h3>
+						<p class="product-price"><span>1 giorno</span> 25€ </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
+							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt=""></a>
 						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>Spox</h3>
+						<p class="product-price"><span>1 giorno</span> 35€</p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 			</div>
@@ -294,24 +269,17 @@
             	<!--Image Column-->
             	<div class="image-column col-lg-6">
                 	<div class="image">
-                    	<div class="price-box">
-                        	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per kg
-                                </span>
-                            </div>
-                        </div>
-                    	<img src="assets/img/a.jpg" alt="">
+							<div class="inner-price">
+							</div>
+                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox3.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
                 <div class="content-column col-lg-6">
-					<h3><span class="orange-text">Deal</span> of the month</h3>
-                    <h4>Hikan Strwaberry</h4>
-                    <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
-                    <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					<h3><span class="orange-text">Lido</span> del mese</h3>
+                    <h4>SPOX</h4>
+                    <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare di Soverato. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
+                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
                 </div>
             </div>
         </div>
@@ -326,7 +294,7 @@
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar1.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Saira Hakim <span>Local shop owner</span></h3>
@@ -340,7 +308,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar2.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>David Niph <span>Local shop owner</span></h3>
@@ -354,7 +322,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar3.png" alt="">
+								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Jacob Sikim <span>Local shop owner</span></h3>
@@ -373,132 +341,8 @@
 	</div>
 	<!-- end testimonail-section -->
 	
-	<!-- advertisement section -->
-	<div class="abt-section mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-bg">
-						<a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-text">
-						<p class="top-sub">Since Year 1999</p>
-						<h2>We are <span class="orange-text">Fruitkha</span></h2>
-						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="about.html" class="boxed-btn mt-4">know more</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end advertisement section -->
-	
-	<!-- shop banner -->
-	<section class="shop-banner">
-    	<div class="container">
-        	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
-            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
-        </div>
-    </section>
-	<!-- end shop banner -->
 
-	<!-- latest news -->
-	<div class="latest-news pt-150 pb-150">
-		<div class="container">
 
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> News</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="news.html" class="boxed-btn">More News</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end latest news -->
-
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end logo carousel -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -507,36 +351,34 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Siamo un gruppo di 4 studenti che hanno realizzato questo sito per un progetto universitario.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
+						<h2 class="widget-title">Resta in Contatto</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
+							<li>Calabria, Rende, Via Majorana 21</li>
+							<li>support@onthebeach.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
+						<h2 class="widget-title">Pagine</h2>
 						<ul>
-							<li><a href="index.jsp">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="services.html">Contatti</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.jsp">
+						<p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
+						<form action="index.html">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -552,19 +394,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
-						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					<p>Copyrights &copy; 2022 - <a href="https://informatica.unical.it/">Unical</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-						</ul>
+
 					</div>
 				</div>
 			</div>

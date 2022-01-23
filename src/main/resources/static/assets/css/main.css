@@ -1468,15 +1468,15 @@ input[type="submit"] {
 }
 
 .homepage-bg-1 {
-  background-image: url(../img/bg-index-1.jpg);
+  background-image: url(../img/gestione-lido-6.jpg);
 }
 
 .homepage-bg-2 {
-  background-image: url(../img/bg-index-2.jpg);
+  background-image: url(../img/lido-3.jpg);
 }
 
 .homepage-bg-3 {
-  background-image: url(../img/hero-bg-3.jpg);
+  background-image: url(../img/gestione-lido2.jpg);
 }
 
 .homepage-slider {
@@ -2117,9 +2117,9 @@ a.video-play-btn {
 .shop-banner {
   position: relative;
   background-color: #f5f5f5;
-  background-image: url(../img/1.jpg);
+  background-image: url(../img/spox.jpg);
   background-size: cover;
-  padding: 110px 0px 115px;
+  padding: 200px 0px 225px;
 }
 
 .shop-banner h3 {
@@ -2129,23 +2129,9 @@ a.video-play-btn {
   margin-bottom: 0px;
 }
 
-.shop-banner .sale-percent {
-  position: relative;
-  font-size: 60px;
-  font-weight: 700;
-  color: #F28123;
-}
 
-.shop-banner .sale-percent span {
-  position: relative;
-  font-size: 24px;
-  line-height: 1.1em;
-  color: #051922;
-  font-weight: 400;
-  text-align: center;
-  margin-right: 10px;
-  display: inline-block;
-}
+
+
 
 /* -----------------------------------------------------------------------------
 
@@ -2185,9 +2171,9 @@ a.video-play-btn {
   background-image: url(../img/team/team-3.jpg);
 }
 
-.team-bg-4 {
+/*.team-bg-4 {
   background-image: url(../img/team/team-4.jpg);
-}
+}*/
 
 .team-bg {
   height: 400px;
