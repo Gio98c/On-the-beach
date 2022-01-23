@@ -14,7 +14,6 @@ public class LidoDaoJDBC implements LidoDao {
 
    Connection conn;
    
-   
    public LidoDaoJDBC(Connection conn) {
       this.conn = conn;
    }
