@@ -64,7 +64,7 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a></li>
-								<li><a href="shop">Prenota Qui</a></li>
+								<li><a href="pageShop">Prenota Qui</a></li>
 								<!--<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.jsp">404 page</a></li>
