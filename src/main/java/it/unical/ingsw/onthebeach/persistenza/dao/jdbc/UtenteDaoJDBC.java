@@ -43,7 +43,7 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public Utente findByPrimaryKey(String username) {
         Utente utente = null;
-        String query = String.format("select * from Utente where id = %s", username);
+        String query = String.format("select * from Utente where username = %s", username);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
@@ -95,7 +95,7 @@ public class UtenteDaoJDBC implements UtenteDao {
         try {
             String query = "update utente "
                     + "set nome = ?, cognome = ?, email = ?, password = ?, data_nascita = ?, tipo_utente=? "
-                    + "where id = ?";
+                    + "where username = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, utente.getTipo_utente());
             st.setString(2, utente.getNome());
@@ -120,10 +120,51 @@ public class UtenteDaoJDBC implements UtenteDao {
     public boolean delete(Utente utente) {
         try {
             String query = "delete from utente "
-                    + "where id = ?";
+                    + "where username = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, utente.getUsername());
             st.executeUpdate();
+        } catch (SQLException e) {
+
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean setPassword(String username, String password) {
+        try {
+            String query = "update utente "
+                    + "set password = ?"
+                    + "where username = ?";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, password);
+            st.setString(2, username);
+
+            st.executeUpdate();
+
+        } catch (SQLException e) {
+
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean setAdmin(String username) {
+        try {
+            String query = "update utente "
+                    + "set tipo_utente = admin"
+                    + "where username = ?";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, username);
+
+            st.executeUpdate();
+
         } catch (SQLException e) {
 
             // TODO Auto-generated catch block

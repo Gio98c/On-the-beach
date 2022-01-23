@@ -1,5 +1,9 @@
 package it.unical.ingsw.onthebeach.persistenza.dao;
 
-public interface OmbrelloneDao {
+import it.unical.ingsw.onthebeach.model.Ombrellone;
 
+public interface OmbrelloneDao {
+    public boolean saveOrUpdate(Ombrellone ombrellone);
+    public Ombrellone findByPrimaryKey(long id);
+    public boolean delete(Ombrellone ombrellone);
 }
