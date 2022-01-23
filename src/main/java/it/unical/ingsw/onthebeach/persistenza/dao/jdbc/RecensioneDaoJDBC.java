@@ -41,7 +41,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public Recensione findByPrimaryKey(long id) {
         Recensione r = null;
-        String query = String.format("select * from Recensione where id_prenotazione = %s", id);
+        String query = String.format("select * from Recensione where id_prenotazione = %d", id);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
@@ -146,12 +146,12 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     }
 
     @Override
-    public boolean delete(long id) {
+    public boolean delete(Recensione recensione) {
         try {
-            String query = "delete from recenisone "
+            String query = "delete from recensione "
                     + "where id_prenotazione = ?";
             PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1, id);
+            st.setLong(1, recensione.getId_prenotazione());
             st.executeUpdate();
         } catch (SQLException e) {
 

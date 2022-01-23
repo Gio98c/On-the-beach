@@ -9,5 +9,5 @@ public interface RecensioneDao {
     public List<Recensione> findByUtente(String username);
     public List<Recensione> findByLido(String nome);
     public boolean saveOrUpdate(Recensione recensione);
-    public boolean delete(long id);
+    public boolean delete(Recensione recensione);
 }
