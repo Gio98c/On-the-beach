@@ -6,10 +6,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UtenteDaoJDBC implements UtenteDao{
+public class UtenteDaoJDBC implements UtenteDao {
     Connection conn;
-    public UtenteDaoJDBC(Connection conn){
-        this.conn=conn;
+
+    public UtenteDaoJDBC(Connection conn) {
+        this.conn = conn;
     }
 
     @Override
@@ -65,57 +66,71 @@ public class UtenteDaoJDBC implements UtenteDao{
     }
 
     @Override
-    public boolean saveOrUpdate(Utente utente) {
-        if (utente.getUsername() == null) {
-            //INSERT
-            try {
-                String query = "insert into utente "
-                        + "values (?, ?, ?, ?, ?, ?, ?)";
-                PreparedStatement st = conn.prepareStatement(query);
-                st.setString(1, utente.getUsername());
-                st.setString(2, utente.getNome());
-                st.setString(3, utente.getCognome());
-                st.setString(4, utente.getEmail());
-                st.setString(5, utente.getPassword());
-                st.setDate(6, utente.getData_nascita());
-                st.setString(7, utente.getTipo_utente());
-                st.executeUpdate();
+    public boolean save(Utente utente) {
+        //INSERT
+        try {
+            String query = "insert into utente "
+                    + "values (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, utente.getUsername());
+            st.setString(2, utente.getNome());
+            st.setString(3, utente.getCognome());
+            st.setString(4, utente.getEmail());
+            st.setString(5, utente.getPassword());
+            st.setDate(6, utente.getData_nascita());
+            st.setString(7, utente.getTipo_utente());
+            st.executeUpdate();
 
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                return false;
-            }
-        }else {
-            //UPDATE
-            try {
-                String query = "update utente "
-                        + "set nome = ?, cognome = ?, email = ?, password = ?, data_nascita = ?, tipo_utente=? "
-                        + "where id = ?";
-                PreparedStatement st = conn.prepareStatement(query);
-                st.setString(7, utente.getUsername());
-                st.setString(1, utente.getTipo_utente());
-                st.setString(2, utente.getNome());
-                st.setString(3, utente.getCognome());
-                st.setString(4, utente.getEmail());
-                st.setString(5, utente.getPassword());
-                st.setDate(6, utente.getData_nascita());
-
-                st.executeUpdate();
-
-            } catch (SQLException e) {
-
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                return false;
-            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
         }
-        // TODO Auto-generated method stub
+        return true;
+    }
+
+    @Override
+    public boolean update(Utente utente) {
+        //UPDATE
+        try {
+            String query = "update utente "
+                    + "set nome = ?, cognome = ?, email = ?, password = ?, data_nascita = ?, tipo_utente=? "
+                    + "where id = ?";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, utente.getTipo_utente());
+            st.setString(2, utente.getNome());
+            st.setString(3, utente.getCognome());
+            st.setString(4, utente.getEmail());
+            st.setString(5, utente.getPassword());
+            st.setDate(6, utente.getData_nascita());
+            st.setString(7, utente.getUsername());
+
+            st.executeUpdate();
+
+        } catch (SQLException e) {
+
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean delete(Utente utente) {
-        return false;
+        try {
+            String query = "delete from utente "
+                    + "where id = ?";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, utente.getUsername());
+            st.executeUpdate();
+        } catch (SQLException e) {
+
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
+
 }

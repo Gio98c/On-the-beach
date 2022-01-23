@@ -6,6 +6,7 @@ import java.util.List;
 public interface UtenteDao {
     public List<Utente> findAll();
     public Utente findByPrimaryKey(String username);
-    public boolean saveOrUpdate(Utente utente);
+    public boolean save(Utente utente);
+    public boolean update(Utente utente);
     public boolean delete(Utente utente);
 }
