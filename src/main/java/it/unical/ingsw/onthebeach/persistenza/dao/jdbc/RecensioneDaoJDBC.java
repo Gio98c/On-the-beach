@@ -125,7 +125,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             try {
                 String query = "update recensione "
                         + "set testo = ?, star = ?, username_cliente = ? "
-                        + "where id = ?";
+                        + "where id_prenotazione = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, recensione.getTesto());
                 st.setInt(2, recensione.getStar());
