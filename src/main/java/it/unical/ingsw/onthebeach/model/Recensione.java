@@ -4,13 +4,13 @@ public class Recensione {
     private String testo;
     private int star;
     private String username_cliente;
-    private int id_prenotazione;
+    private long id_prenotazione;
 
     public Recensione(){
 
     }
 
-    public Recensione(String testo, int star, String usernameCliente, int idPrenotazione){
+    public Recensione(String testo, int star, String usernameCliente, long idPrenotazione){
         this.testo=testo;
         this.star=star;
         this.username_cliente=usernameCliente;
@@ -41,11 +41,11 @@ public class Recensione {
         this.username_cliente = username_cliente;
     }
 
-    public int getId_prenotazione() {
+    public long getId_prenotazione() {
         return id_prenotazione;
     }
 
-    public void setId_prenotazione(int id_prenotazione) {
+    public void setId_prenotazione(long id_prenotazione) {
         this.id_prenotazione = id_prenotazione;
     }
 }
