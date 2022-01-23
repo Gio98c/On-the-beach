@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class idBroker {
+public class IdBroker {
 
 	public static long getId(Connection conn) {
 		long id = 0;

@@ -8,6 +8,6 @@ public interface LidoDao {
 
 	public List<Lido> findAll();
 	public Lido findByPrimaryKey(String nome);
-	public boolean saveOrUpdate(String nome);
-	public boolean delete(String nome);
+	public boolean saveOrUpdate(Lido lido);
+	public boolean delete(Lido lido);
 }
