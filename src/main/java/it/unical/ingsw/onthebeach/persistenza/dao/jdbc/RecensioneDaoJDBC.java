@@ -1,7 +1,6 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
 import it.unical.ingsw.onthebeach.model.Recensione;
-import it.unical.ingsw.onthebeach.model.Utente;
 import it.unical.ingsw.onthebeach.persistenza.dao.RecensioneDao;
 
 import java.sql.*;
@@ -18,16 +17,17 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public List<Recensione> findAll() {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        String query = "select * from Recensione";
+        String query = "select * from recensione";
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
                 Recensione r = new Recensione();
+                r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
-                r.setUsername_cliente(rs.getString("cognome"));
-                r.setId_prenotazione(rs.getLong("id_prenotazione"));
+                r.setUsernameCliente(rs.getString("username_cliente"));
+                r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -41,7 +41,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public Recensione findByPrimaryKey(long id) {
         Recensione r = null;
-        String query = String.format("select * from Recensione where id_prenotazione = %d", id);
+        String query = String.format("select * from recensione where id_recensione = %d", id);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
@@ -49,8 +49,9 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
-                r.setUsername_cliente(rs.getString("cognome"));
-                r.setId_prenotazione(rs.getLong("id_prenotazione"));
+                r.setUsernameCliente(rs.getString("cognome"));
+                r.setIdPrenotazione(rs.getLong("id_prenotazione"));
+                r.setIdRecensione(rs.getLong("id_recensione"));
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -61,7 +62,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public List<Recensione> findByUtente(String username) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        String query = String.format("select * from Recensione,Utente where Username = %s", username);
+        String query = String.format("select * from recensione where username_cliente = %s", username);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
@@ -69,8 +70,9 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
-                r.setUsername_cliente(rs.getString("cognome"));
-                r.setId_prenotazione(rs.getLong("id_prenotazione"));
+                r.setUsernameCliente(rs.getString("username_cliente"));
+                r.setIdPrenotazione(rs.getLong("id_prenotazione"));
+                r.setIdRecensione(rs.getLong("id_recensione"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -79,6 +81,9 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         return recensioni;
     }
 
+
+    //non serve
+    /*
     @Override
     public List<Recensione> findByLido(String nome) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
@@ -99,20 +104,21 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             e.printStackTrace();}
         return recensioni;
     }
-
+    */
     @Override
     public boolean saveOrUpdate(Recensione recensione) {
-        if (recensione.getId_prenotazione() == 0) {
+        if (recensione.getIdRecensione() == 0) {
             //INSERT
             try {
-                recensione.setId_prenotazione(IdBroker.getId(conn));
+                recensione.setIdRecensione(IdBroker.getId(conn));
                 String query = "insert into recensione "
-                        + "values (?, ?, ?, ?)";
+                        + "values (?, ?, ?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);
-                st.setString(1, recensione.getTesto());
-                st.setInt(2, recensione.getStar());
-                st.setString(3, recensione.getUsername_cliente());
-                st.setLong(4, recensione.getId_prenotazione());
+                st.setLong(1, recensione.getIdRecensione());
+                st.setString(2, recensione.getTesto());
+                st.setInt(3, recensione.getStar());
+                st.setString(4, recensione.getUsernameCliente());
+                st.setLong(5, recensione.getIdPrenotazione());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -124,13 +130,14 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             //UPDATE
             try {
                 String query = "update recensione "
-                        + "set testo = ?, star = ?, username_cliente = ? "
-                        + "where id_prenotazione = ?";
+                        + "set testo = ?, star = ?, username_cliente = ?, id_prenotazione = ? "
+                        + "where id_recensione = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, recensione.getTesto());
                 st.setInt(2, recensione.getStar());
-                st.setString(3, recensione.getUsername_cliente());
-                st.setLong(4, recensione.getId_prenotazione());
+                st.setString(3, recensione.getUsernameCliente());
+                st.setLong(4, recensione.getIdPrenotazione());
+                st.setLong(5, recensione.getIdRecensione());
 
                 st.executeUpdate();
 
@@ -149,9 +156,9 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     public boolean delete(Recensione recensione) {
         try {
             String query = "delete from recensione "
-                    + "where id_prenotazione = ?";
+                    + "where id_recensione = ?";
             PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1, recensione.getId_prenotazione());
+            st.setLong(1, recensione.getIdRecensione());
             st.executeUpdate();
         } catch (SQLException e) {
 

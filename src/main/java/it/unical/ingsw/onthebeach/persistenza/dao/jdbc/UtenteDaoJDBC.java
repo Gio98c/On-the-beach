@@ -16,7 +16,7 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public List<Utente> findAll() {
         List<Utente> utenti = new ArrayList<Utente>();
-        String query = "select * from Utente";
+        String query = "select * from utente";
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -43,7 +43,7 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public Utente findByPrimaryKey(String username) {
         Utente utente = null;
-        String query = String.format("select * from Utente where username = %s", username);
+        String query = String.format("select * from utente where username = %s", username);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
@@ -97,12 +97,13 @@ public class UtenteDaoJDBC implements UtenteDao {
                     + "set nome = ?, cognome = ?, email = ?, password = ?, data_nascita = ?, tipo_utente=? "
                     + "where username = ?";
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1, utente.getTipo_utente());
-            st.setString(2, utente.getNome());
-            st.setString(3, utente.getCognome());
-            st.setString(4, utente.getEmail());
-            st.setString(5, utente.getPassword());
-            st.setDate(6, utente.getData_nascita());
+
+            st.setString(1, utente.getNome());
+            st.setString(2, utente.getCognome());
+            st.setString(3, utente.getEmail());
+            st.setString(4, utente.getPassword());
+            st.setDate(5, utente.getData_nascita());
+            st.setString(6, utente.getTipo_utente());
             st.setString(7, utente.getUsername());
 
             st.executeUpdate();

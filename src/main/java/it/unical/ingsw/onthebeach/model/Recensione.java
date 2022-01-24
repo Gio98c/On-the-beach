@@ -3,18 +3,20 @@ package it.unical.ingsw.onthebeach.model;
 public class Recensione {
     private String testo;
     private int star;
-    private String username_cliente;
-    private long id_prenotazione;
+    private String usernameCliente;
+    private long idPrenotazione;
+    private long idRecensione;
 
     public Recensione(){
 
     }
 
-    public Recensione(String testo, int star, String usernameCliente, long idPrenotazione){
+    public Recensione(long idRecensione, String testo, int star, String usernameCliente, long idPrenotazione){
+        this.idRecensione=idRecensione;
         this.testo=testo;
         this.star=star;
-        this.username_cliente=usernameCliente;
-        this.id_prenotazione=idPrenotazione;
+        this.usernameCliente=usernameCliente;
+        this.idPrenotazione=idPrenotazione;
     }
 
     public String getTesto() {
@@ -33,19 +35,27 @@ public class Recensione {
         this.star = star;
     }
 
-    public String getUsername_cliente() {
-        return username_cliente;
+    public String getUsernameCliente() {
+        return usernameCliente;
     }
 
-    public void setUsername_cliente(String username_cliente) {
-        this.username_cliente = username_cliente;
+    public void setUsernameCliente(String username_cliente) {
+        this.usernameCliente = usernameCliente;
     }
 
-    public long getId_prenotazione() {
-        return id_prenotazione;
+    public long getIdPrenotazione() {
+        return idPrenotazione;
     }
 
-    public void setId_prenotazione(long id_prenotazione) {
-        this.id_prenotazione = id_prenotazione;
+    public void setIdPrenotazione(long idPrenotazione) {
+        this.idPrenotazione = idPrenotazione;
+    }
+
+    public long getIdRecensione() {
+        return idRecensione;
+    }
+
+    public void setIdRecensione(long idRecensione) {
+        this.idRecensione = idRecensione;
     }
 }
