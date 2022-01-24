@@ -106,6 +106,36 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 		}
 		return prenotazioni;
 	}
+	
+	@Override
+	public List<Prenotazione> findByLido(String nomeLido) {
+		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+		String query = "SELECT * FROM prenotazione WHERE nome_lido=?;";
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(query);
+			st.setString(1, nomeLido);
+			rs = st.executeQuery();
+			while(rs.next()) {
+				Prenotazione prenotazione = new Prenotazione();
+				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
+				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
+				prenotazione.setDescrizione(rs.getString("descrizione"));
+				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
+				prenotazione.setDataInizio(rs.getDate("data_inizio"));
+				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
+				prenotazioni.add(prenotazione);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
+		}
+		return prenotazioni;
+	}
 
 	@Override
 	public boolean save(Prenotazione prenotazione) {
