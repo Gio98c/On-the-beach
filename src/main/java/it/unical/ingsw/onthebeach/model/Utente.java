@@ -1,6 +1,7 @@
 package it.unical.ingsw.onthebeach.model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Utente {
 
@@ -24,6 +25,19 @@ public class Utente {
         this.password=password;
         this.tipoUtente=tipoUtente;
         this.dataNascita=dataNascita;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Utente utente = (Utente) o;
+        return username.equals(utente.username) && Objects.equals(nome, utente.nome) && Objects.equals(cognome, utente.cognome) && email.equals(utente.email) && password.equals(utente.password) && Objects.equals(tipoUtente, utente.tipoUtente) && Objects.equals(dataNascita, utente.dataNascita);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, nome, cognome, email, password, tipoUtente, dataNascita);
     }
 
     public String getUsername() {

@@ -1,5 +1,7 @@
 package it.unical.ingsw.onthebeach.model;
 
+import java.util.Objects;
+
 public class Recensione {
     private String testo;
     private int star;
@@ -9,6 +11,19 @@ public class Recensione {
 
     public Recensione(){
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recensione that = (Recensione) o;
+        return star == that.star && idPrenotazione == that.idPrenotazione && idRecensione == that.idRecensione && Objects.equals(testo, that.testo) && usernameCliente.equals(that.usernameCliente);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(testo, star, usernameCliente, idPrenotazione, idRecensione);
     }
 
     public Recensione(long idRecensione, String testo, int star, String usernameCliente, long idPrenotazione){

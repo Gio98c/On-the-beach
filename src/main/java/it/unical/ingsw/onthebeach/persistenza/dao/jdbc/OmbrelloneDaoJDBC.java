@@ -21,11 +21,12 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             try {
                 ombrellone.setIdOmbrellone(IdBroker.getId(conn));
                 String query = "insert into ombrellone "
-                        + "values (?, ?, ?)";
+                        + "values (?, ?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setLong(1, ombrellone.getIdOmbrellone());
                 st.setBoolean(2, ombrellone.getOccupato());
                 st.setString(3, ombrellone.getNomeLido());
+                st.setFloat(4, ombrellone.getPrezzo());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -37,12 +38,13 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             //UPDATE
             try {
                 String query = "update ombrellone "
-                        + "set occupato = ?, nome_lido = ?"
+                        + "set occupato = ?, nome_lido = ?, prezzo = ?"
                         + "where id_ombrellone = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setBoolean(1, ombrellone.getOccupato());
                 st.setString(2, ombrellone.getNomeLido());
-                st.setLong(3, ombrellone.getIdOmbrellone());
+                st.setFloat(3, ombrellone.getPrezzo());
+                st.setLong(4, ombrellone.getIdOmbrellone());
 
                 st.executeUpdate();
 
@@ -69,6 +71,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
                 o.setIdOmbrellone(rs.getLong("id_ombrellone"));
                 o.setOccupato(rs.getBoolean("occupato"));
                 o.setNomeLido(rs.getString("nome_lido"));
+                o.setPrezzo(rs.getFloat(("prezzo")));
                 st.executeUpdate();
             }
         } catch (SQLException e) {
