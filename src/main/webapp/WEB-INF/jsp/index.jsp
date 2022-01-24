@@ -64,7 +64,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a></li>
+								<li class="current-list-item"><a href="index">Home</a></li>
 								<li><a href="pageShop">Prenota Qui</a></li>
 								<!--<li><a href="#">Pages</a>
 									<ul class="sub-menu">
@@ -141,7 +141,7 @@
 								<p class="subtitle">Per un soggiorno speciale</p>
 								<h1>Stabilimenti Balneari</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Prenota ora</a>
+									<a href="pageShop" class="boxed-btn">Prenota ora</a>
 									<a href="contactPage" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
@@ -235,7 +235,7 @@
 						</div>
 						<h3>San Domenico</h3>
 						<p class="product-price"><span>1 giorno</span> 30€ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
@@ -245,7 +245,7 @@
 						</div>
 						<h3>El Sombrero</h3>
 						<p class="product-price"><span>1 giorno</span> 25€ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -255,7 +255,7 @@
 						</div>
 						<h3>Spox</h3>
 						<p class="product-price"><span>1 giorno</span> 35€</p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
 				</div>
 			</div>
@@ -280,7 +280,7 @@
 					<h3><span class="orange-text">Lido</span> del mese</h3>
                     <h4>SPOX</h4>
                     <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare di Soverato. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                	<a href="pageShop" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
                 </div>
             </div>
         </div>
