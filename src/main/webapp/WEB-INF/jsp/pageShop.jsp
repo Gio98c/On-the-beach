@@ -186,7 +186,7 @@
                         <li class="active" data-filter="*">All</li>
                         <li data-filter=".strawberry">Prezzo </li>
                         <li data-filter=".berry">Recensioni</li>
-                        <li data-filter=".lemon">Localita'vicine</li>
+                        <li data-filter=".lemon">Localita' vicine</li>
                     </ul>
                 </div>
             </div>
