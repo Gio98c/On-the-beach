@@ -2,25 +2,25 @@ package it.unical.ingsw.onthebeach.model;
 
 public class Ombrellone {
 
-    private long id_ombrellone;
+    private long idOmbrellone;
     private boolean occupato;
-    private String nome_lido;
+    private String nomeLido;
 
     public Ombrellone(){
     }
 
-    public Ombrellone(long id_ombrellone, boolean occupato, String nome_lido){
-        this.id_ombrellone=id_ombrellone;
+    public Ombrellone(long idOmbrellone, boolean occupato, String nomeLido){
+        this.idOmbrellone=idOmbrellone;
         this.occupato=occupato;
-        this.nome_lido=nome_lido;
+        this.nomeLido=nomeLido;
     }
 
-    public long getId_ombrellone() {
-        return id_ombrellone;
+    public long getIdOmbrellone() {
+        return idOmbrellone;
     }
 
-    public void setId_ombrellone(long id_ombrellone) {
-        this.id_ombrellone = id_ombrellone;
+    public void setIdOmbrellone(long idOmbrellone) {
+        this.idOmbrellone = idOmbrellone;
     }
 
     public boolean getOccupato() {
@@ -31,12 +31,12 @@ public class Ombrellone {
         this.occupato = occupato;
     }
 
-    public String getNome_lido() {
-        return nome_lido;
+    public String getNomeLido() {
+        return nomeLido;
     }
 
-    public void setNome_lido(String nome_lido) {
-        this.nome_lido = nome_lido;
+    public void setNomeLido(String nomeLido) {
+        this.nomeLido = nomeLido;
     }
 
 

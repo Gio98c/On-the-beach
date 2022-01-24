@@ -26,9 +26,11 @@ public class UtenteDaoJDBC implements UtenteDao {
                 u.setNome(rs.getString("nome"));
                 u.setCognome(rs.getString("cognome"));
                 u.setEmail(rs.getString("email"));
-                u.setTipo_utente(rs.getString("tipo_utente"));
-                u.setData_nascita(rs.getDate("data_nascita"));
                 u.setPassword(rs.getString("password"));
+                u.setDataNascita(rs.getDate("data_nascita"));
+                u.setTipoUtente(rs.getString("tipo_utente"));
+
+
 
                 utenti.add(u);
             }
@@ -53,9 +55,11 @@ public class UtenteDaoJDBC implements UtenteDao {
                 utente.setNome(rs.getString("nome"));
                 utente.setCognome(rs.getString("cognome"));
                 utente.setEmail(rs.getString("email"));
-                utente.setTipo_utente(rs.getString("tipo_utente"));
-                utente.setData_nascita(rs.getDate("data_nascita"));
                 utente.setPassword((rs.getString("password")));
+                utente.setDataNascita(rs.getDate("data_nascita"));
+                utente.setTipoUtente(rs.getString("tipo_utente"));
+
+
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -77,8 +81,8 @@ public class UtenteDaoJDBC implements UtenteDao {
             st.setString(3, utente.getCognome());
             st.setString(4, utente.getEmail());
             st.setString(5, utente.getPassword());
-            st.setDate(6, utente.getData_nascita());
-            st.setString(7, utente.getTipo_utente());
+            st.setDate(6, utente.getDataNascita());
+            st.setString(7, utente.getTipoUtente());
             st.executeUpdate();
 
         } catch (SQLException e) {
@@ -102,8 +106,8 @@ public class UtenteDaoJDBC implements UtenteDao {
             st.setString(2, utente.getCognome());
             st.setString(3, utente.getEmail());
             st.setString(4, utente.getPassword());
-            st.setDate(5, utente.getData_nascita());
-            st.setString(6, utente.getTipo_utente());
+            st.setDate(5, utente.getDataNascita());
+            st.setString(6, utente.getTipoUtente());
             st.setString(7, utente.getUsername());
 
             st.executeUpdate();
