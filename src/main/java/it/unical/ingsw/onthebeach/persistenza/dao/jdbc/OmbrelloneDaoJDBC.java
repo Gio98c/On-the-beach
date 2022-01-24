@@ -16,16 +16,16 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
 
     @Override
     public boolean saveOrUpdate(Ombrellone ombrellone) {
-        if (ombrellone.getId_ombrellone() == 0) {
+        if (ombrellone.getIdOmbrellone() == 0) {
             //INSERT
             try {
-                ombrellone.setId_ombrellone(IdBroker.getId(conn));
+                ombrellone.setIdOmbrellone(IdBroker.getId(conn));
                 String query = "insert into ombrellone "
                         + "values (?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);
-                st.setLong(1, ombrellone.getId_ombrellone());
+                st.setLong(1, ombrellone.getIdOmbrellone());
                 st.setBoolean(2, ombrellone.getOccupato());
-                st.setString(3, ombrellone.getNome_lido());
+                st.setString(3, ombrellone.getNomeLido());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -36,13 +36,13 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
         }else {
             //UPDATE
             try {
-                String query = "update recensione "
+                String query = "update ombrellone "
                         + "set occupato = ?, nome_lido = ?"
                         + "where id_ombrellone = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setBoolean(1, ombrellone.getOccupato());
-                st.setString(2, ombrellone.getNome_lido());
-                st.setLong(3, ombrellone.getId_ombrellone());
+                st.setString(2, ombrellone.getNomeLido());
+                st.setLong(3, ombrellone.getIdOmbrellone());
 
                 st.executeUpdate();
 
@@ -60,15 +60,15 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
     @Override
     public Ombrellone findByPrimaryKey(long id) {
         Ombrellone o = null;
-        String query = String.format("select * from Ombrellone where id_ombrellone = %d", id);
+        String query = String.format("select * from ombrellone where id_ombrellone = %d", id);
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery(query);
             if (rs.next()) {
                 o = new Ombrellone();
-                o.setId_ombrellone(rs.getLong("id_ombrellone"));
+                o.setIdOmbrellone(rs.getLong("id_ombrellone"));
                 o.setOccupato(rs.getBoolean("occupato"));
-                o.setNome_lido(rs.getString("nome_lido"));
+                o.setNomeLido(rs.getString("nome_lido"));
                 st.executeUpdate();
             }
         } catch (SQLException e) {
@@ -83,7 +83,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             String query = "delete from ombrellone "
                     + "where id_ombrellone = ?";
             PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1, ombrellone.getId_ombrellone());
+            st.setLong(1, ombrellone.getIdOmbrellone());
             st.executeUpdate();
         } catch (SQLException e) {
 
@@ -92,5 +92,25 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public boolean switchOccupato(Ombrellone ombrellone) {
+            try {
+                String query = "update ombrellone "
+                        + "set occupato = ? "
+                        + "where id_ombrellone = ?";
+                PreparedStatement st = conn.prepareStatement(query);
+                st.setBoolean(1, !ombrellone.getOccupato());
+                st.setLong(2, ombrellone.getIdOmbrellone());
+
+                st.executeUpdate();
+
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                return false;
+            }
+            return true;
     }
 }
