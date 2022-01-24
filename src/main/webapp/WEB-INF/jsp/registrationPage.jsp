@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 
 <head>
@@ -99,7 +100,13 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" href="login">Registrati</button>
+                      <button class="btn btn-primary w-100" type="submit" id="btnReg">Registrati</button>
+                      <script type="text/javascript">
+                        document.getElementById("btnReg").addEventListener("click", function () {
+                          alert("Registrazione effettuata!");
+                          window.location.href="login";
+                        })
+                      </script>
                     </div>
                     <!--<div class="col-12">
                       <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
