@@ -174,7 +174,7 @@
                 <div class="contact-form-wrap">
                     <div class="contact-form-box">
                             <h4><i class="fas fa-map"></i> Indirizzo</h4>
-                        <p>21, Arcavacata <br> Rende, Calabria. <br> Italia</p>
+                        <p>Pietro Bucci, Rende <br>  Calabria. <br> Italia</p>
                     </div>
                     <div class="contact-form-box">
                         <h4><i class="far fa-clock"></i> Shop Hours</h4>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="contact-form-box">
                         <h4><i class="fas fa-address-book"></i> Contact</h4>
-                        <p>Phone: +00 111 222 3333 <br> Email: support@fruitkha.com</p>
+                        <p>Phone: +00 111 222 3333 <br> Email: support@onthebeach.com</p>
                     </div>
                 </div>
             </div>
