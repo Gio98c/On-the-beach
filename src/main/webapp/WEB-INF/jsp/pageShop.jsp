@@ -5,37 +5,38 @@
   Time: 12:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+    <meta name="viewport"">
+    <meta name="description">
 
     <!-- title -->
-    <title>Shop</title>
+    <title>Negozio</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&amp;display=swap" rel="stylesheet">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/all.min.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/bootstrap/css/bootstrap.min.css">
     <!-- owl carousel -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/owl.carousel.css">
     <!-- magnific popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/magnific-popup.css">
     <!-- animate css -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/animate.css">
     <!-- mean menu css -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/meanmenu.min.css">
     <!-- main style -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/main.css">
     <!-- responsive -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/responsive.css">
 
 </head>
 <body>
@@ -57,7 +58,7 @@
                     <!-- logo -->
                     <div class="site-logo">
                         <a href="index.html">
-                            <img src="assets/img/logo.png" alt="">
+                            <img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
                         </a>
                     </div>
                     <!-- logo -->
@@ -67,29 +68,11 @@
                     <ul>
                         <li class="current-list-item"><a href="#">Home</a>
                             <ul class="sub-menu">
-                                <li><a href="index.html">Static Home</a></li>
-                                <li><a href="index_2.html">Slider Home</a></li>
+                                <li><a href="index">Home</a></li>
                             </ul>
                         </li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="404.html">404 page</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Check Out</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="news.html">News</a>
-                            <ul class="sub-menu">
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="single-news.html">Single News</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
                         <li><a href="shop.html">Shop</a>
                             <ul class="sub-menu">
                                 <li><a href="shop.html">Shop</a></li>
@@ -183,8 +166,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Fresh and Organic</p>
-                    <h1>Shop</h1>
+                    <p>Per un soggiorno speciale</p>
+                    <h1>Negozio</h1>
                 </div>
             </div>
         </div>
@@ -201,9 +184,9 @@
                 <div class="product-filters">
                     <ul>
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".strawberry">Strawberry</li>
-                        <li data-filter=".berry">Berry</li>
-                        <li data-filter=".lemon">Lemon</li>
+                        <li data-filter=".strawberry">Soverato</li>
+                        <li data-filter=".berry">Tropea</li>
+                        <li data-filter=".lemon">Praia a Mare</li>
                     </ul>
                 </div>
             </div>
@@ -213,10 +196,10 @@
             <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 0px; top: 0px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
                     </div>
                     <h3>Strawberry</h3>
-                    <p class="product-price"><span>Per Kg</span> 85$ </p>
+                    <p class="product-price"><span>1 giorno</span> 25$ </p>
                     <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
@@ -301,27 +284,27 @@
 
 
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-720px, 0px, 0px); transition: all 0.25s ease 0s; width: 2640px;"><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/3.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
                     </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/4.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
                     </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/5.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
                     </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/1.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
                     </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/2.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
                     </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/3.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
                     </div></div><div class="owl-item" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/4.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
                     </div></div><div class="owl-item" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/5.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
                     </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/1.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
                     </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/2.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
                     </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="assets/img/company-logos/3.png" alt="">
+                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
                     </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
             </div>
         </div>

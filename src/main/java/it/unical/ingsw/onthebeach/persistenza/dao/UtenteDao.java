@@ -9,4 +9,6 @@ public interface UtenteDao {
     public boolean save(Utente utente);
     public boolean update(Utente utente);
     public boolean delete(Utente utente);
+    public boolean setPassword(String username, String password);
+    public boolean setAdmin(String username);
 }
