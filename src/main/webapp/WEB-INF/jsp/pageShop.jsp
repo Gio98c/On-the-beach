@@ -245,6 +245,7 @@
 <!-- end products -->
 
 <!-- logo carousel -->
+<!--
 <div class="logo-carousel-section">
     <div class="container">
         <div class="row">
@@ -282,6 +283,7 @@
         </div>
     </div>
 </div>
+-->
 <!-- end logo carousel -->
 
 <!-- footer -->
@@ -308,9 +310,9 @@
                 <div class="footer-box pages">
                     <h2 class="widget-title">Pagine</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Contatti</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="pageShop">Negozio</a></li>
+                        <li><a href="contactPage">Contatti</a></li>
                     </ul>
                 </div>
             </div>

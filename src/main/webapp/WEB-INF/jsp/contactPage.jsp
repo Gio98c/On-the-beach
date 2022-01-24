@@ -157,16 +157,16 @@
                 <div class="contact-form">
                     <form type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
                         <p>
-                            <input type="text" placeholder="Name" name="name" id="name">
+                            <input type="text" placeholder="Nome" name="name" id="name">
                             <input type="email" placeholder="Email" name="email" id="email">
                         </p>
                         <p>
-                            <input type="tel" placeholder="Phone" name="phone" id="phone">
-                            <input type="text" placeholder="Subject" name="subject" id="subject">
+                            <input type="tel" placeholder="Telefono" name="phone" id="phone">
+                            <input type="text" placeholder="Argomento" name="subject" id="subject">
                         </p>
-                        <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
+                        <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Messaggio"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
-                        <p><input type="submit" value="Submit"></p>
+                        <p><input type="submit" value="Invia"></p>
                     </form>
                 </div>
             </div>
@@ -177,11 +177,11 @@
                         <p>Pietro Bucci, Rende <br>  Calabria. <br> Italia</p>
                     </div>
                     <div class="contact-form-box">
-                        <h4><i class="far fa-clock"></i> Shop Hours</h4>
-                        <p>MON - FRIDAY: 8 to 9 PM <br> SAT - SUN: 10 to 8 PM </p>
+                        <h4><i class="far fa-clock"></i> Orario</h4>
+                        <p>LUN-VEN: 8:00 - 20:00 <br> SAB - DOM: 8:00 - 13:30  </p>
                     </div>
                     <div class="contact-form-box">
-                        <h4><i class="fas fa-address-book"></i> Contact</h4>
+                        <h4><i class="fas fa-address-book"></i> Contatti</h4>
                         <p>Phone: +00 111 222 3333 <br> Email: support@onthebeach.com</p>
                     </div>
                 </div>
