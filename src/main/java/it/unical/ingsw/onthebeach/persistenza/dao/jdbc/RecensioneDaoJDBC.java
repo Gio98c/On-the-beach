@@ -105,7 +105,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         if (recensione.getId_prenotazione() == 0) {
             //INSERT
             try {
-                //recensione.setId(IdBrokerRecensione.getId(conn));
+                recensione.setId_prenotazione(IdBroker.getId(conn));
                 String query = "insert into recensione "
                         + "values (?, ?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);

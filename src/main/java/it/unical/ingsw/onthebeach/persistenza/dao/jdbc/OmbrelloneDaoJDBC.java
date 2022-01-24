@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.IdBroker;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Recensione;
 import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
@@ -19,7 +19,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
         if (ombrellone.getId_ombrellone() == 0) {
             //INSERT
             try {
-                //ombrellone.setId(IdBrokerOmbrellone.getId(conn));
+                ombrellone.setId_ombrellone(IdBroker.getId(conn));
                 String query = "insert into ombrellone "
                         + "values (?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);
@@ -67,7 +67,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             if (rs.next()) {
                 o = new Ombrellone();
                 o.setId_ombrellone(rs.getLong("id_ombrellone"));
-                o.setOccupato(rs.getBoolean("star"));
+                o.setOccupato(rs.getBoolean("occupato"));
                 o.setNome_lido(rs.getString("nome_lido"));
                 st.executeUpdate();
             }
