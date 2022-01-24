@@ -9,21 +9,21 @@ public class Utente {
     private String cognome;
     private String email;
     private String password;
-    private String tipo_utente;
-    private Date data_nascita;
+    private String tipoUtente;
+    private Date dataNascita;
 
     public Utente(){
     }
 
-    public Utente(String username, String nome, String cognome, String email, String password, String tipo_utente, Date data_nascita){
+    public Utente(String username, String nome, String cognome, String email, String password, String tipoUtente, Date dataNascita){
         super();
         this.username=username;
         this.nome=nome;
         this.cognome=cognome;
         this.email=email;
         this.password=password;
-        this.tipo_utente=tipo_utente;
-        this.data_nascita=data_nascita;
+        this.tipoUtente=tipoUtente;
+        this.dataNascita=dataNascita;
     }
 
     public String getUsername() {
@@ -66,19 +66,19 @@ public class Utente {
         this.password = password;
     }
 
-    public String getTipo_utente() {
-        return tipo_utente;
+    public String getTipoUtente() {
+        return tipoUtente;
     }
 
-    public void setTipo_utente(String tipo_utente) {
-        this.tipo_utente = tipo_utente;
+    public void setTipoUtente(String tipo_utente) {
+        this.tipoUtente = tipo_utente;
     }
 
-    public Date getData_nascita() {
-        return data_nascita;
+    public Date getDataNascita() {
+        return dataNascita;
     }
 
-    public void setData_nascita(Date data_nascita) {
-        this.data_nascita = data_nascita;
+    public void setDataNascita(Date dataNascita) {
+        this.dataNascita = dataNascita;
     }
 }
