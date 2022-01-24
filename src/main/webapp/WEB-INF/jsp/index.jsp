@@ -141,7 +141,7 @@
 								<h1>Stabilimenti Balneari</h1>
 								<div class="hero-btns">
 									<a href="shop.html" class="boxed-btn">Prenota ora</a>
-									<a href="contact.html" class="bordered-btn">Contattaci</a>
+									<a href="contactPage" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
@@ -160,7 +160,7 @@
 								<h1>Controlla le nostre recensioni</h1>
 								<div class="hero-btns">
 									<a href="shop.html" class="boxed-btn">Visita Lidi</a>
-									<a href="contact.html" class="bordered-btn">Contattaci</a>
+									<a href="contactPage" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
@@ -179,7 +179,7 @@
 								<h1>Inserisci un nuovo lido</h1>
 								<div class="hero-btns">
 									<a href="shop.html" class="boxed-btn">Richiedi Form</a>
-									<a href="contact.html" class="bordered-btn">Contattaci</a>
+									<a href="contactPage" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
 						</div>
