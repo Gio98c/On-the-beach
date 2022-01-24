@@ -47,6 +47,7 @@
     <!--PreLoader Ends-->
 	
 	<!-- header -->
+
 	<div class="top-header-area" id="sticker">
 		<div class="container">
 			<div class="row">
@@ -358,7 +359,7 @@
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Resta in Contatto</h2>
 						<ul>
-							<li>Calabria, Rende, Via Majorana 21</li>
+							<li> Italia, Calabria, Rende, 87036, Via Pietro Bucci</li>
 							<li>support@onthebeach.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
