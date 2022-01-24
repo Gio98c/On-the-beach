@@ -1,20 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: nikod
-  Date: 23/01/2022
-  Time: 12:59
+  Date: 24/01/2022
+  Time: 18:36
   To change this template use File | Settings | File Templates.
 --%>
-
-<!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"">
+    <meta name="viewport">
     <meta name="description">
 
     <!-- title -->
-    <title>Negozio</title>
+    <title>Contatti</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
@@ -50,14 +48,14 @@
 <!--PreLoader Ends-->
 
 <!-- header -->
-<div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 50px;"><div class="top-header-area" id="sticker" style="width: 966px;">
+<div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 50px;"><div class="top-header-area" id="sticker" style="width: 950px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 text-center">
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="index.html">
+                        <a href="index">
                             <img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
                         </a>
                     </div>
@@ -68,14 +66,32 @@
                     <ul>
                         <li class="current-list-item"><a href="#">Home</a>
                             <ul class="sub-menu">
-                                <li><a href="index">Home</a></li>
+                                <li><a href="index.html">Static Home</a></li>
+                                <li><a href="index_2.html">Slider Home</a></li>
                             </ul>
                         </li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contatti</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="404.html">404 page</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Check Out</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="news.html">News</a>
+                            <ul class="sub-menu">
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="single-news.html">Single News</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="shop.html">Shop</a>
                             <ul class="sub-menu">
-                                <li><a href="Shop">Shop</a></li>
+                                <li><a href="shop.html">Shop</a></li>
                                 <li><a href="checkout.html">Check Out</a></li>
                                 <li><a href="single-product.html">Single Product</a></li>
                                 <li><a href="cart.html">Cart</a></li>
@@ -83,7 +99,6 @@
                         </li>
                         <li>
                             <div class="header-icons">
-                                <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                 <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                             </div>
                         </li>
@@ -166,8 +181,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Per un soggiorno speciale</p>
-                    <h1>Negozio</h1>
+                    <p>Supporto 24/7 </p>
+                    <h1>Contattaci</h1>
                 </div>
             </div>
         </div>
@@ -175,142 +190,71 @@
 </div>
 <!-- end breadcrumb section -->
 
-<!-- products -->
-<div class="product-section mt-150 mb-150">
+<!-- contact form -->
+<div class="contact-from-section mt-150 mb-150">
     <div class="container">
-
         <div class="row">
-            <div class="col-md-12">
-                <div class="product-filters">
-                    <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".strawberry">Soverato</li>
-                        <li data-filter=".berry">Tropea</li>
-                        <li data-filter=".lemon">Praia a Mare</li>
-                    </ul>
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="form-title">
+                    <h2>Hai qualche domanda?</h2>
+                    <p>Compila il questionario per risolvere tutti i tuoi dubbi!</p>
+                </div>
+                <div id="form_status"></div>
+                <div class="contact-form">
+                    <form type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
+                        <p>
+                            <input type="text" placeholder="Name" name="name" id="name">
+                            <input type="email" placeholder="Email" name="email" id="email">
+                        </p>
+                        <p>
+                            <input type="tel" placeholder="Phone" name="phone" id="phone">
+                            <input type="text" placeholder="Subject" name="subject" id="subject">
+                        </p>
+                        <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
+                        <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
+                        <p><input type="submit" value="Submit"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="contact-form-wrap">
+                    <div class="contact-form-box">
+                            <h4><i class="fas fa-map"></i> Indirizzo</h4>
+                        <p>21, Arcavacata <br> Rende, Calabria. <br> Italia</p>
+                    </div>
+                    <div class="contact-form-box">
+                        <h4><i class="far fa-clock"></i> Shop Hours</h4>
+                        <p>MON - FRIDAY: 8 to 9 PM <br> SAT - SUN: 10 to 8 PM </p>
+                    </div>
+                    <div class="contact-form-box">
+                        <h4><i class="fas fa-address-book"></i> Contact</h4>
+                        <p>Phone: +00 111 222 3333 <br> Email: support@fruitkha.com</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- end contact form -->
 
-        <div class="row product-lists" style="position: relative; height: 1667.1px;">
-            <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 0px; top: 0px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
-                    </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>1 giorno</span> 25$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center berry" style="position: absolute; left: 360px; top: 0px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-                    </div>
-                    <h3>Berry</h3>
-                    <p class="product-price"><span>Per Kg</span> 70$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center lemon" style="position: absolute; left: 0px; top: 555.7px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-                    </div>
-                    <h3>Lemon</h3>
-                    <p class="product-price"><span>Per Kg</span> 35$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 360px; top: 555.7px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt=""></a>
-                    </div>
-                    <h3>Avocado</h3>
-                    <p class="product-price"><span>Per Kg</span> 50$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 0px; top: 1111.4px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt=""></a>
-                    </div>
-                    <h3>Green Apple</h3>
-                    <p class="product-price"><span>Per Kg</span> 45$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 360px; top: 1111.4px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt=""></a>
-                    </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>Per Kg</span> 80$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>
-
+<!-- find our location -->
+<div class="find-location blue-bg">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <div class="pagination-wrap">
-                    <ul>
-                        <li><a href="#">Prev</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a class="active" href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </div>
+                <p> <i class="fas fa-map-marker-alt"></i> Dove siamo</p>
             </div>
         </div>
     </div>
 </div>
-<!-- end products -->
+<!-- end find our location -->
 
-<!-- logo carousel -->
-<div class="logo-carousel-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="logo-carousel-inner owl-carousel owl-theme owl-loaded">
-
-
-
-
-
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-720px, 0px, 0px); transition: all 0.25s ease 0s; width: 2640px;"><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
-                    </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
-                    </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
-                    </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
-                    </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
-                    </div></div><div class="owl-item active" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
-                    </div></div><div class="owl-item" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
-                    </div></div><div class="owl-item" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
-                    </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
-                    </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
-                    </div></div><div class="owl-item cloned" style="width: 210px; margin-right: 30px;"><div class="single-logo-item">
-                        <img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
-                    </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
-            </div>
-        </div>
-    </div>
+<!-- google map section -->
+<div class="embed-responsive embed-responsive-21by9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26432.42324808999!2d-118.34398767954286!3d34.09378509738966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1576846473265!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
 </div>
-<!-- end logo carousel -->
+<!-- end google map section -->
+
 
 <!-- footer -->
 <div class="footer-area">
@@ -402,8 +346,11 @@
 <script src="assets/js/jquery.meanmenu.min.js"></script>
 <!-- sticker js -->
 <script src="assets/js/sticker.js"></script>
+<!-- form validation js -->
+<script src="assets/js/form-validate.js"></script>
 <!-- main js -->
 <script src="assets/js/main.js"></script>
 
 
 </body></html>
+

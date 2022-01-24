@@ -9,6 +9,7 @@ public interface PrenotazioneDao {
 	public List<Prenotazione> findAll();
 	public Prenotazione findByPrimaryKey(long id);
 	public List<Prenotazione> findByUsername(String username);
+	public List<Prenotazione> findByLido(String nomeLido);
 	public boolean save(Prenotazione prenotazione);
 	public boolean delete(Prenotazione prenotazione);
 }
