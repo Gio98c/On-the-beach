@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class HomePage {
-    @GetMapping("/")
+    @GetMapping("/index")
     public String homePage(HttpServletRequest req, HttpServletResponse resp) {
         return "index";
     }
