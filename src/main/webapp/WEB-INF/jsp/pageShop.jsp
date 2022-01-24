@@ -184,9 +184,9 @@
                 <div class="product-filters">
                     <ul>
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".strawberry">Soverato</li>
-                        <li data-filter=".berry">Tropea</li>
-                        <li data-filter=".lemon">Praia a Mare</li>
+                        <li data-filter=".strawberry">Prezzo crescente/li>
+                        <li data-filter=".berry">Prezzo decrescente</li>
+                        <li data-filter=".lemon">Località più vicine</li>
                     </ul>
                 </div>
             </div>
