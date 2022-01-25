@@ -155,33 +155,30 @@
                 <p class="contact-form">
                     <p type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
                         <p>
-                            <input type="text" placeholder="Nome Lido" name="name" id="name" required>
+                            <input type="text" placeholder="Nome Lido" name="nome" id="nome" required>
                     </p>
                     <p>
-                            <input type="text" placeholder="Gestore Lido"name="name" id="name" required>
+                            <input type="text" placeholder="(Username)Gestore Lido"name="usernameGestore" id="username_gestore" required>
                 </p>
                 <p>
-                    <input type="tel" placeholder="Telefono" name="phone" id="phone" required>
+                    <input type="tel" placeholder="Telefono" name="numero" id="numero" required>
                 </p>
                         <p>
                             <input type="email" placeholder="Email" name="email" id="email">
                         </p>
-                        <p>
-                            <input type="text" placeholder="Username" name="username" id="username">
-                        </p>
                 <p>
-                    <label for="numeroOmbrelloni">Numero Ombrelloni:</label>
+                    <label for="numero_ombrelloni">Numero Ombrelloni:</label>
                     <input type="number"
-                           id="numeroOmbrelloni" name="numeroOmbrelloni">
+                           id="numero_ombrelloni" name="numeroOmbrelloni">
                 </p>
                 <p>
-                <label for="avatar">Inserisci Foto:</label>
+                <label for="foto">Inserisci Foto:</label>
                 <input type="file"
-                       id="avatar" name="avatar"
+                       id="foto" name="foto"
                        accept="image/png, image/jpeg" multiple>
 
                 </p>
-                        <p><textarea name="message" id="message" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
+                        <p><textarea name="descrizione" id="descrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
                         <p><input type="submit" value="Invia"></p>
                     </form>
