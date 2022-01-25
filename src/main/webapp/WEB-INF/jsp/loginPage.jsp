@@ -95,7 +95,7 @@
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                      <div class="g-singin2" data-onsuccess="onSignIn"></div>
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
