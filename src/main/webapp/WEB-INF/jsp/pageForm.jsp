@@ -10,7 +10,7 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description">
 
     <!-- title -->
@@ -42,7 +42,7 @@
 <body>
 
 <!--PreLoader-->
-<div class="loader" style="display: none;">
+<div class="loader">
     <div class="loader-inner">
         <div class="circle"></div>
     </div>
@@ -131,7 +131,17 @@
 </div>
 <!-- end search area -->
 
-
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <h1>RICHIESTA REGISTRAZIONE STABILIMENTO BALNEARE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- contact form -->
 <div class="contact-from-section mt-150 mb-150">
     <div class="container">
@@ -168,7 +178,8 @@
                 <label for="avatar">Inserisci Foto:</label>
                 <input type="file"
                        id="avatar" name="avatar"
-                       accept="image/png, image/jpeg">
+                       accept="image/png, image/jpeg" multiple>
+
                 </p>
                         <p><textarea name="message" id="message" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
