@@ -160,9 +160,17 @@
                             <input type="text" placeholder="Username" name="username" id="username">
                         </p>
                 <p>
-                            <input type="number" placeholder="nOmbrelloni" id="numeroOmbrelloni" name="numeroOmbrelloni" min="20" max="300">
-                        </p>
-                        <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Descrizione"></textarea></p>
+                    <label for="numeroOmbrelloni">Numero Ombrelloni:</label>
+                    <input type="number"
+                           id="numeroOmbrelloni" name="numeroOmbrelloni">
+                </p>
+                <p>
+                <label for="avatar">Inserisci Foto:</label>
+                <input type="file"
+                       id="avatar" name="avatar"
+                       accept="image/png, image/jpeg">
+                </p>
+                        <p><textarea name="message" id="message" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
                         <p><input type="submit" value="Invia"></p>
                     </form>
