@@ -259,7 +259,8 @@
 								</tr>
 							</tbody>
 						</table>
-						<a href="#" class="boxed-btn">Pagamento fisico </a> &nbsp
+						<a href="#" class="boxed-btn">Pagamento fisico </a> <br/>
+						<br/>
 						<!--PULSANTE PAYPAL -->
 						<div id="smart-button-container">
 							<div style="text-align: center;">
