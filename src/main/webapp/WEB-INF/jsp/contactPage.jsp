@@ -64,7 +64,7 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="#">Home</a></li>
+                            <li class="current-list-item"><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
                             <!--<li><a href="#">Pages</a>
                                 <ul class="sub-menu">

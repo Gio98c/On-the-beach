@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="/">Home</a></li>
+								<li><a href="index">Home</a></li>
 								<li><a href="pageShop">Prenota Qui</a></li>
 								<!--<li><a href="#">Pages</a>
 									<ul class="sub-menu">
@@ -275,33 +275,6 @@
 	</div>
 	<!-- end check out section -->
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="${pageContext.request.contextPath }/resources/assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end logo carousel -->
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -317,7 +290,7 @@
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Resta in Contatto</h2>
 						<ul>
-							<li>Calabria, Rende, Via Majorana 21</li>
+							<li> Italia, Calabria, Rende, 87036, Via Pietro Bucci</li>
 							<li>support@onthebeach.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>

@@ -66,7 +66,7 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="#">Home</a></li>
+                            <li class="current-list-item"><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
                             <!--<li><a href="#">Pages</a>
                                 <ul class="sub-menu">
@@ -172,57 +172,57 @@
                     </div>
                     <h3>Strawberry</h3>
                     <p class="product-price"><span>1 giorno</span> 25$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center berry" style="position: absolute; left: 360px; top: 0px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
                     </div>
                     <h3>Berry</h3>
                     <p class="product-price"><span>Per Kg</span> 70$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center lemon" style="position: absolute; left: 0px; top: 555.7px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
                     </div>
                     <h3>Lemon</h3>
                     <p class="product-price"><span>Per Kg</span> 35$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 360px; top: 555.7px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-4.jpg" alt=""></a>
                     </div>
                     <h3>Avocado</h3>
                     <p class="product-price"><span>Per Kg</span> 50$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 0px; top: 1111.4px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-5.jpg" alt=""></a>
                     </div>
                     <h3>Green Apple</h3>
                     <p class="product-price"><span>Per Kg</span> 45$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 360px; top: 1111.4px;">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt=""></a>
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-6.jpg" alt=""></a>
                     </div>
                     <h3>Strawberry</h3>
                     <p class="product-price"><span>Per Kg</span> 80$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
             </div>
         </div>
