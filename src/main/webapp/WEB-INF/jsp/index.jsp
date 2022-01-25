@@ -94,7 +94,7 @@
 								</li>-->
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+										<a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
