@@ -7,6 +7,7 @@
 --%>
 
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,10 +48,12 @@
         <div class="circle"></div>
     </div>
 </div>
-<!--PreLoader Ends-->
+<!--PreLoader Ends
+
+
 
 <!-- header -->
-<div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 50px;"><div class="top-header-area" id="sticker" style="width: 966px;">
+<div class="top-header-area" id="sticker">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 text-center">
@@ -66,7 +69,7 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="index">Home</a></li>
+                            <li><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
                             <!--<li><a href="#">Pages</a>
                                 <ul class="sub-menu">
@@ -138,7 +141,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Per un soggiorno speciale</p>
+                    <p>Per la tua vacanza ideale</p>
                     <h1>Negozio</h1>
                 </div>
             </div>
@@ -164,69 +167,98 @@
             </div>
         </div>
 
-        <div class="row product-lists" style="position: relative; height: 1667.1px;">
-            <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 0px; top: 0px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
+        <div class="latest-news mt-150 mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
+                                <!-- <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                </p> -->
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <p class="product-price"><span>1 giorno</span> 25€ </p>
+                                <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>1 giorno</span> 25$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center berry" style="position: absolute; left: 360px; top: 0px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
+                                <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                </p>
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Berry</h3>
-                    <p class="product-price"><span>Per Kg</span> 70$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center lemon" style="position: absolute; left: 0px; top: 555.7px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
+                                <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                </p>
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Lemon</h3>
-                    <p class="product-price"><span>Per Kg</span> 35$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 360px; top: 555.7px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-4.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-4"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">Fall in love with the fresh orange</a></h3>
+                                <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                </p>
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Avocado</h3>
-                    <p class="product-price"><span>Per Kg</span> 50$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center" style="position: absolute; left: 0px; top: 1111.4px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-5.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-5"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">Why the berries always look delecious</a></h3>
+                                <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                </p>
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Green Apple</h3>
-                    <p class="product-price"><span>Per Kg</span> 45$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center strawberry" style="position: absolute; left: 360px; top: 1111.4px;">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-6.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-news">
+                            <a href="single-news.html"><div class="latest-news-bg news-bg-6"></div></a>
+                            <div class="news-text-box">
+                                <h3><a href="single-news.html">Love for fruits are genuine of John Doe</a></h3>
+                                <p class="blog-meta">
+                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2018</span>
+                                </p>
+                                <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>Per Kg</span> 80$ </p>
-                    <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Checkout</a>
                 </div>
+
             </div>
         </div>
-
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="pagination-wrap">

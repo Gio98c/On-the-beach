@@ -48,7 +48,7 @@
 <!--PreLoader Ends-->
 
 <!-- header -->
-<div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 50px;"><div class="top-header-area" id="sticker" style="width: 950px;">
+<div class="top-header-area" id="sticker">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 text-center">
