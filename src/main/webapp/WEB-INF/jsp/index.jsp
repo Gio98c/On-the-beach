@@ -279,7 +279,7 @@
                 <div class="content-column col-lg-6">
 					<h3><span class="orange-text">Lido</span> del mese</h3>
                     <h4>SPOX</h4>
-                    <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare di Soverato. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
+                    <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
                 	<a href="pageShop" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
                 </div>
             </div>
@@ -287,7 +287,9 @@
     </section>
     <!-- end cart banner section -->
 
-	<!-- testimonail-section -->
+	<!-- testimonail-section
+		RECENSIONI TOLTE
+
 	<div class="testimonail-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
@@ -340,8 +342,10 @@
 			</div>
 		</div>
 	</div>
+	-->
+
 	<!-- end testimonail-section -->
-	
+
 
 
 
