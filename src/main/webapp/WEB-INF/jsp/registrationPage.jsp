@@ -64,7 +64,7 @@
                     <p class="text-center small">Inserisci i tuoi dati personali per creare un account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" novalidate action="registrationServices">
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nome</label>
                       <input type="text" name="name" class="form-control" id="yourName" required>
@@ -101,12 +101,12 @@
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" id="btnReg">Registrati</button>
-                      <script type="text/javascript">
+                      <!--<script type="text/javascript">
                         document.getElementById("btnReg").addEventListener("click", function () {
                           alert("Registrazione effettuata!");
                           window.location.href="login";
                         })
-                      </script>
+                      </script>-->
                     </div>
                     <!--<div class="col-12">
                       <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
