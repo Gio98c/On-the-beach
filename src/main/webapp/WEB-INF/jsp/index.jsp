@@ -179,7 +179,7 @@
 								<p class="subtitle">*SOLO* per proprietari di stabilimenti balneari</p>
 								<h1>Inserisci un nuovo lido</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Richiedi Form</a>
+									<a href="https://docs.google.com/forms/d/e/1FAIpQLScucDAPVpav55sUQVjjayXevxvb7fguLGwugkPpzdjEOrSfYg/viewform?usp=sf_link" class="boxed-btn">Richiedi Form</a>
 									<a href="contactPage" class="bordered-btn">Contattaci</a>
 								</div>
 							</div>
