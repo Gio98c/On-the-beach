@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 
 <head>
@@ -68,7 +69,7 @@
                     <p class="text-center small">Inserisci Username & password</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" novalidate action="loginServices">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
