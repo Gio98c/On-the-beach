@@ -10,10 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 @Controller
 public class Registration {
@@ -31,7 +28,7 @@ public class Registration {
         String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ 0 +"');";
 
         try {
-            Connection conn = (Connection) Database.getInstance();
+            Connection conn = DriverManager.getConnection("\"jdbc:postgresql://localhost:5432/postgres\", \"postgres\", \"root\"");
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -43,6 +40,7 @@ public class Registration {
                 return "registration";
         } catch (SQLException | IOException e) {
             e.printStackTrace();
+            resp.sendRedirect("login");
         }
 
         return null;

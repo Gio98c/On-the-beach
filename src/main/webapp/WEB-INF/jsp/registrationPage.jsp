@@ -64,7 +64,7 @@
                     <p class="text-center small">Inserisci i tuoi dati personali per creare un account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="registrationServices">
+                  <form class="row g-3 needs-validation" novalidate action="registrationServices" method="post">
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nome</label>
                       <input type="text" name="name" class="form-control" id="yourName" required>
