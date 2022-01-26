@@ -69,7 +69,7 @@
                     <p class="text-center small">Inserisci Username & password</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="loginServices">
+                  <form class="row g-3 needs-validation" novalidate action="loginServices" method="post">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>

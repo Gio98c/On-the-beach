@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 @Controller
 public class Login {
@@ -34,21 +31,22 @@ public class Login {
         String sql = "SELECT * FROM utente WHERE username = '"+ username +"'";
         HttpSession session = req.getSession(true);
 
-
-
+        //ERRORE: la relazione "utente" non esiste
         try {
-            Connection conn = (Connection) Database.getInstance();
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                    "postgres", "root");;
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if(rs.next()) {
                 session.setAttribute("username", rs.getString("username"));
-                resp.sendRedirect("dashboard");
+                resp.sendRedirect("profile");
             } else {
                 return "login";
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            resp.sendRedirect("login");
         }
 
         return null;
