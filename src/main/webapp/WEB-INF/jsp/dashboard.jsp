@@ -210,9 +210,9 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="${pageContext.request.contextPath }/resources/User/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <!--<img src="${pageContext.request.contextPath }/resources/User/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">-->
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
+          </a> <!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
@@ -520,7 +520,7 @@
 
     <section class="section profile">
       <div class="row">
-        <div class="col-xl-4">
+        <!--<div class="col-xl-4">
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
@@ -537,7 +537,7 @@
             </div>
           </div>
 
-        </div>
+        </div>-->
 
         <div class="col-xl-8">
 
