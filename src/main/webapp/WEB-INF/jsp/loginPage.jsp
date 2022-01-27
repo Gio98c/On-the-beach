@@ -5,7 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="google-signin-client_id" content="1008706950005-1lulr3nih0o5mv02qddj0j6072avpvsm.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+        content="830725355780-7pbqkus16mkl9lgbmarskpiathgtt9e1.apps.googleusercontent.com">
 
   <!-- Google SignIn -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -69,7 +70,7 @@
                     <p class="text-center small">Inserisci Username & password</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="loginServices" method="post">
+                  <br class="row g-3 needs-validation" novalidate action="loginServices" method="post">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
@@ -93,10 +94,18 @@
                       </div>
                     </div>-->
                     <div class="col-12">
+                      </br>
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
+                      </br>
                       <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                      <div>
+                      </div>
+                    </div>
+                  </br>
+                        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+                      </div>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
@@ -137,6 +146,7 @@
 
   <!-- Template Main JS File -->
   <script src="${pageContext.request.contextPath }/resources/User/assets/js/main.js"></script>
+  <script src="${pageContext.request.contextPath }/resources/User/assets/js/google.js"></script>
 
 
 </body>

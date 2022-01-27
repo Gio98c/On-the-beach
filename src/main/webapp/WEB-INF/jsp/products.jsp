@@ -1,20 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: nikod
-  Date: 25/01/2022
-  Time: 18:17
+  Date: 27/01/2022
+  Time: 16:36
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
     <!-- title -->
-    <title>Richiesta Registrazione Lido</title>
+    <title>Single Product</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
@@ -38,13 +37,11 @@
     <!-- responsive -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/responsive.css">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/scss/maps.css" />
-
 </head>
 <body>
 
 <!--PreLoader-->
-<div class="loader">
+<div class="loader" style="display: none;">
     <div class="loader-inner">
         <div class="circle"></div>
     </div>
@@ -52,15 +49,15 @@
 <!--PreLoader Ends-->
 
 <!-- header -->
-<div class="top-header-area" id="sticker">
+<div id="sticker-sticky-wrapper" class="sticky-wrapper" style="height: 50px;"><div class="top-header-area" id="sticker" style="">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 text-center">
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="index">
-                            <img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
+                        <a href="index.html">
+                            <img src="assets/img/logo.png" alt="">
                         </a>
                     </div>
                     <!-- logo -->
@@ -68,10 +65,9 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li ><a href="index">Home</a></li>
+                            <li><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
-
-                            <li><a href="contactPage">Contatti</a></li>
+                            <li><a href="contactPage">Contatti</a></li
                             <li>
                                 <div class="header-icons">
                                     <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
@@ -98,9 +94,9 @@
                 <span class="close-btn"><i class="fas fa-window-close"></i></span>
                 <div class="search-bar">
                     <div class="search-bar-tablecell">
-                        <h3>Search For:</h3>
-                        <input type="text" placeholder="Keywords">
-                        <button type="submit">Search <i class="fas fa-search"></i></button>
+                        <h3>Cerca per:</h3>
+                        <input type="text" placeholder="Parola chiave">
+                        <button type="submit">Cerca <i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -109,106 +105,96 @@
 </div>
 <!-- end search area -->
 
+<!-- breadcrumb-section -->
 <div class="breadcrumb-section breadcrumb-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <h1>RICHIESTA REGISTRAZIONE STABILIMENTO BALNEARE</h1>
+                    <p>Effettua la prenotazione</p>
+                    <h1>Stabilimento Balneare</h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- contact form -->
-<div class="contact-from-section mt-150 mb-150">
+<!-- end breadcrumb section -->
+
+<!-- single product -->
+<div class="single-product mt-150 mb-150">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="form-title">
-                    <h2>Sei il gestore di uno stabilimento balneare?</h2>
-                    <p>Compila il questionario per richiedere la registrazione del tuo lido!</p>
-                </div>
-                <div id="form_status"></div>
-                <p class="contact-form">
-                    <p type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
-                        <p>
-                            <input type="text" placeholder="Nome Lido" name="nome" id="nome" required>
-                    </p>
-                    <p>
-                            <input type="text" placeholder="(Username)Gestore Lido"name="usernameGestore" id="username_gestore" required>
-                </p>
-                <p>
-                    <input type="text" placeholder="Località" name="posizione" id="posizione" required>
-                </p>
-                <p>
-                    <input type="tel" placeholder="Telefono" name="numero" id="numero" required>
-                </p>
-                        <p>
-                            <input type="email" placeholder="Email" name="email" id="email">
-                        </p>
-                <p>
-                    <label for="numero_ombrelloni">Numero Ombrelloni:</label>
-                    <input type="number"
-                           id="numero_ombrelloni" name="numeroOmbrelloni">
-                </p>
-                <p>
-                <label for="foto">Inserisci Foto:</label>
-                <input type="file"
-                       id="foto" name="foto"
-                       accept="image/png, image/jpeg" multiple>
-
-                </p>
-                        <p><textarea name="descrizione" id="descrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
-                        <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
-                        <p><input type="submit" value="Invia"></p>
-                    </form>
+            <div class="col-md-5">
+                <div class="single-product-img">
+                    <img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-5.jpg" alt="">
                 </div>
             </div>
-
+            <div class="col-md-7">
+                <div class="single-product-content">
+                    <h3>Green apples have polyphenols</h3>
+                    <p class="single-product-pricing"><span>Per Kg</span> $50</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+                    <div class="single-product-form">
+                        <form action="index.html">
+                            <input type="number" placeholder="0">
+                        </form>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <p><strong>Categories: </strong>Fruits, Organic</p>
+                    </div>
+                    <h4>Share:</h4>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- end contact form -->
+<!-- end single product -->
 
-
-
-
-<div style="display: none">
-    <input
-            id="pac-input"
-            class="controls"
-            type="text"
-            placeholder="Enter a location"
-    />
+<!-- more products -->
+<div class="more-products mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3><span class="orange-text">Related</span> Products</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
+                    </div>
+                    <h3>Strawberry</h3>
+                    <p class="product-price"><span>Per Kg</span> 85$ </p>
+                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
+                    </div>
+                    <h3>Berry</h3>
+                    <p class="product-price"><span>Per Kg</span> 70$ </p>
+                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
+                    </div>
+                    <h3>Lemon</h3>
+                    <p class="product-price"><span>Per Kg</span> 35$ </p>
+                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="map"></div>
-<div id="infowindow-content">
-    <span id="place-name" class="title"></span><br />
-    <strong>Place ID</strong>: <span id="place-id"></span><br />
-    <span id="place-address"></span>
-</div>
-
-<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPE3t9S8PbhsknpEBc6bAxQu5She2k_Q&callback=initMap&libraries=places&v=weekly"
-        async
-></script>
-
-<!-- end find our location -->
-
-
-<!-- google map section
-<div class="embed-responsive embed-responsive-21by9">
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26432.42324808999!2d-118.34398767954286!3d34.09378509738966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1576846473265!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
-
-    <iframe src="https://maps.google.com/maps?q=universit%C3%A0%20della%20calabria%20pietro%20bucci%2087036&t=&z=13&ie=UTF8&iwloc=&output=embed"  width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
-
-    <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=pietro%20bucci%20rende&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google custom map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:2500px;width:2600px;}</style></div></div>
--->
-</div>
-<!-- end google map section -->
+<!-- end more products -->
 
 
 <!-- footer -->
@@ -292,11 +278,8 @@
 <script src="${pageContext.request.contextPath }/resources/assets/js/jquery.meanmenu.min.js"></script>
 <!-- sticker js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/sticker.js"></script>
-<!-- form validation js -->
-<script src="${pageContext.request.contextPath }/resources/assets/js/form-validate.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
-<script src="${pageContext.request.contextPath }/resources/assets/js/googlemaps.js"></script>
-</body></html>
 
+</body></html>
