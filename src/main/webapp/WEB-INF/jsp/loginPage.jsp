@@ -5,7 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="google-signin-client_id" content="1008706950005-1lulr3nih0o5mv02qddj0j6072avpvsm.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+        content="830725355780-7pbqkus16mkl9lgbmarskpiathgtt9e1.apps.googleusercontent.com">
 
   <!-- Google SignIn -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
