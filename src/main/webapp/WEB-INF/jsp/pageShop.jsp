@@ -124,9 +124,9 @@
                 <span class="close-btn"><i class="fas fa-window-close"></i></span>
                 <div class="search-bar">
                     <div class="search-bar-tablecell">
-                        <h3>Search For:</h3>
-                        <input type="text" placeholder="Keywords">
-                        <button type="submit">Search <i class="fas fa-search"></i></button>
+                        <h3>Cerca per:</h3>
+                        <input type="text" placeholder="Parola chiave">
+                        <button type="submit">Cerca <i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                                 </p> -->
                                 <p class="excerpt">Descrizione Lido El Sombrero</p>
                                 <p class="product-price"><span>1 giorno</span> 25€ </p>
-                                <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                                <a href="products" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
                         <div class="single-latest-news">
                             <a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
                             <div class="news-text-box">
-                                <h3><a href="single-news.html">Spox.</a></h3>
+                                <h3><a href="single-news.html">Spox</a></h3>
                                 <p class="excerpt">Descrizione lido Spox</p>
                                 <!--<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
                             -->
