@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class Dashboard {
 
     @GetMapping("profile")
-    public String paginaProfilo() { return "profile"; }
+    public String paginaProfilo() { return "dashboard"; }
 
     /*@GetMapping("/profile")
     public String paginaProfilo(HttpServletRequest req) {
