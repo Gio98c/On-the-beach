@@ -601,7 +601,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form method="post" action="updateInfoUtente">
                     <!--<div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
@@ -611,13 +611,6 @@
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
-                    </div>-->
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
-                      </div>
                     </div>
 
                     <div class="row mb-3">
@@ -625,23 +618,30 @@
                       <div class="col-md-8 col-lg-9">
                         <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                      <label for="inputNome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+                        <input name="nome" type="text" class="form-control" id="inputNome">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                      <label for="inputCognome" class="col-md-4 col-lg-3 col-form-label">Cognome</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
+                        <input name="cognome" type="text" class="form-control" id="inputCognome">
                       </div>
                     </div>
 
                     <div class="row mb-3">
+                      <label for="inputEmail" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="email" type="text" class="form-control" id="inputEmail">
+                      </div>
+                    </div>
+
+                    <!--<div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="country" type="text" class="form-control" id="Country" value="USA">
@@ -695,12 +695,12 @@
                       <div class="col-md-8 col-lg-9">
                         <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" id="btnUpdateInfoUtente">Salva</button>
                     </div>
-                  </form><!-- End Profile Edit Form -->
+                  </form> <!-- End Profile Edit Form -->
 
                 </div>
 

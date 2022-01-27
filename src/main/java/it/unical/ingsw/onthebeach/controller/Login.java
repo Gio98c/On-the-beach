@@ -26,7 +26,7 @@ public class Login {
     }
 
     @PostMapping("/loginServices")
-    public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String passw) throws IOException {
+    public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String password) throws IOException {
 
         String sql = "SELECT * FROM utente WHERE username = '"+ username +"'";
         HttpSession session = req.getSession(true);
