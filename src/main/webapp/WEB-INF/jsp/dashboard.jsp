@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
@@ -704,9 +706,9 @@
 
                 </div>
 
-                <div class="tab-pane fade pt-3" id="profile-settings">
+                <!--<div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form -->
+                   Settings Form
                   <form>
 
                     <div class="row mb-3">
@@ -742,37 +744,138 @@
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
-                  </form><!-- End settings Form -->
+                  </form>  End settings Form
 
-                </div>
+                </div>-->
+
+
+                <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
+                  <div class="tab-content pt-2">
+
+                    <div class="tab-pane fade show active profile-overview" id="lido-overview">
+                      <!--<h5 class="card-title">About</h5>
+                      <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>-->
+
+                      <h5 class="card-title">Dettagli lido ${lido.nome}</h5>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Numero di telefono</div>
+                        <div class="col-lg-9 col-md-8">${lido.numero}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Email</div>
+                        <div class="col-lg-9 col-md-8">${lido.email}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Descrizione</div>
+                        <div class="col-lg-9 col-md-8">${lido.descrizione}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Numero di ombrelloni</div>
+                        <div class="col-lg-9 col-md-8">${lido.numeroOmbrelloni}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Posizione</div>
+                        <div class="col-lg-9 col-md-8">${lido.posizione}</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="tab-pane fade profile-edit pt-3" id="lido-edit">
+
+                    <!-- Profile Edit Form -->
+                    <form method="post" action="updateInfoLido">
+
+                      <div class="row mb-3">
+                        <label for="inputTelefono" class="col-md-4 col-lg-3 col-form-label">Numero di telefono</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="telefono" type="text" class="form-control" id="inputTelefono">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputEmailLido" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="email" type="text" class="form-control" id="inputEmailLido">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descizione</label>
+                        <div class="col-md-8 col-lg-9">
+                          <textarea name="descrizione" class="form-control" id="inputDescrizione" style="height: 100px"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputNumOmbrelloni" class="col-md-4 col-lg-3 col-form-label">Numero Ombrelloni</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="numOmbrelloni" type="text" class="form-control" id="inputNumOmbrelloni">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputFoto" class="col-md-4 col-lg-3 col-form-label">Foto</label>
+                        <div class="col-md-8 col-lg-9">
+                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" multiple accept="image/png, image/jpeg"></i>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary" id="btnUpdateInfoLido">Salva</button>
+                      </div>
+                    </form> <!-- End Profile Edit Form -->
+
+                  </div>
+                </c:if>
+
+                <c:if test="${utente.tipoUtente == 'Cliente'}">
+                  <!-- tab cronologia prenotazioni + insert recensioni -->
+                </c:if>
+
+                <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
+                  <!-- lista utenti + pulsante promozione -->
+                  <c:forEach items="${utenteCliente}" var="cliente">
+                    <tr>
+                      <td>${cliente.username}</td>
+                      <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
+                      <td><button class="btn btn-primary">Promuovi</button></td>
+                    </tr>
+                  </c:forEach>
+                </c:if>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form method="post" action="cambiaPassword">
 
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Password corrente</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="password" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nuova password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="newpassword" type="password" class="form-control" id="newPassword">
                       </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <!--<div class="row mb-3">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="renewpassword" type="password" class="form-control" id="renewPassword">
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="submit" class="btn btn-primary">Cambia Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
 

@@ -11,4 +11,5 @@ public interface UtenteDao {
     public boolean delete(Utente utente);
     public boolean setPassword(String username, String password);
     public boolean setAdmin(String username);
+    public List<Utente> findAllFromTipoUtente(String tipoUtente);
 }

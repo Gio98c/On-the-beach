@@ -185,4 +185,33 @@ public class LidoDaoJDBC implements LidoDao{
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public Lido findByGestore(String username) {
+		Lido lido = null;
+		String query = "SELECT * FROM lido WHERE username_gestore=?;";
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(query);
+			st.setString(1, username);
+			rs = st.executeQuery();
+			if(rs.next()) {
+				lido = new Lido();
+				lido.setNome(rs.getString("nome"));
+				lido.setPosizione(rs.getString("posizione"));
+				lido.setNumero(rs.getString("numero"));
+				lido.setEmail(rs.getString("email"));
+				lido.setDescrizione(rs.getString("descrizione"));
+				lido.setFoto(rs.getString("foto"));
+				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
+		}
+		return lido;
+	}
 }

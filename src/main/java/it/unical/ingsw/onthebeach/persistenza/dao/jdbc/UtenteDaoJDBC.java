@@ -70,6 +70,33 @@ public class UtenteDaoJDBC implements UtenteDao {
     }
 
     @Override
+    public List<Utente> findAllFromTipoUtente(String tipoUtente) {
+        List<Utente> utenti = new ArrayList<Utente>();
+        String query = String.format("select * from utente where tipo_utente = %s", tipoUtente);
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                Utente u = new Utente();
+                u.setUsername(rs.getString("username"));
+                u.setNome(rs.getString("nome"));
+                u.setCognome(rs.getString("cognome"));
+                u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("password"));
+                u.setDataNascita(rs.getDate("data_nascita"));
+                u.setTipoUtente(rs.getString("tipo_utente"));
+                utenti.add(u);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return utenti;
+    }
+
+
+    @Override
     public boolean save(Utente utente) {
         //INSERT
         try {
