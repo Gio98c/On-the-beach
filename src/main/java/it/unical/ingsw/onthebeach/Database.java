@@ -27,29 +27,29 @@ public class Database {
 	}
 	private Database() {
 		try {
-			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres");
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2", "postgres", "root");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
 
-	public LidoDao getLidoDao() {
+	public LidoDao getLidoDao() throws SQLException {
 		return new LidoDaoJDBC(conn);
 	}
 	
-	public PrenotazioneDao getPrenotazioneDao() {
+	public PrenotazioneDao getPrenotazioneDao() throws SQLException {
 		return new PrenotazioneDaoJDBC(conn);
 	}
 	
-	public UtenteDao getUtenteDao(){
+	public UtenteDao getUtenteDao() throws SQLException{
 		return new UtenteDaoJDBC(conn);
 	}
 
-	public RecensioneDao getRecensioneDao(){
+	public RecensioneDao getRecensioneDao() throws SQLException{
 		return new RecensioneDaoJDBC(conn);
 	}
-	public OmbrelloneDao getOmbrelloneDao(){
+	public OmbrelloneDao getOmbrelloneDao() throws SQLException{
 		return new OmbrelloneDaoJDBC(conn);
 	}
 }

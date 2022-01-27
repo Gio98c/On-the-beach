@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UtenteDaoJDBC implements UtenteDao {
-    Connection conn;
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            "postgres", "root");
 
-    public UtenteDaoJDBC(Connection conn) {
+    public UtenteDaoJDBC(Connection conn) throws SQLException {
         this.conn = conn;
     }
 
@@ -45,10 +46,15 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public Utente findByPrimaryKey(String username) {
         Utente utente = null;
-        String query = String.format("select * from utente where username = %s", username);
+        //String query = String.format("select * from utente where username = %s", username);
+        String query = "select * from utente where username = ?";
+        PreparedStatement st = null;
+        ResultSet rs = null;
         try {
-            PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            st = conn.prepareStatement(query);
+            st.setString(1,username);
+
+            rs = st.executeQuery(query);
             if (rs.next()) {
                 utente = new Utente();
                 utente.setUsername(rs.getString("username"));
@@ -63,11 +69,16 @@ public class UtenteDaoJDBC implements UtenteDao {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
+            System.out.println(username);
             e.printStackTrace();
+
+
         }
+
 
         return utente;
     }
+
 
     @Override
     public List<Utente> findAllFromTipoUtente(String tipoUtente) {

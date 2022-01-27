@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecensioneDaoJDBC implements RecensioneDao {
-    Connection conn;
-    public RecensioneDaoJDBC(Connection conn){
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            "postgres", "root");
+    public RecensioneDaoJDBC(Connection conn) throws SQLException {
         this.conn=conn;
     }
 

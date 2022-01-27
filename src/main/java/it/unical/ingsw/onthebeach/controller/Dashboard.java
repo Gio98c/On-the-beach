@@ -18,9 +18,9 @@ import java.util.List;
 public class Dashboard {
 
     @GetMapping("/profile")
-    public String paginaProfilo(HttpServletRequest req) {
+    public String paginaProfilo(HttpServletRequest req) throws SQLException {
         if(req.getSession().getAttribute("username") != null) {
-
+            //System.out.println(req.getSession().getAttribute("username"));
             Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
             req.setAttribute("utente", utente);
 
@@ -36,13 +36,14 @@ public class Dashboard {
 
         return "Non Autorizzato";
     }
-
+/*
     @GetMapping("/logout")
     public void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
         session.invalidate();
         resp.sendRedirect("login");
     }
+*/
 
     @PostMapping("/updateInfoUtente")
     public String modificaInfoUtente(HttpServletRequest req, HttpServletResponse resp, String nome, String cognome, String email) {
@@ -52,8 +53,8 @@ public class Dashboard {
                 + "WHERE username = ?;";
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+                    "postgres", "root");
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -72,7 +73,7 @@ public class Dashboard {
     }
 
     @PostMapping("/cambiaPassword")
-    public String cambiaPassword(HttpServletRequest req, HttpServletResponse resp, String password, String newpassword) {
+    public String cambiaPassword(HttpServletRequest req, HttpServletResponse resp, String password, String newpassword) throws SQLException {
 
         Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
 
@@ -100,4 +101,5 @@ public class Dashboard {
             }*/
         //Database.getInstance().getUtenteDao().setPassword((String) req.getSession().getAttribute("username"), newpassword);
     }
+
 }
