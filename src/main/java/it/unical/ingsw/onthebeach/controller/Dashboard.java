@@ -10,10 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class Dashboard {
 
-    @GetMapping("profile")
-    public String paginaProfilo() { return "profile"; }
-
-    /*@GetMapping("/profile")
+    @GetMapping("/profile")
     public String paginaProfilo(HttpServletRequest req) {
         if(req.getSession().getAttribute("username") != null) {
 
@@ -25,5 +22,5 @@ public class Dashboard {
         }
 
         return "Non Autorizzato";
-    }*/
+    }
 }
