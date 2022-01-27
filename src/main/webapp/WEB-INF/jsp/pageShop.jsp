@@ -158,7 +158,7 @@
             <div class="col-md-12">
                 <div class="product-filters">
                     <ul>
-                        <li class="active" data-filter="*">All</li>
+                        <li class="active" data-filter="*">ALL</li>
                         <li data-filter=".strawberry">Prezzo </li>
                         <li data-filter=".berry">Recensioni</li>
                         <li data-filter=".lemon">Localita' vicine</li>

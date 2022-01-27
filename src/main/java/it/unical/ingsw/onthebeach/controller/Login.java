@@ -33,8 +33,8 @@ public class Login {
 
         //ERRORE: la relazione "utente" non esiste
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+                    "postgres", "root");;
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);

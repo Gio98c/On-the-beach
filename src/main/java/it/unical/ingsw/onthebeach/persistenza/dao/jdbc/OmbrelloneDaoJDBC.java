@@ -25,8 +25,8 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setLong(1, ombrellone.getIdOmbrellone());
                 st.setBoolean(2, ombrellone.getOccupato());
-                st.setString(3, ombrellone.getNomeLido());
                 st.setFloat(4, ombrellone.getPrezzo());
+                st.setString(3, ombrellone.getNomeLido());
                 st.executeUpdate();
 
             } catch (SQLException e) {
