@@ -38,6 +38,8 @@
     <!-- responsive -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/responsive.css">
 
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/scss/maps.css" />
+
 </head>
 <body>
 
@@ -68,32 +70,8 @@
                         <ul>
                             <li ><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
-                            <!--<li><a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="404.jsp">404 page</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Check Out</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="news.html">News</a>
-                                <ul class="sub-menu">
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="single-news.html">Single News</a></li>
-                                </ul>
-                            </li>-->
+
                             <li><a href="contactPage">Contatti</a></li>
-                            <!--<li><a href="shop.html">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="checkout.html">Check Out</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                </ul>
-                            </li>-->
                             <li>
                                 <div class="header-icons">
                                     <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
@@ -191,7 +169,31 @@
 <!-- end contact form -->
 
 
+
+
+<div style="display: none">
+    <input
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="Enter a location"
+    />
+</div>
+<div id="map"></div>
+<div id="infowindow-content">
+    <span id="place-name" class="title"></span><br />
+    <strong>Place ID</strong>: <span id="place-id"></span><br />
+    <span id="place-address"></span>
+</div>
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPE3t9S8PbhsknpEBc6bAxQu5She2k_Q&callback=initMap&libraries=places&v=weekly"
+        async
+></script>
+
 <!-- end find our location -->
+
 
 <!-- google map section
 <div class="embed-responsive embed-responsive-21by9">
@@ -292,6 +294,6 @@
 <!-- main js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
-
+<script src="${pageContext.request.contextPath }/resources/assets/js/googlemaps.js"></script>
 </body></html>
 
