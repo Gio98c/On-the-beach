@@ -34,7 +34,7 @@ public class Login {
         //ERRORE: la relazione "utente" non esiste
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "root");;
+                    "postgres", "postgres");;
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
