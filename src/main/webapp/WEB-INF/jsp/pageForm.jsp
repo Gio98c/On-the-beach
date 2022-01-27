@@ -139,6 +139,9 @@
                             <input type="text" placeholder="(Username)Gestore Lido"name="usernameGestore" id="username_gestore" required>
                 </p>
                 <p>
+                    <input type="text" placeholder="Località" name="posizione" id="posizione" required>
+                </p>
+                <p>
                     <input type="tel" placeholder="Telefono" name="numero" id="numero" required>
                 </p>
                         <p>
