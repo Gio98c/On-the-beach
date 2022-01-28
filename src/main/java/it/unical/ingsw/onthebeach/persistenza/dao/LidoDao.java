@@ -10,4 +10,5 @@ public interface LidoDao {
 	public Lido findByPrimaryKey(String nome);
 	public boolean saveOrUpdate(Lido lido);
 	public boolean delete(Lido lido);
+	public Lido findByGestore(String username);
 }

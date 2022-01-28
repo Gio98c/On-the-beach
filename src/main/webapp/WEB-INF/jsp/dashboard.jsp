@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
@@ -47,7 +49,7 @@
         <img src="${pageContext.request.contextPath }/resources/User/assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">On The Beach</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <!--<i class="bi bi-list toggle-sidebar-btn"></i>-->
     </div><!-- End Logo -->
 
     <!--<div class="search-bar">
@@ -211,11 +213,11 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <!--<img src="${pageContext.request.contextPath }/resources/User/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">-->
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">${utente.username}</span>
           </a> <!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
+            <!--<li class="dropdown-header">
               <h6>Kevin Anderson</h6>
               <span>Web Designer</span>
             </li>
@@ -251,7 +253,7 @@
             </li>
             <li>
               <hr class="dropdown-divider">
-            </li>
+            </li>-->
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
@@ -269,11 +271,11 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+  <!--<aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
@@ -450,60 +452,60 @@
         </ul>
       </li> End Icons Nav -->
 
-      <!--<li class="nav-heading">Pages</li>-->
+      <!--<li class="nav-heading">Pages</li>
 
       <li class="nav-item">
         <a class="nav-link " href="users-profile.html">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li> End Profile Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
-      </li> End F.A.Q Page Nav -->
+      </li> End F.A.Q Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
-      </li> End Contact Page Nav -->
+      </li> End Contact Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-card-list"></i>
           <span>Register</span>
         </a>
-      </li> End Register Page Nav -->
+      </li> End Register Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
-      </li> End Login Page Nav -->
+      </li> End Login Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">
           <i class="bi bi-dash-circle"></i>
           <span>Error 404</span>
         </a>
-      </li> End Error 404 Page Nav -->
+      </li> End Error 404 Page Nav
 
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
           <i class="bi bi-file-earmark"></i>
           <span>Blank</span>
         </a>
-      </li> End Blank Page Nav -->
+      </li> End Blank Page Nav
 
     </ul>
 
-  </aside><!-- End Sidebar-->
+  </aside> End Sidebar-->
 
   <main id="main" class="main">
 
@@ -554,56 +556,54 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                </li>
+                <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-overview">Overview Lido</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-edit">Edit Lido</button>
+                    </li>
+                </c:if>
+
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                 </li>
 
               </ul>
+
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                  <!--<h5 class="card-title">About</h5>
+                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>-->
 
-                  <h5 class="card-title">Profile Details</h5>
+                  <h5 class="card-title">Dettagli Profilo</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Username</div>
+                    <div class="col-lg-9 col-md-8">${utente.username}</div>
+                  </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    <div class="col-lg-9 col-md-8">${utente.nome} ${utente.cognome}</div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    <div class="col-lg-3 col-md-4 label">Data di nascita</div>
+                    <div class="col-lg-9 col-md-8">${utente.dataNascita}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                    <div class="col-lg-9 col-md-8">${utente.email}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Tipo utente</div>
+                    <div class="col-lg-9 col-md-8">${utente.tipoUtente}</div>
                   </div>
 
                 </div>
@@ -611,8 +611,8 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
-                    <div class="row mb-3">
+                  <form method="post" action="updateInfoUtente">
+                    <!--<div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
                         <img src="${pageContext.request.contextPath }/resources/User/assets/img/profile-img.jpg" alt="Profile">
@@ -624,34 +624,32 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
                       <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
                       <div class="col-md-8 col-lg-9">
                         <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                       </div>
-                    </div>
-
+                    </div>-->
                     <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                      <label for="inputNome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+                        <input name="nome" type="text" class="form-control" id="inputNome">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                      <label for="inputCognome" class="col-md-4 col-lg-3 col-form-label">Cognome</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
+                        <input name="cognome" type="text" class="form-control" id="inputCognome">
                       </div>
                     </div>
 
                     <div class="row mb-3">
+                      <label for="inputEmail" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="email" type="text" class="form-control" id="inputEmail">
+                      </div>
+                    </div>
+                    <!--<div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="country" type="text" class="form-control" id="Country" value="USA">
@@ -705,18 +703,16 @@
                       <div class="col-md-8 col-lg-9">
                         <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
                       </div>
-                    </div>
-
+                    </div> -->
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" id="btnUpdateInfoUtente">Salva</button>
                     </div>
-                  </form><!-- End Profile Edit Form -->
+                  </form> <!-- End Profile Edit Form -->
 
                 </div>
+                <!--<div class="tab-pane fade pt-3" id="profile-settings">
 
-                <div class="tab-pane fade pt-3" id="profile-settings">
-
-                  <!-- Settings Form -->
+                   Settings Form
                   <form>
 
                     <div class="row mb-3">
@@ -752,37 +748,134 @@
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
-                  </form><!-- End settings Form -->
+                  </form>  End settings Form
 
-                </div>
+                </div>-->
+                <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
+
+                    <div class="tab-pane fade show active profile-overview" id="lido-overview">
+                      <!--<h5 class="card-title">About</h5>
+                      <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>-->
+
+                      <h5 class="card-title">Dettagli lido ${lido.nome}</h5>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Numero di telefono</div>
+                        <div class="col-lg-9 col-md-8">${lido.numero}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Email</div>
+                        <div class="col-lg-9 col-md-8">${lido.email}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Descrizione</div>
+                        <div class="col-lg-9 col-md-8">${lido.descrizione}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Numero di ombrelloni</div>
+                        <div class="col-lg-9 col-md-8">${lido.numeroOmbrelloni}</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label">Posizione</div>
+                        <div class="col-lg-9 col-md-8">${lido.posizione}</div>
+                      </div>
+                    </div>
+
+
+                  <div class="tab-pane fade lido-edit pt-3" id="lido-edit">
+
+                    <!-- Profile Edit Form -->
+                    <form method="post" action="updateInfoLido">
+
+                      <div class="row mb-3">
+                        <label for="inputTelefono" class="col-md-4 col-lg-3 col-form-label">Numero di telefono</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="telefono" type="text" class="form-control" id="inputTelefono">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputEmailLido" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="email" type="text" class="form-control" id="inputEmailLido">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descizione</label>
+                        <div class="col-md-8 col-lg-9">
+                          <textarea name="descrizione" class="form-control" id="inputDescrizione" style="height: 100px"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputNumOmbrelloni" class="col-md-4 col-lg-3 col-form-label">Numero Ombrelloni</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="numOmbrelloni" type="text" class="form-control" id="inputNumOmbrelloni">
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputFoto" class="col-md-4 col-lg-3 col-form-label">Foto</label>
+                        <div class="col-md-8 col-lg-9">
+                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" multiple accept="image/png, image/jpeg"></i>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary" id="btnUpdateInfoLido">Salva</button>
+                      </div>
+                    </form> <!-- End Profile Edit Form -->
+
+                  </div>
+                </c:if>
+
+                <c:if test="${utente.tipoUtente == 'Cliente'}">
+                  <!-- tab cronologia prenotazioni + insert recensioni -->
+                </c:if>
+
+                <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
+                  <!-- lista utenti + pulsante promozione -->
+                  <c:forEach items="${utenteCliente}" var="cliente">
+                    <tr>
+                      <td>${cliente.username}</td>
+                      <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
+                      <td><button class="btn btn-primary">Promuovi</button></td>
+                    </tr>
+                  </c:forEach>
+                </c:if>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form method="post" action="cambiaPassword">
 
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Password corrente</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="password" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nuova password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="newpassword" type="password" class="form-control" id="newPassword">
                       </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <!--<div class="row mb-3">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="renewpassword" type="password" class="form-control" id="renewPassword">
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="submit" class="btn btn-primary">Cambia Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
 
@@ -826,6 +919,9 @@
 
   <!-- Template Main JS File -->
   <script src="${pageContext.request.contextPath }/resources/User/assets/js/main.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath }/resources/User/assets/js/gestioneUtente.js"></script>
 
 </body>
 

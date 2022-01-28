@@ -1,16 +1,15 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
 import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.IdBroker;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Recensione;
 import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
 public class OmbrelloneDaoJDBC implements OmbrelloneDao{
-    Connection conn;
-    public OmbrelloneDaoJDBC(Connection conn){
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            "postgres", "root");
+    public OmbrelloneDaoJDBC(Connection conn) throws SQLException {
         this.conn=conn;
     }
 
@@ -62,10 +61,11 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
     @Override
     public Ombrellone findByPrimaryKey(long id) {
         Ombrellone o = null;
-        String query = String.format("select * from ombrellone where id_ombrellone = %d", id);
+        String query = "select * from ombrellone where id_ombrellone = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 o = new Ombrellone();
                 o.setIdOmbrellone(rs.getLong("id_ombrellone"));

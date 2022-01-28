@@ -1,9 +1,6 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +9,9 @@ import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
 
 public class LidoDaoJDBC implements LidoDao{
 
-	Connection conn;
-	
-	public LidoDaoJDBC(Connection conn) {
+	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+			"postgres", "root");
+	public LidoDaoJDBC(Connection conn) throws SQLException {
 		this.conn = conn;
 	}
 	
@@ -184,5 +181,34 @@ public class LidoDaoJDBC implements LidoDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public Lido findByGestore(String username) {
+		Lido lido = null;
+		String query = "SELECT * FROM lido WHERE username_gestore=?;";
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(query);
+			st.setString(1, username);
+			rs = st.executeQuery();
+			if(rs.next()) {
+				lido = new Lido();
+				lido.setNome(rs.getString("nome"));
+				lido.setPosizione(rs.getString("posizione"));
+				lido.setNumero(rs.getString("numero"));
+				lido.setEmail(rs.getString("email"));
+				lido.setDescrizione(rs.getString("descrizione"));
+				lido.setFoto(rs.getString("foto"));
+				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
+		}
+		return lido;
 	}
 }

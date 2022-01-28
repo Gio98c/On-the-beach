@@ -26,15 +26,15 @@ public class Login {
     }
 
     @PostMapping("/loginServices")
-    public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String passw) throws IOException {
+    public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String password) throws IOException {
 
         String sql = "SELECT * FROM utente WHERE username = '"+ username +"'";
         HttpSession session = req.getSession(true);
 
         //ERRORE: la relazione "utente" non esiste
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+                    "postgres", "root");
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -42,6 +42,7 @@ public class Login {
                 session.setAttribute("username", rs.getString("username"));
                 //System.out.println(rs.getString("username"));
                 resp.sendRedirect("profile");
+
             } else {
                 //System.out.println("Debug");
                 resp.sendRedirect("login");

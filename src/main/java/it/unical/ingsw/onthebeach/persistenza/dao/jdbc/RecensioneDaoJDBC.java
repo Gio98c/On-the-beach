@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecensioneDaoJDBC implements RecensioneDao {
-    Connection conn;
-    public RecensioneDaoJDBC(Connection conn){
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            "postgres", "root");
+    public RecensioneDaoJDBC(Connection conn) throws SQLException {
         this.conn=conn;
     }
 
@@ -19,8 +20,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         List<Recensione> recensioni = new ArrayList<Recensione>();
         String query = "select * from recensione";
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Recensione r = new Recensione();
                 r.setIdRecensione(rs.getLong("id_recensione"));
@@ -44,7 +45,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         String query = String.format("select * from recensione where id_recensione = %d", id);
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 r = new Recensione();
                 r.setTesto(rs.getString("testo"));
@@ -62,10 +63,11 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public List<Recensione> findByUtente(String username) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        String query = String.format("select * from recensione where username_cliente = %s", username);
+        String query = "select * from recensione where username_cliente = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            st.setString(1,username);
+            ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
@@ -90,7 +92,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         String query = String.format("select * from Recensione,Lido where nome = %s", nome);
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
