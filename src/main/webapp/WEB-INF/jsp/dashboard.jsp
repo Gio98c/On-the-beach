@@ -558,11 +558,11 @@
 
                 <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-overview">Settings</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-overview">Overview Lido</button>
                     </li>
 
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-edit">Settings</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-edit">Edit Lido</button>
                     </li>
                 </c:if>
 
@@ -752,7 +752,6 @@
 
                 </div>-->
                 <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
-                  <div class="tab-content pt-2">
 
                     <div class="tab-pane fade show active profile-overview" id="lido-overview">
                       <!--<h5 class="card-title">About</h5>
@@ -785,7 +784,6 @@
                         <div class="col-lg-9 col-md-8">${lido.posizione}</div>
                       </div>
                     </div>
-                  </div>
 
 
                   <div class="tab-pane fade lido-edit pt-3" id="lido-edit">
