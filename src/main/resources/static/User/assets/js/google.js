@@ -5,6 +5,20 @@ function onSignIn(googleUser) {
     $("#image").attr('src', profile.getImageUrl());
     $(".data").css("display", "block");
     $(".g-signin2").css("display", "none");
+
+    $.ajax({
+        type: "POST",
+        url: "/registrationServicesGoogle",
+        data: {"username" : profile.getEmail(),
+            "email" : profile.getEmail(),
+            "nome" : profile.getName()},
+        success: function (risposta) {
+            console.log(risposta);
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
 }
 
 function signOut() {

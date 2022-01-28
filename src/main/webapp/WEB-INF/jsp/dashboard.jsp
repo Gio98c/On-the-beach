@@ -255,12 +255,14 @@
               <hr class="dropdown-divider">
             </li>-->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
+            <c:if test="${username != null}">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="logout">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </c:if>
 
           </ul><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
@@ -556,6 +558,12 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
+                <c:if test="${utente.tipoUtente == 'Cliente'}">
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#prenotazioni-overview">Cronologia Prenotazioni</button>
+                  </li>
+                </c:if>
+
                 <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
                     <li class="nav-item">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-overview">Overview Lido</button>
@@ -566,6 +574,11 @@
                     </li>
                 </c:if>
 
+                <c:if test="${utente.tipoUtente == 'Amministratore Lido'}">
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#promozione-overview">Promozione</button>
+                  </li>
+                </c:if>
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
@@ -753,37 +766,37 @@
                 </div>-->
                 <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
 
-                    <div class="tab-pane fade show active profile-overview" id="lido-overview">
-                      <!--<h5 class="card-title">About</h5>
-                      <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>-->
+                  <div class="tab-pane fade lido-overview" id="lido-overview">
+                    <!--<h5 class="card-title">About</h5>
+                    <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>-->
 
-                      <h5 class="card-title">Dettagli lido ${lido.nome}</h5>
+                    <h5 class="card-title">Dettagli lido ${lido.nome}</h5>
 
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label ">Numero di telefono</div>
-                        <div class="col-lg-9 col-md-8">${lido.numero}</div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label ">Email</div>
-                        <div class="col-lg-9 col-md-8">${lido.email}</div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Descrizione</div>
-                        <div class="col-lg-9 col-md-8">${lido.descrizione}</div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Numero di ombrelloni</div>
-                        <div class="col-lg-9 col-md-8">${lido.numeroOmbrelloni}</div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Posizione</div>
-                        <div class="col-lg-9 col-md-8">${lido.posizione}</div>
-                      </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Numero di telefono</div>
+                      <div class="col-lg-9 col-md-8">${lido.numero}</div>
                     </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Email</div>
+                      <div class="col-lg-9 col-md-8">${lido.email}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Descrizione</div>
+                      <div class="col-lg-9 col-md-8">${lido.descrizione}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Numero di ombrelloni</div>
+                      <div class="col-lg-9 col-md-8">${lido.numeroOmbrelloni}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Posizione</div>
+                      <div class="col-lg-9 col-md-8">${lido.posizione}</div>
+                    </div>
+                  </div>
 
 
                   <div class="tab-pane fade lido-edit pt-3" id="lido-edit">
@@ -836,16 +849,50 @@
 
                 <c:if test="${utente.tipoUtente == 'Cliente'}">
                   <!-- tab cronologia prenotazioni + insert recensioni -->
+                  <div class="tab-pane fade prenotazioni-overview" id="prenotazioni-overview">
+                    <table id="tableCronologiaPrenotazioni" class="table table-responsive">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Prezzo Totale</th>
+                          <th>Data Inizio</th>
+                          <th>Data Fine</th>
+                          <th>Recensione</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <c:forEach items="${prenotazioni}" var="pren">
+                          <tr>
+                            <td>${pren.idPrenotazione}</td>
+                            <td>${pren.prezzoTotale}</td>
+                            <td>${pren.dataInizio}</td>
+                            <td>${pren.dataFine}</td>
+                            <td><textarea class="form-control" style="height: 100px" name="textRecensioni" id="textRecensioni">
+                                <c:forEach items="${recensioni}" var="rec">
+                                  <c:if test="${rec.idPrenotazione == pren.idPrenotazione}">
+                                    ${rec.testo}
+                                  </c:if>
+                                </c:forEach>
+                                </textarea>
+                            </td>
+                            <td><button class="btn btn-secondary" id="updateRecensione">Pubblica</button></td>
+                          </tr>
+                        </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
                 </c:if>
 
                 <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
                   <!-- lista utenti + pulsante promozione -->
                   <c:forEach items="${utenteCliente}" var="cliente">
-                    <tr>
-                      <td>${cliente.username}</td>
-                      <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
-                      <td><button class="btn btn-primary">Promuovi</button></td>
-                    </tr>
+                    <div class="tab-pane fade promozione-overview" id="promozione-overview">
+                      <tr>
+                        <td>${cliente.username}</td>
+                        <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
+                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td>
+                      </tr>
+                    </div>
                   </c:forEach>
                 </c:if>
 
