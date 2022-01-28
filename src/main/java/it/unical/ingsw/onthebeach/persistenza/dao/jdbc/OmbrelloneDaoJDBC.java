@@ -61,10 +61,11 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
     @Override
     public Ombrellone findByPrimaryKey(long id) {
         Ombrellone o = null;
-        String query = String.format("select * from ombrellone where id_ombrellone = %d", id);
+        String query = "select * from ombrellone where id_ombrellone = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 o = new Ombrellone();
                 o.setIdOmbrellone(rs.getLong("id_ombrellone"));

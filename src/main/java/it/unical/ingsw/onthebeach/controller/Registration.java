@@ -28,7 +28,7 @@ public class Registration {
         String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ 0 +"');";
 
         try {
-            Connection conn = DriverManager.getConnection("\"jdbc:postgresql://localhost:5432/postgres\", \"postgres\", \"root\"");
+            Connection conn = DriverManager.getConnection("\"jdbc:postgresql://localhost:5432/GestoreLido2\", \"postgres\", \"root\"");
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
