@@ -889,7 +889,7 @@
                   <c:forEach items="${utenteCliente}" var="cliente">
 
                       <br>
-                        <td>${cliente.username}</td>
+                    <td>${cliente.username}</td>
                         <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
                         <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td><br/>
                       </tr>

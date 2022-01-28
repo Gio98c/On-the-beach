@@ -203,7 +203,7 @@ public class UtenteDaoJDBC implements UtenteDao {
     public boolean setAdmin(String username) {
         try {
             String query = "update utente "
-                    + "set tipo_utente = admin"
+                    + "set tipo_utente = 'Amministratore Lido'"
                     + "where username = ?";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
