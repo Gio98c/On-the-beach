@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class ProfileREST {
 /*
-    @PostMapping("/updateInfoUtente")
+    /*@PostMapping("/updateInfoUtente")
     public String updateInfoUtente(@RequestBody Utente utente, HttpServletResponse resp) {
         if(Database.getInstance().getUtenteDao().update(utente)) {
             return "OK";
@@ -19,7 +19,7 @@ public class ProfileREST {
 
         resp.setStatus(500);
         return "Errore update";
-    }
+    }*/
 */
 }
 

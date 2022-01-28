@@ -556,15 +556,23 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                </li>
+                <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-overview">Settings</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lido-edit">Settings</button>
+                    </li>
+                </c:if>
+
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                 </li>
 
               </ul>
+
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
@@ -621,7 +629,6 @@
                         <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                       </div>
                     </div>-->
-
                     <div class="row mb-3">
                       <label for="inputNome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
                       <div class="col-md-8 col-lg-9">
@@ -642,7 +649,6 @@
                         <input name="email" type="text" class="form-control" id="inputEmail">
                       </div>
                     </div>
-
                     <!--<div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
                       <div class="col-md-8 col-lg-9">
@@ -698,14 +704,12 @@
                         <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
                       </div>
                     </div> -->
-
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary" id="btnUpdateInfoUtente">Salva</button>
                     </div>
                   </form> <!-- End Profile Edit Form -->
 
                 </div>
-
                 <!--<div class="tab-pane fade pt-3" id="profile-settings">
 
                    Settings Form
@@ -747,8 +751,6 @@
                   </form>  End settings Form
 
                 </div>-->
-
-
                 <c:if test="${utente.tipoUtente == 'Gestore Lido'}">
                   <div class="tab-content pt-2">
 
@@ -786,7 +788,7 @@
                   </div>
 
 
-                  <div class="tab-pane fade profile-edit pt-3" id="lido-edit">
+                  <div class="tab-pane fade lido-edit pt-3" id="lido-edit">
 
                     <!-- Profile Edit Form -->
                     <form method="post" action="updateInfoLido">
