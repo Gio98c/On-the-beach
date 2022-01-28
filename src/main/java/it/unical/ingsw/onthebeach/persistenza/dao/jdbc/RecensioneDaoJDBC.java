@@ -42,9 +42,32 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public Recensione findByPrimaryKey(long id) {
         Recensione r = null;
-        String query = String.format("select * from recensione where id_recensione = %d", id);
+        String query = "select * from recensione where id_recensione = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                r = new Recensione();
+                r.setTesto(rs.getString("testo"));
+                r.setStar(rs.getInt("star"));
+                r.setUsernameCliente(rs.getString("cognome"));
+                r.setIdPrenotazione(rs.getLong("id_prenotazione"));
+                r.setIdRecensione(rs.getLong("id_recensione"));
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();}
+        return r;
+    }
+
+    @Override
+    public Recensione findByPrenotazione(long id) {
+        Recensione r = null;
+        String query = "select * from recensione where id_prenotazione = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 r = new Recensione();
