@@ -48,7 +48,7 @@
   <main>
     <div class="container">
 
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
@@ -70,7 +70,7 @@
                     <p class="text-center small">Inserisci Username & password</p>
                   </div>
 
-                  <br class="row g-3 needs-validation" novalidate action="loginServices" method="post">
+                  <form class="row g-3 needs-validation" novalidate action="loginServices" method="post">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
@@ -94,19 +94,17 @@
                       </div>
                     </div>-->
                     <div class="col-12">
-                      </br>
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
+
                     <div class="col-12">
-                      </br>
                       <div class="g-signin2" data-onsuccess="onSignIn"></div>
                       <div>
                       </div>
                     </div>
-                  </br>
-                        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+                      <div>
+                        <br/><button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
                       </div>
-                    </div>
                     <div class="col-12">
                       <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
                     </div>
@@ -125,10 +123,7 @@
 
             </div>
           </div>
-        </div>
-
-      </section>
-
+      </div>
     </div>
   </main><!-- End #main -->
 
