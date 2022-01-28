@@ -26,8 +26,10 @@ public class Dashboard {
             req.setAttribute("lido", lido);
 
             List<Utente> utentiCliente = Database.getInstance().getUtenteDao().findAllFromTipoUtente("Cliente");
+            for(Utente u : utentiCliente) {
+                System.out.println(u.getUsername());
+            }
             req.setAttribute("utenteCliente", utentiCliente);
-
             List<Prenotazione> prenotazioni = Database.getInstance().getPrenotazioneDao().findByUsername((String) req.getSession().getAttribute("username"));
             req.setAttribute("prenotazioni", prenotazioni);
 

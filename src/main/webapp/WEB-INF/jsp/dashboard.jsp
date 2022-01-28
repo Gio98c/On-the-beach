@@ -883,17 +883,19 @@
                   </div>
                 </c:if>
 
-                <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
+                <c:if test="${utente.tipoUtente == 'Amministratore Lido'}">
                   <!-- lista utenti + pulsante promozione -->
+                  <div class="tab-pane fade promozione-overview" id="promozione-overview">
                   <c:forEach items="${utenteCliente}" var="cliente">
-                    <div class="tab-pane fade promozione-overview" id="promozione-overview">
-                      <tr>
+
+                      <br>
                         <td>${cliente.username}</td>
                         <!-- come faccio a pruomuovere se non lo posso prendere da javascript il cliente? Nel bottone andrebbe un onclick="" -->
-                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td>
+                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td><br/>
                       </tr>
-                    </div>
+
                   </c:forEach>
+                  </div>
                 </c:if>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">

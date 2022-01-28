@@ -77,7 +77,7 @@ public class ProfileREST {
 
     @PostMapping("/promozione")
     public String promozioneUtente(String username) throws SQLException {
-
+        System.out.println(username);
         if(Database.getInstance().getUtenteDao().setAdmin(username))
             return "utentePromosso";
 
