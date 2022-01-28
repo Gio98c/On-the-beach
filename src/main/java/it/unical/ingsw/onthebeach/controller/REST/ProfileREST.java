@@ -20,6 +20,6 @@ public class ProfileREST {
         resp.setStatus(500);
         return "Errore update";
     }*/
-*/
+
 }
 
