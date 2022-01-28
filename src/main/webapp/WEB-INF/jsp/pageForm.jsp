@@ -131,7 +131,7 @@
                 </div>
                 <div id="form_status"></div>
                 <p class="contact-form">
-                    <p type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
+                    <form type="POST" action="registrationeLido" method="post">
                         <p>
                             <input type="text" placeholder="Nome Lido" name="nome" id="nome" required>
                     </p>

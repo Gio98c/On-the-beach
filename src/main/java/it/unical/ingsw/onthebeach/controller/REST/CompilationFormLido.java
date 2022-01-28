@@ -14,7 +14,7 @@ import java.sql.SQLException;
 @RestController
 public class CompilationFormLido {
 
-    @PostMapping("/registrationLido")
+    @PostMapping("/registrationeLido")
     public String addLido(HttpServletRequest req, HttpServletResponse resp, String nome, String usernameGestore, String posizione, String numero, String email, int numeroOmbrelloni, String foto, String descrizione) throws IOException {
         Lido lido = new Lido();
         lido.setNome(nome);
@@ -27,13 +27,15 @@ public class CompilationFormLido {
         lido.setDescrizione(descrizione);
 
         try {
-            if(Database.getInstance().getLidoDao().saveOrUpdate(lido))
-                resp.sendRedirect("login");
+            if(Database.getInstance().getLidoDao().saveOrUpdate(lido)) {
+                resp.sendRedirect("index");
+                return "registrazioneLidoEffettuata";
+            }
             else
-                return "registration";
+                return "errore";
         } catch (SQLException e) {
             e.printStackTrace();
-            resp.sendRedirect("login");
+            resp.sendRedirect("Form");
         }
 
         return null;
