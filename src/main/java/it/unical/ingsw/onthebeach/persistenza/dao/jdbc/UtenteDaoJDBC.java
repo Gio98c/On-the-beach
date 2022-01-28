@@ -19,8 +19,8 @@ public class UtenteDaoJDBC implements UtenteDao {
         List<Utente> utenti = new ArrayList<Utente>();
         String query = "select * from utente";
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Utente u = new Utente();
                 u.setUsername(rs.getString("username"));
@@ -46,7 +46,7 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public Utente findByPrimaryKey(String username) {
         Utente utente = null;
-        //String query = String.format("select * from utente where username = %s", username);
+
         String query = "select * from utente where username = ?";
         PreparedStatement st = null;
         ResultSet rs = null;
@@ -54,7 +54,7 @@ public class UtenteDaoJDBC implements UtenteDao {
             st = conn.prepareStatement(query);
             st.setString(1,username);
 
-            rs = st.executeQuery(query);
+            rs = st.executeQuery();
             if (rs.next()) {
                 utente = new Utente();
                 utente.setUsername(rs.getString("username"));
@@ -83,10 +83,12 @@ public class UtenteDaoJDBC implements UtenteDao {
     @Override
     public List<Utente> findAllFromTipoUtente(String tipoUtente) {
         List<Utente> utenti = new ArrayList<Utente>();
-        String query = String.format("select * from utente where tipo_utente = %s", tipoUtente);
+        String query = "select * from utente where tipo_utente = ?";
+
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,tipoUtente);
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Utente u = new Utente();
                 u.setUsername(rs.getString("username"));
