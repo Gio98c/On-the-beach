@@ -19,7 +19,7 @@ public class Registration {
     public String paginaRegistrazione() {
         return "registrationPage";
     }
-
+/*
     @PostMapping("/registrationServices")
     public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String passw) throws ServletException, IOException {
 
@@ -46,4 +46,6 @@ public class Registration {
         return null;
 
     }
+    */
+
 }

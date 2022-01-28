@@ -22,6 +22,7 @@ btnUpdateInfoUtente.addEventListener("click", function () {
 
 
 function promuovi(username) {
+    console.log(username);
     $.ajax({
         type: "POST",
         url: "/promozione",
