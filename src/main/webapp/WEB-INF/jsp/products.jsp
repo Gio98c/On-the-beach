@@ -71,7 +71,7 @@
                         <ul>
                             <li><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
-                            <li><a href="contactPage">Contatti</a></li
+                            <li><a href="contactPage">Contatti</a></li>
                             <li>
                                 <div class="header-icons">
                                     <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
@@ -157,7 +157,10 @@
                             </table>
                         </form>
 
-                        <input type="date" id="dataInizio" /><br/>
+                        <br/>
+                        <label class="label">Data Inizio</label>
+                        <input type="date" id="dataInizio" /><br/><br/>
+                        <label class="label">Data Fine</label>
                         <input type="date" id="dataFine" /><br/>
 
                         <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(${lido.nome})"></i>Prenota</a>
