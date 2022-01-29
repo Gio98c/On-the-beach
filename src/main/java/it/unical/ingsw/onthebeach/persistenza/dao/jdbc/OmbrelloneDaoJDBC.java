@@ -80,6 +80,29 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
         return o;
     }
 
+
+    @Override
+    public Ombrellone findByLido(String nome) {
+        Ombrellone o = null;
+        String query = "select * from ombrellone where nome_lido = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,nome);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                o = new Ombrellone();
+                o.setIdOmbrellone(rs.getLong("id_ombrellone"));
+                o.setOccupato(rs.getBoolean("occupato"));
+                o.setPrezzo(rs.getFloat(("prezzo")));
+                o.setNomeLido(rs.getString("nome_lido"));
+                st.executeUpdate();
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();}
+        return o;
+    }
+
     @Override
     public boolean delete(Ombrellone ombrellone) {
         try {
