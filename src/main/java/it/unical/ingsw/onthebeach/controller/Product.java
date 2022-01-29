@@ -35,6 +35,8 @@ public class Product {
         List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(lido.getNome());
         req.setAttribute("ombrelloni", ombrelloni);
 
+        System.out.println(lido.getNome());
+
         return "products";
         //return "nonAutorizzato";
     }
