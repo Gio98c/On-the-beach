@@ -54,7 +54,7 @@ public class Recensione {
         return usernameCliente;
     }
 
-    public void setUsernameCliente(String username_cliente) {
+    public void setUsernameCliente(String usernameCliente) {
         this.usernameCliente = usernameCliente;
     }
 

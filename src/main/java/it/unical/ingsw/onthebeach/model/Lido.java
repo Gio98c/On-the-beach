@@ -1,5 +1,6 @@
 package it.unical.ingsw.onthebeach.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Lido {
@@ -11,12 +12,13 @@ public class Lido {
 	private String descrizione;
 	private String foto;
 	private int numeroOmbrelloni;
+	//private List<Ombrellone> listaOmbrelloni;
 	private String usernameGestore;
 	
 	public Lido() {}
 	
 	public Lido(String nome, String posizione, String numero, String email, String descrizione, String foto,
-			int numeroOmbrelloni, String usernameGestore) {
+			int numeroOmbrelloni, String usernameGestore /*, List<Ombrellone> listaOmbrelloni*/) {
 		super();
 		this.nome = nome;
 		this.posizione = posizione;

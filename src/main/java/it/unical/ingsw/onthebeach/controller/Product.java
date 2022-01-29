@@ -28,14 +28,17 @@ public class Product {
         }*/
         Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("San Domenico");
         req.setAttribute("lido", lido);
-
-        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(lido.getNome());
+        System.out.println(lido.getNome());
+        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido("San Domenico");
         req.setAttribute("recensioni", recensioni);
 
-        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(lido.getNome());
-        req.setAttribute("ombrelloni", ombrelloni);
 
-        System.out.println(lido.getNome());
+        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido("San Domenico");
+        req.setAttribute("ombrelloni", ombrelloni);
+        for(Ombrellone o : ombrelloni){
+            System.out.println(o.getIdOmbrellone());
+        }
+
 
         return "products";
         //return "nonAutorizzato";

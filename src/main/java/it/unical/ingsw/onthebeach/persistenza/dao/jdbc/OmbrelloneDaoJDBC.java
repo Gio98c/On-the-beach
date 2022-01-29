@@ -91,7 +91,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,nome);
             ResultSet rs = st.executeQuery();
-            if (rs.next()) {
+            while(rs.next()) {
                 Ombrellone o = new Ombrellone();
                 o.setIdOmbrellone(rs.getLong("id_ombrellone"));
                 o.setOccupato(rs.getBoolean("occupato"));

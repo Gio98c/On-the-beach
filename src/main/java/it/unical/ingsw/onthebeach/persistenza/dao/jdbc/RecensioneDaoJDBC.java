@@ -110,16 +110,23 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public List<Recensione> findByLido(String nome) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        String query = "select testo,star,username_cliente from Recensione,Lido where nome = ?";
+        //String query = "select testo,star,username_cliente from recensione LEFT JOIN prenotazione on ";
+        //String query = "SELECT * FROM recensione r INNER JOIN prenotazione p ON p.id_prenotazione = r.id_prenotazione WHERE p.nome_lido = ?";
+        //String query = "SELECT * FROM recensione WHERE id_prenotazione = (SELECT id_prenotazione FROM prenotazione WHERE nome_lido = ?)";
+        String query = "select r.id_recensione, r.testo,r.star,r.username_cliente,r.id_prenotazione" +
+                " from recensione r, prenotazione p" +
+                " where p.nome_lido = ? and r.id_prenotazione=p.id_prenotazione";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,nome);
             ResultSet rs = st.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
                 Recensione r = new Recensione();
+                r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
+                r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {

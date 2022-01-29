@@ -57,6 +57,7 @@ public class LidoDaoJDBC implements LidoDao{
 			rs = st.executeQuery();
 			if(rs.next()) {
 				lido = new Lido();
+				lido.setNome(rs.getString("nome"));
 				lido.setPosizione(rs.getString("posizione"));
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
