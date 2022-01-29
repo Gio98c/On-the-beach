@@ -1,6 +1,8 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.IdBroker;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
@@ -82,25 +84,25 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
 
 
     @Override
-    public Ombrellone findByLido(String nome) {
-        Ombrellone o = null;
+    public List<Ombrellone> findByLido(String nome) {
+        List<Ombrellone> ombrelloni = new ArrayList<Ombrellone>();
         String query = "select * from ombrellone where nome_lido = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,nome);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                o = new Ombrellone();
+                Ombrellone o = new Ombrellone();
                 o.setIdOmbrellone(rs.getLong("id_ombrellone"));
                 o.setOccupato(rs.getBoolean("occupato"));
                 o.setPrezzo(rs.getFloat(("prezzo")));
                 o.setNomeLido(rs.getString("nome_lido"));
-                st.executeUpdate();
+                ombrelloni.add(o);
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();}
-        return o;
+        return ombrelloni;
     }
 
     @Override
