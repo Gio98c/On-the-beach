@@ -137,7 +137,7 @@
             <div class="col-md-7">
                 <div class="single-product-content">
                     <h3>${lido.nome}</h3>
-                    <p class="single-product-pricing"><span>1 giorno</span> ${lido.prezzo}</p>
+                    <p class="single-product-pricing"><span>1 giorno</span> ${ombrellone.prezzo}</p>
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
                         <!--<form action="index">
