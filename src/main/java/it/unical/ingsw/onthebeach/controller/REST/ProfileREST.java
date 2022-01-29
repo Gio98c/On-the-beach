@@ -1,6 +1,7 @@
 package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
+import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,10 +47,11 @@ public class ProfileREST {
     }
 
     @PostMapping("/updateInfoLido")
-    public String modificaInfoLido(HttpServletRequest req, HttpServletResponse resp, String telefono, String email, String descrizione, String numOmbrelloni, String foto){
+    public String modificaInfoLido(HttpServletRequest req, HttpServletResponse resp, String telefono, String email, String descrizione, int numOmbrelloni, String foto) throws SQLException {
 
+        Lido lido = Database.getInstance().getLidoDao().findByGestore((String) req.getSession().getAttribute("username"));
         String sql = "UPDATE lido "
-                + "SET numero = ?, email = ?, descrizione = ?, foto = ?, numero_ombrelloni = ?;";
+                + "SET numero = ?, email = ?, descrizione = ?, foto = ?, numero_ombrelloni = ? where nome = ?;";
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
@@ -61,7 +63,8 @@ public class ProfileREST {
             ps.setString(2, email);
             ps.setString(3, descrizione);
             ps.setString(4, foto);
-            ps.setString(5, numOmbrelloni);
+            ps.setInt(5, numOmbrelloni);
+            ps.setString(6, lido.getNome());
 
             ps.executeUpdate();
 

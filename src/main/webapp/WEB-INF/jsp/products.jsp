@@ -186,9 +186,9 @@
                                 <c:forEach items="${recensioni}" var="rec">
                                     <div class="single-testimonial-slider">
                                         <div class="client-meta">
-                                            <h3>${recensioni.usernameCliente} <span>stelline</span></h3>
+                                            <h3>${rec.usernameCliente} <span>stelline</span></h3>
                                             <p class="testimonial-body">
-                                                " ${recensioni.testo} "
+                                                " ${rec.testo} "
                                             </p>
                                             <div class="last-icon">
                                                 <i class="fas fa-quote-right"></i>

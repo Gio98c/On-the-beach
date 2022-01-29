@@ -28,12 +28,14 @@ public class Product {
         }*/
         Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("San Domenico");
         req.setAttribute("lido", lido);
-        System.out.println(lido.getNome());
-        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido("San Domenico");
+        //System.out.println(lido.getNome());
+        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(lido.getNome());
         req.setAttribute("recensioni", recensioni);
+        for(Recensione r : recensioni){
+            System.out.println(r.getTesto());
+        }
 
-
-        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido("San Domenico");
+        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(lido.getNome());
         req.setAttribute("ombrelloni", ombrelloni);
         for(Ombrellone o : ombrelloni){
             System.out.println(o.getIdOmbrellone());
