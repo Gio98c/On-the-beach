@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nikod
-  Date: 27/01/2022
-  Time: 16:36
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -137,13 +130,13 @@
             <div class="col-md-7">
                 <div class="single-product-content">
                     <h3>${lido.nome}</h3>
-                    <p class="single-product-pricing"><span>1 giorno</span> ${ombrellone.prezzo}</p>
+                    <p class="single-product-pricing"><span>1 giorno</span></p>
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
                         <!--<form action="index">
                             <input type="number" placeholder="0" id="numeroOmbrDaPren">
                         </form>-->
-                        <form>
+                        <form method="get" action="product">
                             <table class="table table-responsive" id="tabellaOmbrelloni">
                                 <tbody>
                                     <c:forEach items="${ombrelloni}" var="omb">
