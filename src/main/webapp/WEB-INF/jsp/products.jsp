@@ -111,7 +111,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                    <p>Effettua la prenotazione</p>
+                    <p>Effettua la prenotazione </p>
                     <h1>Stabilimento Balneare</h1>
                 </div>
             </div>
@@ -131,17 +131,15 @@
             </div>
             <div class="col-md-7">
                 <div class="single-product-content">
-                    <h3>Green apples have polyphenols</h3>
-                    <p class="single-product-pricing"><span>Per Kg</span> $50</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+                    <h3>${lido.nome}</h3>
+                    <p class="single-product-pricing"><span>1 giorno</span> ${lido.prezzo}</p>
+                    <p>${lido.descrizione}</p>
                     <div class="single-product-form">
-                        <form action="index.html">
+                        <form action="index">
                             <input type="number" placeholder="0">
                         </form>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                        <p><strong>Categories: </strong>Fruits, Organic</p>
+                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                     </div>
-                    <h4>Share:</h4>
                 </div>
             </div>
         </div>

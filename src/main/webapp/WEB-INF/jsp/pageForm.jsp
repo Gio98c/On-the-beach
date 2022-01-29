@@ -131,37 +131,37 @@
                 </div>
                 <div id="form_status"></div>
                 <p class="contact-form">
-                    <form type="POST" action="registrationeLido" method="post">
+                    <form method="post" action="updateInfoLido">
                         <p>
-                            <input type="text" placeholder="Nome Lido" name="nome" id="nome" required>
+                            <input type="text" placeholder="Nome Lido" name="nome" id="inputNome" required>
                     </p>
                     <p>
-                            <input type="text" placeholder="(Username)Gestore Lido"name="usernameGestore" id="username_gestore" required>
+                            <input type="text" placeholder="(Username)Gestore Lido"name="usernameGestore" id="inputUsernameGestore" required>
                 </p>
                 <p>
-                    <input type="text" placeholder="Località" name="posizione" id="posizione" required>
+                    <input type="text" placeholder="Località" name="posizione" id="inputPosizione" required>
                 </p>
                 <p>
-                    <input type="tel" placeholder="Telefono" name="numero" id="numero" required>
+                    <input type="tel" placeholder="Telefono" name="numero" id="inputTelefono" required>
                 </p>
                         <p>
-                            <input type="email" placeholder="Email" name="email" id="email">
+                            <input type="email" placeholder="Email" name="email" id="inputEmailLido">
                         </p>
                 <p>
-                    <label for="numero_ombrelloni">Numero Ombrelloni:</label>
+                    <label for="inputNumOmbrelloni">Numero Ombrelloni:</label>
                     <input type="number"
-                           id="numero_ombrelloni" name="numeroOmbrelloni">
+                           id="inputNumOmbrelloni" name="numeroOmbrelloni">
                 </p>
                 <p>
-                <label for="foto">Inserisci Foto:</label>
+                <label for="inputFoto">Inserisci Foto:</label>
                 <input type="file"
-                       id="foto" name="foto"
+                       id="inputFoto" name="foto"
                        accept="image/png, image/jpeg" multiple>
 
                 </p>
-                        <p><textarea name="descrizione" id="descrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
+                        <p><textarea name="descrizione" id="inputDescrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
-                        <p><input type="submit" value="Invia"></p>
+                        <p><input type="submit" id="btnUpdateInfoLido" value="Invia"></p>
                     </form>
                 </div>
             </div>
