@@ -15,7 +15,7 @@ public class Checkout {
     @GetMapping("/checkout")
     public String paginaCheckout(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
 
-        Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey(req.getSession().getAttribute("username"));
+        Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
 
         return "checkout";
     }

@@ -147,11 +147,13 @@
                             <table class="table table-responsive" id="tabellaOmbrelloni">
                                 <tbody>
                                     <c:forEach items="${ombrelloni}" var="omb">
-                                        <tr>
-                                            <td><input type="checkbox" id="${omb.idOmbrellone}" /></td>
-                                            <td>${omb.idOmbrellone}</td>
-                                            <td>${omb.prezzo}</td>
-                                        </tr>
+                                        <c:if test="${omb.occupato == false}">
+                                            <tr>
+                                                <td><input type="checkbox" id="${omb.idOmbrellone}" /></td>
+                                                <td>${omb.idOmbrellone}</td>
+                                                <td>${omb.prezzo}</td>
+                                            </tr>
+                                        </c:if>
                                     </c:forEach>
                                 </tbody>
                             </table>
