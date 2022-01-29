@@ -26,7 +26,7 @@ public class Product {
 
             return "products";
         }*/
-        Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("Nome");
+        Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("San Domenico");
         req.setAttribute("lido", lido);
 
         List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(lido.getNome());
