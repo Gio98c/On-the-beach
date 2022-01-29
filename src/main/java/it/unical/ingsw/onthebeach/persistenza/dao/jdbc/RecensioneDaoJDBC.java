@@ -107,21 +107,19 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     }
 
 
-    //non serve
-    /*
     @Override
     public List<Recensione> findByLido(String nome) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        String query = String.format("select * from Recensione,Lido where nome = %s", nome);
+        String query = "select testo,star,username_cliente from Recensione,Lido where nome = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,nome);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
-                r.setUsername_cliente(rs.getString("cognome"));
-                r.setId_prenotazione(rs.getLong("id_prenotazione"));
+                r.setUsernameCliente(rs.getString("username_cliente"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -129,7 +127,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             e.printStackTrace();}
         return recensioni;
     }
-    */
+
     @Override
     public boolean saveOrUpdate(Recensione recensione) {
         if (recensione.getIdRecensione() == 0) {
