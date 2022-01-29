@@ -5,15 +5,19 @@
   Time: 16:36
   To change this template use File | Settings | File Templates.
 --%>
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en"><head>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
     <!-- title -->
-    <title>Single Product</title>
+    <title>${lido.nome}</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
@@ -56,8 +60,8 @@
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="index.html">
-                            <img src="assets/img/logo.png" alt="">
+                        <a href="index">
+                            <img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
                         </a>
                     </div>
                     <!-- logo -->
@@ -112,7 +116,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Effettua la prenotazione </p>
-                    <h1>Stabilimento Balneare</h1>
+                    <h1>${lido.nome}</h1>
                 </div>
             </div>
         </div>
@@ -126,7 +130,8 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="single-product-img">
-                    <img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-5.jpg" alt="">
+                    <!-- da controllare le foto -->
+                    <img src="${lido.foto}" alt="">
                 </div>
             </div>
             <div class="col-md-7">
@@ -136,9 +141,9 @@
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
                         <form action="index">
-                            <input type="number" placeholder="0">
+                            <input type="number" placeholder="0" id="numeroOmbrDaPren">
                         </form>
-                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(document.getElementById('numeroOmbrDaPren').value)"></i>Prenota</a>
                     </div>
                 </div>
             </div>
@@ -153,12 +158,35 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
-                    <h3><span class="orange-text">Related</span> Products</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                    <h3><span class="orange-text">Recensioni</span></h3>
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>-->
                 </div>
             </div>
         </div>
-        <div class="row">
+            <div class="testimonail-section mt-150 mb-150">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 text-center">
+                            <div class="testimonial-sliders">
+                                <c:forEach items="${recensioni}" var="rec">
+                                    <div class="single-testimonial-slider">
+                                        <div class="client-meta">
+                                            <h3>Saira Hakim <span>Local shop owner</span></h3>
+                                            <p class="testimonial-body">
+                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+                                            </p>
+                                            <div class="last-icon">
+                                                <i class="fas fa-quote-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--<div class="row">
             <div class="col-lg-4 col-md-6 text-center">
                 <div class="single-product-item">
                     <div class="product-image">
@@ -189,7 +217,7 @@
                     <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 <!-- end more products -->
@@ -278,6 +306,8 @@
 <script src="${pageContext.request.contextPath }/resources/assets/js/sticker.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
+
+<script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
 
 </body></html>

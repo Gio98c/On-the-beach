@@ -45,6 +45,35 @@ public class ProfileREST {
         return null;
     }
 
+    @PostMapping("/updateInfoLido")
+    public String modificaInfoLido(HttpServletRequest req, HttpServletResponse resp, String telefono, String email, String descrizione, String numOmbrelloni, String foto){
+
+        String sql = "UPDATE lido "
+                + "SET numero = ?, email = ?, descrizione = ?, foto = ?, numero_ombrelloni = ?;";
+
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+                    "postgres", "root");
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, telefono);
+            ps.setString(2, email);
+            ps.setString(3, descrizione);
+            ps.setString(4, foto);
+            ps.setString(5, numOmbrelloni);
+
+            ps.executeUpdate();
+
+            return "Update Completato";
+        } catch (SQLException e) {
+            resp.setStatus(500);
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     @PostMapping("/cambiaPassword")
     public String cambiaPassword(HttpServletRequest req, HttpServletResponse resp, String password, String newpassword) throws SQLException {
 

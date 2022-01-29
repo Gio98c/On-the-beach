@@ -13,19 +13,25 @@ import java.util.List;
 
 
 @Controller
-public class product {
+public class Product {
+
     @GetMapping("/product")
     public String paginaProdotti(HttpServletRequest req) throws SQLException {
-        if (req.getSession().getAttribute("nome") != null) {
+        /*if (req.getSession().getAttribute("username") != null) {
             //System.out.println(req.getSession().getAttribute("nome"));
             Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey((String) req.getSession().getAttribute("nome"));
             req.setAttribute("lido", lido);
 
-
             return "products";
-        }
-        return "index";
+        }*/
+        //Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey((String) req.getSession().getAttribute("nome"));
+        //req.setAttribute("lido", lido);
+
+        return "products";
+        //return "nonAutorizzato";
     }
+
+
 }
 
 

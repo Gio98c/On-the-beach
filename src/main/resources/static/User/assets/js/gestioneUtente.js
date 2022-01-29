@@ -21,6 +21,24 @@ btnUpdateInfoUtente.addEventListener("click", function () {
 });
 
 
+var btnUpdateInfoLido = document.querySelector("#btnUpdateInfoLido");
+btnUpdateInfoLido.addEventListener("click", function () {
+
+    $.ajax({
+        type: "POST",
+        url: "/updateInfoLido",
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "Update Completato");
+                alert("Modifica dati, avvenuta con successo");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+})
+
+
 function promuovi(username) {
     console.log(username);
     $.ajax({
