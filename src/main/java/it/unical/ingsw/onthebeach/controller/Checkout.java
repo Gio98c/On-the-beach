@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class Checkout {
 
-    @GetMapping("checkout")
+    @GetMapping("/checkout")
     public String paginaCheckout() {
+
+
+
         return "checkout";
     }
 }

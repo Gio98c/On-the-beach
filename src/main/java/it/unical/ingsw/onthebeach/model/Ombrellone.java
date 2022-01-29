@@ -7,10 +7,8 @@ public class Ombrellone {
     private long idOmbrellone;
     private boolean occupato;
     private String nomeLido;
-
-
-
     private float prezzo;
+
     public Ombrellone(){
     }
 

@@ -140,10 +140,27 @@
                     <p class="single-product-pricing"><span>1 giorno</span> ${lido.prezzo}</p>
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
-                        <form action="index">
+                        <!--<form action="index">
                             <input type="number" placeholder="0" id="numeroOmbrDaPren">
+                        </form>-->
+                        <form>
+                            <table class="table table-responsive" id="tabellaOmbrelloni">
+                                <tbody>
+                                    <c:forEach items="${ombrelloni}" var="omb">
+                                        <tr>
+                                            <td><input type="checkbox" id="${omb.idOmbrellone}" /></td>
+                                            <td>${omb.idOmbrellone}</td>
+                                            <td>${omb.prezzo}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
                         </form>
-                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(document.getElementById('numeroOmbrDaPren').value)"></i>Prenota</a>
+
+                        <input type="date" id="dataInizio" /><br/>
+                        <input type="date" id="dataFine" /><br/>
+
+                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(${lido.nome})"></i>Prenota</a>
                     </div>
                 </div>
             </div>
@@ -171,9 +188,9 @@
                                 <c:forEach items="${recensioni}" var="rec">
                                     <div class="single-testimonial-slider">
                                         <div class="client-meta">
-                                            <h3>Saira Hakim <span>Local shop owner</span></h3>
+                                            <h3>${recensioni.usernameCliente} <span>stelline</span></h3>
                                             <p class="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+                                                " ${recensioni.testo} "
                                             </p>
                                             <div class="last-icon">
                                                 <i class="fas fa-quote-right"></i>
