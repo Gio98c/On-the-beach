@@ -58,6 +58,40 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 			rs = st.executeQuery();
 			if(rs.next()) {
 				prenotazione = new Prenotazione();
+				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
+				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
+				prenotazione.setDescrizione(rs.getString("descrizione"));
+				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
+				prenotazione.setDataInizio(rs.getDate("data_inizio"));
+				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
+				prenotazione.setNomeLido(rs.getString("nome_lido"));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
+		}
+		return prenotazione;
+	}
+
+	@Override
+	public Prenotazione findLastPrenotazione(String nome, String cliente) {
+		Prenotazione prenotazione = null;
+		String query = "SELECT *" +
+				" FROM prenotazione" +
+				" WHERE nome_lido = ? and username_cliente = ? order by data_prenotazione desc limit 1;";
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(query);
+			st.setString(1, nome);
+			st.setString(2, cliente);
+			rs = st.executeQuery();
+			if(rs.next()) {
+				prenotazione = new Prenotazione();
+				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
 				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
