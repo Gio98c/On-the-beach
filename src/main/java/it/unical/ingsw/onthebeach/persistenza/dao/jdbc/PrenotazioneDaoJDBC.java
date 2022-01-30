@@ -77,17 +77,16 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 	}
 
 	@Override
-	public Prenotazione findLastPrenotazione(String nome, String cliente) {
+	public Prenotazione findLastPrenotazione(String cliente) {
 		Prenotazione prenotazione = null;
 		String query = "SELECT *" +
 				" FROM prenotazione" +
-				" WHERE nome_lido = ? and username_cliente = ? order by data_prenotazione desc limit 1;";
+				" WHERE username_cliente = ? order by data_prenotazione desc limit 1;";
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement(query);
-			st.setString(1, nome);
-			st.setString(2, cliente);
+			st.setString(1, cliente);
 			rs = st.executeQuery();
 			if(rs.next()) {
 				prenotazione = new Prenotazione();
