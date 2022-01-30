@@ -819,7 +819,7 @@
                       </div>
 
                       <div class="row mb-3">
-                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descizione</label>
+                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descrizione</label>
                         <div class="col-md-8 col-lg-9">
                           <textarea name="descrizione" class="form-control" id="inputDescrizione" style="height: 100px"></textarea>
                         </div>

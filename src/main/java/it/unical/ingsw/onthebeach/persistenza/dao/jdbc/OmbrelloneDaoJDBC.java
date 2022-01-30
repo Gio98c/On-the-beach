@@ -1,15 +1,13 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
+import it.unical.ingsw.onthebeach.model.Ombrellone;
+import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.IdBroker;
-import it.unical.ingsw.onthebeach.model.Ombrellone;
-import it.unical.ingsw.onthebeach.model.Recensione;
-import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
 public class OmbrelloneDaoJDBC implements OmbrelloneDao{
-    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
             "postgres", "root");
     public OmbrelloneDaoJDBC(Connection conn) throws SQLException {
         this.conn=conn;
