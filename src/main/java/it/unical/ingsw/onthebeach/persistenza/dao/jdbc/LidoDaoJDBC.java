@@ -76,6 +76,41 @@ public class LidoDaoJDBC implements LidoDao{
 	}
 
 	@Override
+	public List<Lido> findBest3() {
+		List<Lido> lidi = new ArrayList<Lido>();
+		String query = "select l.nome, l.posizione, l.numero, l.email, l.descrizione, l.foto, l.numero_ombrelloni, l.username_gestore, AVG(r.star) as media, count(r.star) as nrece" +
+				" from lido l ,prenotazione p, recensione r" +
+				" where l.nome=p.nome_lido and p.id_prenotazione = r.id_prenotazione" +
+				" group by l.nome" +
+				" order by media, nrece desc" +
+				" limit 3";
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(query);
+			rs = st.executeQuery();
+			while(rs.next()) {
+				Lido lido = new Lido();
+				lido.setNome(rs.getString("nome"));
+				lido.setPosizione(rs.getString("posizione"));
+				lido.setNumero(rs.getString("numero"));
+				lido.setEmail(rs.getString("email"));
+				lido.setDescrizione(rs.getString("descrizione"));
+				lido.setFoto(rs.getString("foto"));
+				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
+				lido.setUsernameGestore(rs.getString("username_gestore"));
+				lidi.add(lido);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
+		}
+		return lidi;
+	}
+
+	@Override
 	public boolean saveOrUpdate(Lido lido) {
 		String saveQuery = "INSERT INTO lido(nome, posizione, numero, email, descrizione, foto, numero_ombrelloni, username_gestore) "
 				+ "VALUES(?,?,?,?,?,?,?,?);";
@@ -124,6 +159,9 @@ public class LidoDaoJDBC implements LidoDao{
 		}
 		return true;
 	}
+
+
+
 
 	@Override
 	public boolean delete(Lido lido) {

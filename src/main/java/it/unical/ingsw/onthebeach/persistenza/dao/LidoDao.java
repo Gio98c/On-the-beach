@@ -8,6 +8,7 @@ public interface LidoDao {
 
 	public List<Lido> findAll();
 	public Lido findByPrimaryKey(String nome);
+	public List<Lido> findBest3();
 	public boolean saveOrUpdate(Lido lido);
 	public boolean delete(Lido lido);
 	public Lido findByGestore(String username);
