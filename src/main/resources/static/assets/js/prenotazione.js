@@ -83,4 +83,18 @@ function prenota(nomeLido) {
 }
 */
 
+$('btnPagamentoInSede').click(function () {
 
+    $.ajax({
+        type: "POST",
+        url: "/pagamentoInSede",
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "emailInviata")
+                alert("Pagamento in sede approvato!");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+});

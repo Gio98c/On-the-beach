@@ -115,7 +115,7 @@
 						<div class="search-bar-tablecell">
 							<h3>Search For:</h3>
 							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<button type="submit" id="tastoRicerca">Search <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -213,9 +213,11 @@
 							<div id="collapseFour" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
 							  <div class="card-body">
 								  <div class="card-details">
-									  <p>Nome e cognome utente.</p>
-									  <p>Periodo prenotazione.</p>
-									  <p>Descrizione.</p>
+									  <p>${utenteCheckOut.nome} ${utenteCheckOut.cognome}</p>
+									  <p><label>Data inizio:</label> ${prenotazioneCheckOut.dataInizio}</p>
+									  <p><label>Data fine:</label> ${prenotazioneCheckOut.dataFine}</p>
+									  <p><label>Descrizione: </label></p>
+									  <p>${prenotazioneCheckOut.descrizione}</p>
 								  </div>
 							  </div>
 							</div>
@@ -255,11 +257,13 @@
 							<tbody class="checkout-details">
 								<tr>
 									<td>Total</td>
-									<td>$190</td>
+									<td>${prenotazioneCheckOut.prezzoTotale}</td>
 								</tr>
 							</tbody>
 						</table>
-						<a href="#" class="boxed-btn">Pagamento fisico </a> <br/>
+						<form method="post" action="pagamentoInSede">
+							<a href="#" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico </a> <br/>
+						</form>
 						<br/>
 						<!--PULSANTE PAYPAL -->
 						<div id="smart-button-container">
@@ -281,8 +285,8 @@
 
 									createOrder: function(data, actions) {
 										return actions.order.create({
-											<!--CAMBIARE 25 CON IL PREZZO DELLA PRENOTAZIONE -->
-											purchase_units: [{"amount":{"currency_code":"EUR","value":25}}]
+											<!--CAMBIARE 25 CON IL PREZZO DELLA PRENOTAZIONE,fatto -->
+											purchase_units: [{"amount":{"currency_code":"EUR","value":${prenotazioneCheckOut.prezzoTotale}}}]
 										});
 									},
 
@@ -400,6 +404,8 @@
 	<script src="${pageContext.request.contextPath }/resources/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
+
+	<script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
 </body>
 </html>
