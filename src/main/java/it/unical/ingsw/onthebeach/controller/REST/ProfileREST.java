@@ -25,7 +25,7 @@ public class ProfileREST {
                 + "WHERE username = ?;";
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
                     "postgres", "root");
 
             PreparedStatement ps = conn.prepareStatement(sql);
