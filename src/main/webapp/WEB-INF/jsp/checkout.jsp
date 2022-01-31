@@ -286,7 +286,7 @@
 									createOrder: function(data, actions) {
 										return actions.order.create({
 											<!--CAMBIARE 25 CON IL PREZZO DELLA PRENOTAZIONE,fatto -->
-											purchase_units: [{"amount":{"currency_code":"EUR","value":${prenotazioneCheckOut.prezzoTotale}}}]
+											purchase_units: [{"amount":{"currency_code":"EUR","value":5}}]
 										});
 									},
 
@@ -407,5 +407,6 @@
 
 	<script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
+	<script src="${pageContext.request.contextPath }/resources/assets/js/jquery.min.map.js"></script>
 </body>
 </html>

@@ -15,13 +15,13 @@ public class Checkout {
 
     @GetMapping("/checkout")
     public String paginaCheckout(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
-
+        System.out.println("Inizio");
         Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
         req.setAttribute("utenteCheckOut", utente);
-
+        System.out.println(utente.getUsername());
         Prenotazione prenotazione = Database.getInstance().getPrenotazioneDao().findLastPrenotazione((String) req.getSession().getAttribute("username"));
         req.setAttribute("prenotazioneCheckOut", prenotazione);
-
+        System.out.println(prenotazione.getNomeLido());
         return "checkout";
     }
 

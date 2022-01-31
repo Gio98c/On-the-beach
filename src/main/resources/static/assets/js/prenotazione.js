@@ -35,7 +35,8 @@ function prenota(nomeLido) {
            console.log(checkBox);
            checkBox.log(checkBox.getAttribute("id"));
 
-           ombrelloni[indice] = checkBox.getAttribute("id");
+            ombrelloni.push(checkBox.getAttribute("id"));
+           //ombrelloni[indice] = checkBox.getAttribute("id");
 
         });
     } else {
@@ -45,9 +46,41 @@ function prenota(nomeLido) {
     var dataInizio = document.getElementById("dataInizio");
     var dataFine = document.getElementById("dataFine");
 
+    /*
     $.ajax({
         type: "POST",
         url: "/prenota",
+        data: {"nomeLido" : nomeLido, ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "prenotazioneCreata")
+                console.log("prenotazione creata");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+*/
+    /*
+    $.ajax({
+        type: "POST",
+        url: "/prenota",
+        data: JSON.stringify(nomeLido,ombrelloni,dataInizio,dataFine),
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "prenotazioneCreata")
+                console.log("prenotazione creata");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+
+     */
+    $.ajax({
+        type: "POST",
+        url: "/prenota",
+        dataType: "JSON",
         data: {"nomeLido" : nomeLido, ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
         success: function (risposta) {
             console.log(risposta);

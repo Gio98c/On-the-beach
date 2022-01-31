@@ -158,7 +158,9 @@
                         <label class="label">Data Fine</label>
                         <input type="date" id="dataFine" /><br/>
 
-                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(${lido.nome})"></i>Prenota</a>
+                        <form method = 'post' action="prenota">
+                            <a class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota(${lido.nome})">Prenota</button></a>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -324,5 +326,6 @@
 
 <script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
+<script src="${pageContext.request.contextPath }/resources/assets/js/jquery.min.map.js"></script>
 
 </body></html>

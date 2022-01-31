@@ -883,13 +883,13 @@
                   </div>
                 </c:if>
 
-                <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
+                <c:if test="${utente.tipoUtente == 'Amministratore Lido'}">
                   <!-- lista utenti + pulsante promozione -->
                 <div class="tab-pane fade promozione-overview" id="promozione-overview">
                   <c:forEach items="${utenteCliente}" var="cliente">
                       <tr>
-                        <td>${cliente.username}</td>
-                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td>
+                        <td>${cliente.username}</td> <!-- ${cliente.username} -->
+                        <td><button class="btn btn-primary" onclick="promuovi('GioR')">Promuovi</button></td>
                       </tr>
                   </c:forEach>
                   </div>

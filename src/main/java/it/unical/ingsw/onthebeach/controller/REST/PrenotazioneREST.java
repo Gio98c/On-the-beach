@@ -18,14 +18,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
+
+import static java.lang.Long.parseLong;
 
 @RestController
 public class PrenotazioneREST {
@@ -34,11 +40,13 @@ public class PrenotazioneREST {
     @PostMapping("/prenota")
     public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, String nomeLido, int[] ombrelloni, String dataInizio, String dataFine) throws SQLException, IOException, ParseException {
         //System.out.println(numOmbrelloni);
-        Date dataAttuale = (Date) Calendar.getInstance().getTime();
 
+        //Date dataAttuale = (Date) Calendar.getInstance().getTime();
+        Date dataAttuale = Date.valueOf(LocalDate.now());
         List<Ombrellone> ombrelloniList = new ArrayList<>();
+        //System.out.println("ombrelloni: " + ombrelloni.lenght);
         for(int o : ombrelloni)
-            ombrelloniList.add(Database.getInstance().getOmbrelloneDao().findByPrimaryKey(o));
+           ombrelloniList.add(Database.getInstance().getOmbrelloneDao().findByPrimaryKey(o));
 
         java.util.Date dataInizio1 = new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio);
         java.util.Date dataInizio2 = new SimpleDateFormat("dd/MM/yyyy").parse(dataFine);
@@ -47,15 +55,15 @@ public class PrenotazioneREST {
         for(Ombrellone o : ombrelloniList) {
             prezzoTotale += o.getPrezzo();
         }
-
+        ombrelloniList.clear();
         long intervalloGiorni = Duration.between((Temporal) dataInizio1, (Temporal) dataInizio2).toDays();
         if(intervalloGiorni != 0)
             prezzoTotale *= intervalloGiorni;
 
-
+        System.out.println("Inizio prenotazione");
         Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, dataAttuale, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio), (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataFine), (String) req.getSession().getAttribute("username"), nomeLido);
         if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
-
+            System.out.println("dentro");
             for(Ombrellone o : ombrelloniList) {
                 Database.getInstance().getOmbrelloneDao().switchOccupato(o);
             }
