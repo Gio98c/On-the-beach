@@ -30,8 +30,7 @@ public class CompilationFormLido {
 
             if(Database.getInstance().getLidoDao().saveOrUpdate(new Lido (nome, posizione,numero,email,descrizione,foto,numeroOmbrelloni,usernameGestore))) {
                 for(int i=0; i<numeroOmbrelloni; i++) {
-                   double prezzo= 150.0;
-                    Ombrellone ombrellone = new Ombrellone(0, false, nome, 0);
+                    Ombrellone ombrellone = new Ombrellone();
                     Database.getInstance().getOmbrelloneDao().saveOrUpdate(ombrellone);
                 }
                 resp.sendRedirect("index");
