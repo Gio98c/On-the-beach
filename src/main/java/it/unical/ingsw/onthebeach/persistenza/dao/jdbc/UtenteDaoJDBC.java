@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UtenteDaoJDBC implements UtenteDao {
-    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+    Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
             "postgres", "root");
 
     public UtenteDaoJDBC(Connection conn) throws SQLException {

@@ -1,6 +1,5 @@
 package it.unical.ingsw.onthebeach.controller;
 
-import it.unical.ingsw.onthebeach.Database;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +32,7 @@ public class Login {
 
         //ERRORE: la relazione "utente" non esiste
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
                     "postgres", "root");
 
             Statement st = conn.createStatement();
