@@ -2,7 +2,6 @@ package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +14,7 @@ import java.sql.SQLException;
 public class CompilationFormLido {
 
     @PostMapping("/registrationeLido")
-    public String addLido(HttpServletRequest req, HttpServletResponse resp, String nome, String usernameGestore, String posizione, String numero, String email, int numeroOmbrelloni, String foto, String descrizione) throws IOException {
+    public String addLido(HttpServletRequest req, HttpServletResponse resp, String nome, String usernameGestore, String posizione, String numero, String email, int numeroOmbrelloni, byte[] foto, String descrizione) throws IOException {
         Lido lido = new Lido();
         lido.setNome(nome);
         lido.setUsernameGestore(usernameGestore);

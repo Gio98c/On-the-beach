@@ -124,7 +124,7 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <input type="file" id="${lido.foto}/>
+                    <img src="${lido.foto}">
                     <div id="result"></div>
                 </div>
             </div>
@@ -159,7 +159,7 @@
                         <label class="label">Data Fine</label>
                         <input type="date" id="dataFine" /><br/>
 
-                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(${lido.nome})"></i>Prenota</a>
+                        <a class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota(${lido.nome})">Prenota</button></a>
                     </div>
                 </div>
             </div>

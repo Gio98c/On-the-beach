@@ -31,7 +31,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 				lido.setUsernameGestore(rs.getString("username_gestore"));
 				lidi.add(lido);
@@ -62,7 +62,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 				lido.setUsernameGestore(rs.getString("username_gestore"));
 			}
@@ -92,7 +92,7 @@ public class LidoDaoJDBC implements LidoDao{
 				st.setString(3, lido.getNumero());
 				st.setString(4, lido.getEmail());
 				st.setString(5, lido.getDescrizione());
-				st.setString(6, lido.getFoto());
+				st.setBytes(6, lido.getFoto());
 				st.setInt(7, lido.getNumeroOmbrelloni());
 				st.setString(8, lido.getUsernameGestore());
 				st.executeUpdate();
@@ -111,7 +111,7 @@ public class LidoDaoJDBC implements LidoDao{
 				st.setString(2, lido.getNumero());
 				st.setString(3, lido.getEmail());
 				st.setString(4, lido.getDescrizione());
-				st.setString(5, lido.getFoto());
+				st.setBytes(5, lido.getFoto());
 				st.setInt(6, lido.getNumeroOmbrelloni());
 				st.setString(7, lido.getUsernameGestore());
 				st.setString(8, lido.getNome());
@@ -202,7 +202,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 			}
 		} catch(SQLException e) {
