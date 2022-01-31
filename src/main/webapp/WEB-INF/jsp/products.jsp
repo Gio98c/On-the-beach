@@ -144,7 +144,7 @@
                                             <tr>
                                                 <td><input type="checkbox" id="${omb.idOmbrellone}" /></td>
                                                 <td>${omb.idOmbrellone}</td>
-                                                <td>${omb.prezzo}</td>
+                                                <td>${omb.prezzo} €</td>
                                             </tr>
                                         </c:if>
                                     </c:forEach>

@@ -804,6 +804,14 @@
                     <!-- Profile Edit Form -->
                     <form method="post" action="updateInfoLido">
 
+
+                      <div class="row mb-3">
+                        <label for="inputPosizione" class="col-md-4 col-lg-3 col-form-label">Posizione</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="posizione" type="text" class="form-control" id="inputPosizione">
+                        </div>
+                      </div>
+
                       <div class="row mb-3">
                         <label for="inputTelefono" class="col-md-4 col-lg-3 col-form-label">Numero di telefono</label>
                         <div class="col-md-8 col-lg-9">
@@ -832,12 +840,12 @@
                         </div>
                       </div>
 
-                      <div class="row mb-3">
-                        <label for="inputFoto" class="col-md-4 col-lg-3 col-form-label">Foto</label>
-                        <div class="col-md-8 col-lg-9">
-                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" multiple accept="image/png, image/jpeg"></i>
-                        </div>
-                      </div>
+                      <p>
+                        <label for="inputFoto">Inserisci Foto:</label>
+                        <input type="file"
+                               id="inputFoto" name="foto"
+                               accept="image/png, image/jpeg" multiple>
+                      </p>
 
                       <div class="text-center">
                         <button type="submit" class="btn btn-primary" id="btnUpdateInfoLido">Salva</button>

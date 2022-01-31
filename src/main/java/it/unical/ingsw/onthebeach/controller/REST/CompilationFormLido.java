@@ -2,6 +2,7 @@ package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
+import it.unical.ingsw.onthebeach.model.Ombrellone;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,11 @@ public class CompilationFormLido {
             Statement st = conn.createStatement();
 
             if(Database.getInstance().getLidoDao().saveOrUpdate(new Lido (nome, posizione,numero,email,descrizione,foto,numeroOmbrelloni,usernameGestore))) {
+                for(int i=0; i<numeroOmbrelloni; i++) {
+                   double prezzo= 150.0;
+                    Ombrellone ombrellone = new Ombrellone(0, false, nome, 0);
+                    Database.getInstance().getOmbrelloneDao().saveOrUpdate(ombrellone);
+                }
                 resp.sendRedirect("index");
                 return "registrazioneLidoEffettuata";
             }
