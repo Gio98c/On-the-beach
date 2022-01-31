@@ -68,7 +68,13 @@
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nome</label>
                       <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Perfavore, insierisci il tuo nome</div>
+                      <div class="invalid-feedback">Perfavore, inserisci il tuo nome</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourCognome" class="form-label">Cognome</label>
+                      <input type="cognome" name="cognome" class="form-control" id="yourCognome" required>
+                      <div class="invalid-feedback">Inserisci il tuo cognome!</div>
                     </div>
 
                     <div class="col-12">
@@ -90,6 +96,23 @@
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="passw" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Inserisci la tua password!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourTipo_utente">Scegli un tipo di utente:</label>
+                      <select id="yourTipo_utente">
+                        <option value="">--Scegli un tipo di utente--</option>
+                        <option value="Cliente">cliente</option>
+                        <option value="GestoreLido">gestore Lido</option>
+                      </select>
+                      <div class="invalid-feedback">Scegli il tuo tipo di utente</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="dataNascita">Inserisci la tua data di nascita:</label>
+                      <input type="date" id="dataNascita" name="dataNascita"
+                             value="2001-01-01"
+                             min="2001-01-01" max="2018-12-31">
                     </div>
 
                     <div class="col-12">
@@ -147,6 +170,7 @@
 
   <!-- Template Main JS File -->
   <script src="${pageContext.request.contextPath }/resources/User/assets/js/main.js"></script>
+  <script src="${pageContext.request.contextPath }/resources/User/assets/js/gestioneReg.js"></script>
 
 </body>
 
