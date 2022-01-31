@@ -124,7 +124,8 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <img src="${lido.foto}" alt="">
+                    <input type="file" id="${lido.foto}/>
+                    <div id="result"></div>
                 </div>
             </div>
             <div class="col-md-7">

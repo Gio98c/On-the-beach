@@ -4,7 +4,6 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +24,7 @@ public class ProfileREST {
                 + "WHERE username = ?;";
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
                     "postgres", "root");
 
             PreparedStatement ps = conn.prepareStatement(sql);

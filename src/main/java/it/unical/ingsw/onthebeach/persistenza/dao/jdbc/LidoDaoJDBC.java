@@ -1,15 +1,15 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
+import it.unical.ingsw.onthebeach.model.Lido;
+import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unical.ingsw.onthebeach.model.Lido;
-import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
-
 public class LidoDaoJDBC implements LidoDao{
 
-	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
 			"postgres", "root");
 	public LidoDaoJDBC(Connection conn) throws SQLException {
 		this.conn = conn;
