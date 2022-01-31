@@ -4,13 +4,11 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Recensione;
-import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-import java.sql.*  ;
 import java.util.List;
 
 
@@ -26,7 +24,7 @@ public class Product {
 
             return "products";
         }*/
-        Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("San Domenico");
+        Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey("Faro");
         req.setAttribute("lido", lido);
         //System.out.println(lido.getNome());
         List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(lido.getNome());

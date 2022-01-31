@@ -9,25 +9,26 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 @RestController
 public class RegistrationREST {
 
     @PostMapping("/registrationServices")
-    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String passw) throws ServletException, IOException {
+    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String cognome, String tipo_utente, Date dataNascita,   String passw) throws ServletException, IOException {
 
         //sql aggiunta di un utente nel database
 
-        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ 0 +"');";
-
         try {
-            Connection conn = DriverManager.getConnection("\"jdbc:postgresql://localhost:5432/GestoreLido2\", \"postgres\", \"root\"");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                    "postgres", "root");
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
 
-            if(rs.next()) {
+
+            if(Database.getInstance().getUtenteDao().save (new Utente(username,nome,cognome,passw,email, tipo_utente, dataNascita))){
                 resp.sendRedirect("login");
                 return "registrazioneEffettuata";
             }
@@ -35,15 +36,15 @@ public class RegistrationREST {
                 return "error";
         } catch (SQLException | IOException e) {
             e.printStackTrace();
-            resp.sendRedirect("login");
+            resp.sendRedirect("index");
             return "error";
         }
     }
 
     @PostMapping("/registrationServicesGoogle")
-    public String registratiGoogle(HttpServletResponse resp, String username, String email, String nome) throws SQLException, IOException {
+    public String registratiGoogle(HttpServletResponse resp, String nome, String cognome, String email, String username , String passw, String tipo_utente, Date dataNascita) throws SQLException, IOException {
 
-        Utente utente = new Utente(username, nome, null, email, null, "Cliente", null);
+        Utente utente = new Utente(username, nome, cognome, email, passw, tipo_utente, dataNascita);
         if(Database.getInstance().getUtenteDao().save(utente)) {
             resp.sendRedirect("profile");
             return "registrazioneCompletata";

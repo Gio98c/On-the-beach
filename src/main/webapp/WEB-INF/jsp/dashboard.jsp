@@ -45,7 +45,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index" class="logo d-flex align-items-center">
         <img src="${pageContext.request.contextPath }/resources/User/assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">On The Beach</span>
       </a>
@@ -804,6 +804,14 @@
                     <!-- Profile Edit Form -->
                     <form method="post" action="updateInfoLido">
 
+
+                      <div class="row mb-3">
+                        <label for="inputPosizione" class="col-md-4 col-lg-3 col-form-label">Posizione</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="posizione" type="text" class="form-control" id="inputPosizione">
+                        </div>
+                      </div>
+
                       <div class="row mb-3">
                         <label for="inputTelefono" class="col-md-4 col-lg-3 col-form-label">Numero di telefono</label>
                         <div class="col-md-8 col-lg-9">
@@ -819,7 +827,7 @@
                       </div>
 
                       <div class="row mb-3">
-                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descizione</label>
+                        <label for="inputDescrizione" class="col-md-4 col-lg-3 col-form-label">Descrizione</label>
                         <div class="col-md-8 col-lg-9">
                           <textarea name="descrizione" class="form-control" id="inputDescrizione" style="height: 100px"></textarea>
                         </div>
@@ -832,12 +840,12 @@
                         </div>
                       </div>
 
-                      <div class="row mb-3">
-                        <label for="inputFoto" class="col-md-4 col-lg-3 col-form-label">Foto</label>
-                        <div class="col-md-8 col-lg-9">
-                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" multiple accept="image/png, image/jpeg"></i>
-                        </div>
-                      </div>
+                      <p>
+                        <label for="inputFoto">Inserisci Foto:</label>
+                        <input type="file"
+                               id="inputFoto" name="foto"
+                               accept="image/png, image/jpeg" multiple>
+                      </p>
 
                       <div class="text-center">
                         <button type="submit" class="btn btn-primary" id="btnUpdateInfoLido">Salva</button>
@@ -883,13 +891,13 @@
                   </div>
                 </c:if>
 
-                <c:if test="${utente.tipoUtente == 'Amministratore Sito'}">
+                <c:if test="${utente.tipoUtente == 'Amministratore Lido'}">
                   <!-- lista utenti + pulsante promozione -->
                 <div class="tab-pane fade promozione-overview" id="promozione-overview">
                   <c:forEach items="${utenteCliente}" var="cliente">
                       <tr>
                         <td>${cliente.username}</td>
-                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td>
+                        <p><input type="submit" id="promuovi(${Luca})" value="Promuovi"></p>
                       </tr>
                   </c:forEach>
                   </div>

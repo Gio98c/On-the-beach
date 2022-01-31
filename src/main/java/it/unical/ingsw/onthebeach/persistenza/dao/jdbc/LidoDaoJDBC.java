@@ -77,9 +77,10 @@ public class LidoDaoJDBC implements LidoDao{
 
 	@Override
 	public boolean saveOrUpdate(Lido lido) {
+		System.out.println(lido.getNome());
 		String saveQuery = "INSERT INTO lido(nome, posizione, numero, email, descrizione, foto, numero_ombrelloni, username_gestore) "
 				+ "VALUES(?,?,?,?,?,?,?,?);";
-		String updateQuery = "UPDATE lido SET posizione=?, numero=?, email=?, descrizione=?, foto=?, numero_ombrelloni=?, "
+		String updateQuery = "UPDATE lido SET numero=?,  posizione=?,email=?, descrizione=?, foto=?, numero_ombrelloni=?, "
 				+ "username_gestore=? WHERE nome=?;";
 		PreparedStatement st = null;
 		if(!existLido(lido)) {
