@@ -297,6 +297,7 @@
 <!-- main js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
+<script src="${pageContext.request.contextPath }/resources/User/assets/js/gestioneLido.js"></script>
 <script src="${pageContext.request.contextPath }/resources/assets/js/googlemaps.js"></script>
 </body></html>
 
