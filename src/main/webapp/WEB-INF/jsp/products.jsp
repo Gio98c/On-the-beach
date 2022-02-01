@@ -67,7 +67,13 @@
                             <li><a href="contactPage">Contatti</a></li>
                             <li>
                                 <div class="header-icons">
-                                    <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+                                    <c:if test="${username == null}">
+                                        <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
+                                    </c:if>
+                                    <c:if test="${username != null}">
+                                        <!-- questo va tolto -->
+                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                    </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
                             </li>
@@ -93,7 +99,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <button type="submit">Cerca <i class="fas fa-search"></i></button>
+                        <button type="submit" href="pageShopSearch?lido='${lido.nome}'">Cerca <i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -158,7 +164,7 @@
                         <label class="label">Data Fine</label>
                         <input type="date" id="dataFine" /><br/>
 
-                        <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart" onclick="prenota(${lido.nome})"></i>Prenota</a>
+                        <a href="checkout?lido='${lido.nome}'" class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota('San Domenico')">Prenota</button></a>
                     </div>
                 </div>
             </div>

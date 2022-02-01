@@ -21,6 +21,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -35,6 +36,10 @@ public class PrenotazioneREST {
     public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, String nomeLido, int[] ombrelloni, String dataInizio, String dataFine) throws SQLException, IOException, ParseException {
         //System.out.println(numOmbrelloni);
         Date dataAttuale = (Date) Calendar.getInstance().getTime();
+
+        Date datee = Date.valueOf(LocalDate.now());
+
+        String nomeLido1 = req.getParameter("lido");
 
         List<Ombrellone> ombrelloniList = new ArrayList<>();
         for(int o : ombrelloni)
@@ -53,7 +58,7 @@ public class PrenotazioneREST {
             prezzoTotale *= intervalloGiorni;
 
 
-        Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, dataAttuale, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio), (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataFine), (String) req.getSession().getAttribute("username"), nomeLido);
+        Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, dataAttuale, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio), (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataFine), (String) req.getSession().getAttribute("username"), nomeLido1);
         if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
 
             for(Ombrellone o : ombrelloniList) {

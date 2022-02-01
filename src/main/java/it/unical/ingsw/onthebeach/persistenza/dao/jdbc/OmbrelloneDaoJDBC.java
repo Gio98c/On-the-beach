@@ -4,9 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.IdBroker;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
-import it.unical.ingsw.onthebeach.model.Recensione;
 import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
 public class OmbrelloneDaoJDBC implements OmbrelloneDao{
     Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
@@ -141,4 +139,26 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             }
             return true;
     }
+    @Override
+    public List<Ombrellone> findAll() {
+        List<Ombrellone> ombrelloni = new ArrayList<Ombrellone>();
+        String query = "select * from ombrellone";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Ombrellone o = new Ombrellone();
+                o.setIdOmbrellone(rs.getLong("id_ombrellone"));
+                o.setOccupato(rs.getBoolean("occupato"));
+                o.setNomeLido(rs.getString("nome_lido"));
+                o.setPrezzo(rs.getFloat(("prezzo")));
+                ombrelloni.add(o);
+            }
+        } catch (SQLException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();}
+        return ombrelloni;
+    }
+
+
 }

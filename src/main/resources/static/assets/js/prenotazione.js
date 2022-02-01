@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
     }
 });*/
 
-ombrelloni = [];
+var ombrelloni = [];
 
 function prenota(nomeLido) {
     var selectCheckedBoxes = document.querySelector("input:checked");
@@ -35,7 +35,8 @@ function prenota(nomeLido) {
            console.log(checkBox);
            checkBox.log(checkBox.getAttribute("id"));
 
-           ombrelloni[indice] = checkBox.getAttribute("id");
+           ombrelloni.push(checkBox.getAttribute("id"));
+           //ombrelloni[indice] = checkBox.getAttribute("id");
 
         });
     } else {
@@ -48,6 +49,7 @@ function prenota(nomeLido) {
     $.ajax({
         type: "POST",
         url: "/prenota",
+        dataType: "JSON",
         data: {"nomeLido" : nomeLido, ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
         success: function (risposta) {
             console.log(risposta);

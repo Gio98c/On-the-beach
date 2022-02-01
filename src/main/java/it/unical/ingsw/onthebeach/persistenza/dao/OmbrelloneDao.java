@@ -11,4 +11,5 @@ public interface OmbrelloneDao {
     public List<Ombrellone> findByLido(String nome);
     public boolean delete(Ombrellone ombrellone);
     public boolean switchOccupato(Ombrellone ombrellone);
+    public List<Ombrellone> findAll();
 }

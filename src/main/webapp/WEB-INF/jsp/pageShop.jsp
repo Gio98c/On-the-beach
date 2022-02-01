@@ -8,6 +8,7 @@
 
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +49,7 @@
         <div class="circle"></div>
     </div>
 </div>
-<!--PreLoader Ends
+<!--PreLoader Ends -->
 
 
 
@@ -60,7 +61,7 @@
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="index.html">
+                        <a href="index">
                             <img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
                         </a>
                     </div>
@@ -99,7 +100,13 @@
                             </li>-->
                             <li>
                                 <div class="header-icons">
-                                    <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+                                    <c:if test="${username == null}">
+                                        <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
+                                    </c:if>
+                                    <c:if test="${username != null}">
+                                        <!-- questo va tolto -->
+                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                    </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
                             </li>
@@ -113,7 +120,7 @@
             </div>
         </div>
     </div>
-</div></div>
+</div>
 <!-- end header -->
 
 <!-- search area -->
@@ -126,7 +133,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <button type="submit">Cerca <i class="fas fa-search"></i></button>
+                        <button type="submit" href="pageShopSearch?lido='${lido.nome}'">Cerca <i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -170,29 +177,37 @@
         <div class="latest-news mt-150 mb-150">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-latest-news">
-                            <a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
-                            <div class="news-text-box">
-                                <h3><a href="single-news.html">El Sombrero</a></h3>
-                                <!-- <p class="blog-meta">
-                                    <span class="author"><i class="fas fa-user"></i> Admin</span>
-                                    <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-                                </p> -->
-                                <p class="excerpt">Descrizione Lido El Sombrero</p>
-                                <p class="product-price"><span>1 giorno</span> 25€ </p>
-                                <a href="products" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                    <!--<jsp:useBean id="lidi" scope="request" type="java.util.List"/>-->
+                    <c:forEach items="${lidi}" var="lido">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-latest-news">
+                                <a onclick="visualizzaProdotto(${lido.nome})"><div class="latest-news-bg" style="background-image: url('./imgPathh/${lido.foto}')"></div></a>
+                                <div class="news-text-box">
+                                    <h3><a onclick="visualizzaProdotto(${lido.nome})">${lido.nome}</a></h3>
+                                    <!-- <p class="blog-meta">
+                                        <span class="author"><i class="fas fa-user"></i> Admin</span>
+                                        <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+                                    </p> -->
+                                    <p class="excerpt">${lido.descrizione}</p>
+                                    <c:forEach items="${ombrelloni}" var="omb">
+                                        <c:if test="${omb.nomeLido == lido.nome}">
+                                            <p class="product-price"><span>1 giorno</span> ${omb.prezzo} </p>
+                                        </c:if>
+                                    </c:forEach>
+                                    <a href="pageShopSearch?lido='${lido.nome}'" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
+                    <!--
                     <div class="col-lg-4 col-md-6">
                         <div class="single-latest-news">
                             <a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
                             <div class="news-text-box">
                                 <h3><a href="single-news.html">Spox</a></h3>
                                 <p class="excerpt">Descrizione lido Spox</p>
-                                <!--<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-                            -->
+                                <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+
                                 <p class="product-price"><span>1 giorno</span> 35€ </p>
                                 <a href="checkout" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                             </div>
@@ -250,7 +265,7 @@
                                 <a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
             </div>
@@ -329,7 +344,7 @@
                     <h2 class="widget-title">Resta in Contatto</h2>
                     <ul>
                         <li> Italia, Calabria, Rende, 87036, Via Pietro Bucci</li>
-                        <li>support@onthebeach.com</li>
+                        <li href="mailto:giovannirusso1998.gr@gmail.com">support@onthebeach.com</li>
                         <li>+00 111 222 3333</li>
                     </ul>
                 </div>

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +74,13 @@
                             <li><a href="contactPage">Contatti</a></li>
                             <li>
                                 <div class="header-icons">
-                                    <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+                                    <c:if test="${username == null}">
+                                        <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
+                                    </c:if>
+                                    <c:if test="${username != null}">
+                                        <!-- questo va tolto -->
+                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                    </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
                             </li>
