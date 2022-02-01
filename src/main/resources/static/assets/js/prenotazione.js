@@ -65,7 +65,7 @@ function prenota() {
     var dataPrenotazione = dateTest.getFullYear()+'/'+(dateTest.getMonth()+1)+'/'+dateTest.getDate();
 
 
-    var nomeLido1 = document.getElementById("nomeLido").value;
+    var nomeLido1 = document.querySelector("#nomeLido").value;
 
     var prezzoTotale;
     for (const o in ombrelloni) {

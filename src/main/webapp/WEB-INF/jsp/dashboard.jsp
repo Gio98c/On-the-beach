@@ -889,7 +889,7 @@
                   <c:forEach items="${utenteCliente}" var="cliente">
                       <tr>
                         <td>${cliente.username}</td>
-                        <td><button class="btn btn-primary" onclick="promuovi(${cliente.username})">Promuovi</button></td>
+                        <td><button class="btn btn-primary" href="profile?usrCliente=${cliente.username}">Promuovi</button></td>
                       </tr>
                   </c:forEach>
                   </div>
