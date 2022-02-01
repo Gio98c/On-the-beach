@@ -4,7 +4,6 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -109,8 +108,8 @@ public class ProfileREST {
 
     @PostMapping("/promozione")
     public String promozioneUtente(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
-        System.out.println(req.getAttribute("usrCliente"));
-        if(Database.getInstance().getUtenteDao().setAdmin((String) req.getAttribute("usrCliente")))
+        System.out.println(req.getAttribute("userCliente"));
+        if(Database.getInstance().getUtenteDao().setAdmin((String) req.getAttribute("userCliente")))
             return "utentePromosso";
 
         return "errore";

@@ -875,7 +875,9 @@
                                 </c:forEach>
                                 </textarea>
                             </td>
-                            <td><button class="btn btn-secondary" id="updateRecensione">Pubblica</button></td>
+                            <form method="post" action="updateRecensione">
+                            <td><input type="submit" id="btnUpdateRecensione">Pubblica</td>
+                            </form>
                           </tr>
                         </c:forEach>
                       </tbody>
