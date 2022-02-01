@@ -9,6 +9,8 @@ public class Recensione {
     private long idPrenotazione;
     private long idRecensione;
 
+    public Recensione(){}
+
     public Recensione(String testo, int star, String usernameCliente, long idPrenotazione, long idRecensione){
 
     }

@@ -15,9 +15,7 @@ btnUpdateInfoUtente.addEventListener("click", function () {
             console.log(xhr);
             //alert(xhr.responseText);
         }
-
     });
-
 });
 
 

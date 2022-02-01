@@ -11,5 +11,7 @@ public interface RecensioneDao {
     public Recensione findByPrenotazione(long id);
     public boolean saveOrUpdate(Recensione recensione);
     public boolean delete(Recensione recensione);
-    public boolean updateText(Recensione recensione);
+    public boolean updateText(Recensione recensione) ;
+
+
 }

@@ -25,7 +25,7 @@ public class RecensioneREST {
 
                         Statement st = conn.createStatement();
 
-                        if (Database.getInstance().getRecensioneDao().updateText(new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione))) {
+                        if (Database.getInstance().getRecensioneDao().updateText(new Recensione(testo,star,usernameCliente,idPrenotazione,idRecensione))) {
 
                                 resp.sendRedirect("index");
                                 return "modifica Recensione completata";

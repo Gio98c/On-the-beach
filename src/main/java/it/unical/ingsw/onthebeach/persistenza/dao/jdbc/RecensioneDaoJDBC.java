@@ -24,7 +24,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
+                Recensione r = new Recensione();
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
@@ -49,7 +49,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             st.setLong(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
+                r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
@@ -72,7 +72,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             st.setLong(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
+                r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
@@ -95,7 +95,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
+                Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
@@ -125,7 +125,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             st.setString(1, nome);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
+                Recensione r = new Recensione();
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
