@@ -876,7 +876,7 @@
                                 </textarea>
                             </td>
                             <form method="post" action="updateRecensione">
-                            <td><input type="submit" id="btnUpdateRecensione">Pubblica</td>
+                              <td><input type="submit" id="btnUpdateRecensione" value="publica"></td>
                             </form>
                           </tr>
                         </c:forEach>
@@ -891,7 +891,7 @@
                   <c:forEach items="${utenteCliente}" var="cliente">
                       <tr>
                         <td>${cliente.username}</td>
-                        <td><button class="btn btn-primary" href="promozione?usrCliente=${cliente.username}">Promuovi</button></td>
+                        <td><button class="btn btn-primary" onclick=promuovi('Luca2')>Promuovi</button></td>
                       </tr>
                   </c:forEach>
                   </div>

@@ -8,15 +8,15 @@ public class Prenotazione {
 	private long idPrenotazione;
 	private float prezzoTotale;
 	private String descrizione;
-	private Date dataPrenotazione;
-	private Date dataInizio;
-	private Date dataFine;
+	private String dataPrenotazione;
+	private String dataInizio;
+	private String dataFine;
 	private String usernameCliente;
 	private String nomeLido;
 
 	public Prenotazione() {}
 
-	public Prenotazione(float prezzoTotale, String descrizione, Date dataPrenotazione, Date dataInizio, Date dataFine,
+	public Prenotazione(float prezzoTotale, String descrizione, String dataPrenotazione, String dataInizio, String dataFine,
 						String usernameCliente, String nomeLido) {
 		super();
 		this.prezzoTotale = prezzoTotale;
@@ -52,27 +52,27 @@ public class Prenotazione {
 		this.descrizione = descrizione;
 	}
 
-	public Date getDataPrenotazione() {
+	public String getDataPrenotazione() {
 		return dataPrenotazione;
 	}
 
-	public void setDataPrenotazione(Date dataPrenotazione) {
+	public void setDataPrenotazione(String dataPrenotazione) {
 		this.dataPrenotazione = dataPrenotazione;
 	}
 
-	public Date getDataInizio() {
+	public String getDataInizio() {
 		return dataInizio;
 	}
 
-	public void setDataInizio(Date dataInizio) {
+	public void setDataInizio(String dataInizio) {
 		this.dataInizio = dataInizio;
 	}
 
-	public Date getDataFine() {
+	public String getDataFine() {
 		return dataFine;
 	}
 
-	public void setDataFine(Date dataFine) {
+	public void setDataFine(String dataFine) {
 		this.dataFine = dataFine;
 	}
 

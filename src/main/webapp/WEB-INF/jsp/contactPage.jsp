@@ -120,7 +120,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Search For:</h3>
                         <input type="text" placeholder="Keywords">
-                        <button type="submit">Search <i class="fas fa-search"></i></button>
+                        <a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>

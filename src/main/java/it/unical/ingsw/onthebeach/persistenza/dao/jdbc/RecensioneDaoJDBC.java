@@ -142,12 +142,12 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             try {
                 recensione.setIdRecensione(IdBroker.getId(conn));
                 String query = "insert into recensione "
-                        + "values (?, ?, ?, ?, ?)";
+                        + "values (?, ?, ?, ?)";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setLong(1, recensione.getIdRecensione());
                 st.setString(2, recensione.getTesto());
-                st.setString(4, recensione.getUsernameCliente());
-                st.setLong(5, recensione.getIdPrenotazione());
+                st.setString(3, recensione.getUsernameCliente());
+                st.setLong(4, recensione.getIdPrenotazione());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -159,13 +159,13 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             //UPDATE
             try {
                 String query = "update recensione "
-                        + "set testo = ?, star = ?, username_cliente = ?, id_prenotazione = ? "
+                        + "set testo = ?, username_cliente = ?, id_prenotazione = ? "
                         + "where id_recensione = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, recensione.getTesto());
-                st.setString(3, recensione.getUsernameCliente());
-                st.setLong(4, recensione.getIdPrenotazione());
-                st.setLong(5, recensione.getIdRecensione());
+                st.setString(2, recensione.getUsernameCliente());
+                st.setLong(3, recensione.getIdPrenotazione());
+                st.setLong(4, recensione.getIdRecensione());
 
                 st.executeUpdate();
 
