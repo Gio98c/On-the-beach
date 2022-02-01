@@ -4,6 +4,7 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Prenotazione;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.theme.SessionThemeResolver;
 
@@ -33,9 +34,9 @@ public class PrenotazioneREST {
 
     //vedere che ombrelloni che cos'è: int o String?
     @PostMapping("/prenota")
-    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, String nomeLido, int[] ombrelloni, String dataInizio, String dataFine) throws SQLException, IOException, ParseException {
+    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, @RequestBody Prenotazione prenotazioneCreata) throws SQLException, IOException, ParseException {
         //System.out.println(numOmbrelloni);
-        Date dataAttuale = (Date) Calendar.getInstance().getTime();
+        /*Date dataAttuale = (Date) Calendar.getInstance().getTime();
 
         Date datee = Date.valueOf(LocalDate.now());
 
@@ -59,11 +60,15 @@ public class PrenotazioneREST {
 
 
         Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, dataAttuale, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio), (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataFine), (String) req.getSession().getAttribute("username"), nomeLido1);
-        if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
+        */
 
-            for(Ombrellone o : ombrelloniList) {
+        prenotazioneCreata.setUsernameCliente((String) req.getSession().getAttribute("username"));
+
+        if(Database.getInstance().getPrenotazioneDao().save(prenotazioneCreata)) {
+
+            /*for(Ombrellone o : ombrelloniList) {
                 Database.getInstance().getOmbrelloneDao().switchOccupato(o);
-            }
+            }*/
 
             resp.sendRedirect("checkout");
             return "prenotazioneCreata";

@@ -115,7 +115,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
                     <p>Effettua la prenotazione </p>
-                    <h1>${lido.nome}</h1>
+                    <h1 id="nomeLido">${lido.nome}</h1>
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@
                                             <tr>
                                                 <td><input type="checkbox" id="${omb.idOmbrellone}" /></td>
                                                 <td>${omb.idOmbrellone}</td>
-                                                <td>${omb.prezzo}</td>
+                                                <td id="prezzoOmbrellone">${omb.prezzo}</td>
                                             </tr>
                                         <!--</c:if>-->
                                     </c:forEach>

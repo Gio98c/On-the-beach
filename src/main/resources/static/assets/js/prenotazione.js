@@ -27,6 +27,18 @@ window.addEventListener("load", function () {
 
 var ombrelloni = [];
 
+
+function Prenotazione(prezzoTotale, descrizione, dataPrenotazione, dataInizio, dataFine, usrCliente, nomeLido) {
+    this.prezzoTotale = prezzoTotale;
+    this.descrizione = descrizione;
+    this.dataPrenotazione = dataPrenotazione;
+    this.dataInizio = dataInizio;
+    this.dataFine = dataFine;
+    this.usrCliente = usrCliente;
+    this.nomeLido = nomeLido;
+}
+
+
 function prenota(nomeLido) {
     var selectCheckedBoxes = document.querySelector("input:checked");
 
@@ -43,14 +55,35 @@ function prenota(nomeLido) {
         alert("Si prega di selezionare almeno un elemnto");
     }
 
-    var dataInizio = document.getElementById("dataInizio");
-    var dataFine = document.getElementById("dataFine");
+    //var dataInizio = document.getElementById("dataInizio");
+    //var dataFine = new Date(document.getElementById("dataFine"));
+
+    var dF = document.getElementById("dataFine").value = new Date();
+    var dI = document.getElementById("dataInizio").value = new Date();
+
+    var dateTest = new Date();
+    var dataPrenotazione = dateTest.getFullYear()+'/'+(dateTest.getMonth()+1)+'/'+dateTest.getDate();
+
+
+    var nomeLido1 = document.getElementById("nomeLido").value;
+
+    var prezzoTotale;
+    for (const o in ombrelloni) {
+        prezzoTotale += document.getElementById("prezzoOmbrellone").value;
+    }
+
+    var intervallo = dF.getDate() - dI.getDate();
+    if(intervallo !== 0)
+        prezzoTotale *= intervallo;
+
+
+    var prenotazioneAggiungere = new Prenotazione(prezzoTotale, "", dataPrenotazione, dI, dF, "", nomeLido1);
 
     $.ajax({
         type: "POST",
         url: "/prenota",
         dataType: "JSON",
-        data: {"nomeLido" : nomeLido, ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
+        data: JSON.stringify(prenotazioneAggiungere),
         success: function (risposta) {
             console.log(risposta);
             if(risposta === "prenotazioneCreata")
