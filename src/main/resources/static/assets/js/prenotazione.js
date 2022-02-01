@@ -76,13 +76,15 @@ function prenota() {
     if(intervallo !== 0)
         prezzoTotale *= intervallo;
 
+    var dataInizioFinish = dI.getFullYear()+'/'+dI.getMonth()+'/'+dI.getDate();
+    var dataFineFinish = dF.getFullYear()+'/'+dF.getMonth()+'/'+dF.getDate();
 
-    var prenotazioneAggiungere = new Prenotazione(prezzoTotale, "", dataPrenotazione, dI, dF, "", nomeLido1);
+    var prenotazioneAggiungere = new Prenotazione(prezzoTotale, "", dataPrenotazione, dataInizioFinish, dataFineFinish, "", nomeLido1);
 
     $.ajax({
         type: "POST",
         url: "/prenota",
-        dataType: "JSON",
+        dataType: "application/json",
         data: JSON.stringify(prenotazioneAggiungere),
         success: function (risposta) {
             console.log(risposta);
