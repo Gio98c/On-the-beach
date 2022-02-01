@@ -137,7 +137,7 @@
                 </div>
                 <div id="form_status"></div>
                 <p class="contact-form">
-                    <form method="post" action="updateInfoLido">
+                    <form method="post" action="InsertLido">
                         <p>
                             <input type="text" placeholder="Nome Lido" name="nome" id="inputNome" required>
                     </p>
@@ -167,7 +167,7 @@
                 </p>
                         <p><textarea name="descrizione" id="inputDescrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
-                        <p><input type="submit" id="btnUpdateInfoLido" value="Invia"></p>
+                        <p><input type="submit" id="btnInsertLido" value="Invia"></p>
                     </form>
                 </div>
             </div>

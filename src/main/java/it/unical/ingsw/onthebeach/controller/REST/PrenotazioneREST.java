@@ -40,7 +40,7 @@ public class PrenotazioneREST {
     //vedere che ombrelloni che cos'è: int o String?
     @PostMapping("/prenota")
     public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, @RequestParam Prenotazione prenotazioneCreata) throws SQLException, IOException, ParseException {
-        System.out.println("sono in preRest" + prenotazioneCreata.getNomeLido());
+        //System.out.println("sono in preRest" + prenotazioneCreata.getNomeLido());
         //System.out.println(numOmbrelloni);
         /*Date dataAttuale = (Date) Calendar.getInstance().getTime();
 
