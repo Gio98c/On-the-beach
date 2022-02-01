@@ -36,7 +36,8 @@ btnUpdateInfoLido.addEventListener("click", function () {
     });
 })
 
-
+var btnPromuovi = document.querySelector("#btnUpdateInfoLido");
+btnPromuovi.addEventListener("click", function (){
 function promuovi(username) {
     console.log(username);
     $.ajax({
@@ -45,7 +46,7 @@ function promuovi(username) {
         data: {"username": username},
         success: function (risposta) {
             console.log(risposta);
-            if(risposta === "utentePromosso")
+            if (risposta === "utentePromosso")
                 alert("Utente promosso!");
         },
         error: function (xhr) {
@@ -54,4 +55,5 @@ function promuovi(username) {
         }
 
     });
+}
 }

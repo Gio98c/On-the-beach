@@ -17,7 +17,7 @@ import java.sql.Statement;
 public class RecensioneREST {
 
         @PostMapping("/updateRecensione")
-        public String modificaRecensione(HttpServletRequest req, HttpServletResponse resp, String testo, String usernameCliente, Long idPrenotazione, Long idRecensione) throws SQLException, IOException {
+        public String modificaRecensione(HttpServletRequest req, HttpServletResponse resp, String testo) throws SQLException, IOException {
 
                 try {
                         Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
@@ -25,7 +25,7 @@ public class RecensioneREST {
 
                         Statement st = conn.createStatement();
 
-                        if (Database.getInstance().getRecensioneDao().updateText(new Recensione (testo,usernameCliente,idPrenotazione,idRecensione))) {
+                        if (Database.getInstance().getRecensioneDao().updateText(new Recensione ())) {
 
                                 resp.sendRedirect("index");
                                 return "modifica Recensione completata";
