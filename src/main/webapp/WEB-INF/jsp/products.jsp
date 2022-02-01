@@ -99,7 +99,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <button type="submit" href="pageShopSearch?lido='${lido.nome}'">Cerca <i class="fas fa-search"></i></button>
+                        <a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>
