@@ -27,7 +27,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 Recensione r = new Recensione();
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
-                r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 recensioni.add(r);
@@ -51,7 +50,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             if (rs.next()) {
                 r = new Recensione();
                 r.setTesto(rs.getString("testo"));
-                r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
@@ -74,7 +72,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             if (rs.next()) {
                 r = new Recensione();
                 r.setTesto(rs.getString("testo"));
-                r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
@@ -97,7 +94,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             if (rs.next()) {
                 Recensione r = new Recensione();
                 r.setTesto(rs.getString("testo"));
-                r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
@@ -117,7 +113,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         //String query = "select testo,star,username_cliente from recensione LEFT JOIN prenotazione on ";
         //String query = "SELECT * FROM recensione r INNER JOIN prenotazione p ON p.id_prenotazione = r.id_prenotazione WHERE p.nome_lido = ?";
         //String query = "SELECT * FROM recensione WHERE id_prenotazione = (SELECT id_prenotazione FROM prenotazione WHERE nome_lido = ?)";
-        String query = "select r.id_recensione, r.testo,r.star,r.username_cliente,r.id_prenotazione" +
+        String query = "select r.id_recensione, r.testo,r.username_cliente,r.id_prenotazione" +
                 " from recensione r, prenotazione p" +
                 " where p.nome_lido = ? and r.id_prenotazione=p.id_prenotazione";
         try {
@@ -128,7 +124,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 Recensione r = new Recensione();
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
-                r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 recensioni.add(r);
@@ -169,7 +164,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                         + "where id_recensione = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, recensione.getTesto());
-                st.setInt(2, recensione.getStar());
                 st.setString(3, recensione.getUsernameCliente());
                 st.setLong(4, recensione.getIdPrenotazione());
                 st.setLong(5, recensione.getIdRecensione());

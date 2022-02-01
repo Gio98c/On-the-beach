@@ -4,14 +4,13 @@ import java.util.Objects;
 
 public class Recensione {
     private String testo;
-    private int star;
     private String usernameCliente;
     private long idPrenotazione;
     private long idRecensione;
 
     public Recensione(){}
 
-    public Recensione(String testo, int star, String usernameCliente, long idPrenotazione, long idRecensione){
+    public Recensione(String testo,  String usernameCliente, long idPrenotazione, long idRecensione){
 
     }
 
@@ -20,18 +19,17 @@ public class Recensione {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recensione that = (Recensione) o;
-        return star == that.star && idPrenotazione == that.idPrenotazione && idRecensione == that.idRecensione && Objects.equals(testo, that.testo) && usernameCliente.equals(that.usernameCliente);
+        return idPrenotazione == that.idPrenotazione && idRecensione == that.idRecensione && Objects.equals(testo, that.testo) && usernameCliente.equals(that.usernameCliente);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(testo, star, usernameCliente, idPrenotazione, idRecensione);
+        return Objects.hash(testo, usernameCliente, idPrenotazione, idRecensione);
     }
 
     public Recensione(long idRecensione, String testo, int star, String usernameCliente, long idPrenotazione){
         this.idRecensione=idRecensione;
         this.testo=testo;
-        this.star=star;
         this.usernameCliente=usernameCliente;
         this.idPrenotazione=idPrenotazione;
     }
@@ -44,13 +42,6 @@ public class Recensione {
         this.testo = testo;
     }
 
-    public int getStar() {
-        return star;
-    }
-
-    public void setStar(int star) {
-        this.star = star;
-    }
 
     public String getUsernameCliente() {
         return usernameCliente;
