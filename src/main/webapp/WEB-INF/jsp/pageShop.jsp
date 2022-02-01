@@ -133,7 +133,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <button type="submit" href="pageShopSearch?lido='${lido.nome}'">Cerca <i class="fas fa-search"></i></button>
+                        <button type="submit" href="pageShopSearch?lido=${lido.nome}">Cerca <i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                                             <p class="product-price"><span>1 giorno</span> ${omb.prezzo} </p>
                                         </c:if>
                                     </c:forEach>
-                                    <a href="pageShopSearch?lido='${lido.nome}'" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                                    <a href="product?lido=${lido.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                                 </div>
                             </div>
                         </div>

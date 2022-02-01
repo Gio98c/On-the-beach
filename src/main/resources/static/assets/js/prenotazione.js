@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
 
 var ombrelloni = [];
 
-function prenota(nomeLido) {
+function prenota() {
     var selectCheckedBoxes = document.querySelector("input:checked");
 
     if(selectCheckedBoxes.lenght > 0) {
@@ -50,7 +50,7 @@ function prenota(nomeLido) {
         type: "POST",
         url: "/prenota",
         dataType: "JSON",
-        data: {"nomeLido" : nomeLido, ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
+        data: {ombrelloni : ombrelloni, "dataInizio" : dataInizio.value, "dataFIne" : dataFine.value},
         success: function (risposta) {
             console.log(risposta);
             if(risposta === "prenotazioneCreata")

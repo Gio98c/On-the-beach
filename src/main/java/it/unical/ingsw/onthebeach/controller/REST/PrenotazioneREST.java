@@ -33,17 +33,17 @@ public class PrenotazioneREST {
 
     //vedere che ombrelloni che cos'è: int o String?
     @PostMapping("/prenota")
-    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, String nomeLido, int[] ombrelloni, String dataInizio, String dataFine) throws SQLException, IOException, ParseException {
+    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, String[] ombrelloni, String dataInizio, String dataFine) throws SQLException, IOException, ParseException {
         //System.out.println(numOmbrelloni);
-        Date dataAttuale = (Date) Calendar.getInstance().getTime();
+        //Date dataAttuale = (Date) Calendar.getInstance().getTime();
 
-        Date datee = Date.valueOf(LocalDate.now());
+        Date dataAttuale = Date.valueOf(LocalDate.now());
 
         String nomeLido1 = req.getParameter("lido");
 
         List<Ombrellone> ombrelloniList = new ArrayList<>();
-        for(int o : ombrelloni)
-            ombrelloniList.add(Database.getInstance().getOmbrelloneDao().findByPrimaryKey(o));
+        for(String o : ombrelloni)
+            ombrelloniList.add(Database.getInstance().getOmbrelloneDao().findByPrimaryKey(Integer.parseInt(o)));
 
         java.util.Date dataInizio1 = new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio);
         java.util.Date dataInizio2 = new SimpleDateFormat("dd/MM/yyyy").parse(dataFine);
