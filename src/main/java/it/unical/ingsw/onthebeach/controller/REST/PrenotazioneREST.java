@@ -3,8 +3,11 @@ package it.unical.ingsw.onthebeach.controller.REST;
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Prenotazione;
+import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.PrenotazioneDaoJDBC;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.theme.SessionThemeResolver;
 
@@ -32,9 +35,12 @@ import java.util.Properties;
 @RestController
 public class PrenotazioneREST {
 
+
+
     //vedere che ombrelloni che cos'è: int o String?
     @PostMapping("/prenota")
-    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, @RequestBody Prenotazione prenotazioneCreata) throws SQLException, IOException, ParseException {
+    public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, @RequestParam Prenotazione prenotazioneCreata) throws SQLException, IOException, ParseException {
+        System.out.println("sono in preRest" + prenotazioneCreata.getNomeLido());
         //System.out.println(numOmbrelloni);
         /*Date dataAttuale = (Date) Calendar.getInstance().getTime();
 
@@ -63,7 +69,7 @@ public class PrenotazioneREST {
         */
 
         prenotazioneCreata.setUsernameCliente((String) req.getSession().getAttribute("username"));
-
+        System.out.println(prenotazioneCreata.getDataInizio());
         if(Database.getInstance().getPrenotazioneDao().save(prenotazioneCreata)) {
 
             /*for(Ombrellone o : ombrelloniList) {

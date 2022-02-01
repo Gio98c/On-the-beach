@@ -40,7 +40,7 @@ function Prenotazione(prezzoTotale, descrizione, dataPrenotazione, dataInizio, d
 
 
 function prenota() {
-    var selectCheckedBoxes = document.querySelector("input:checked");
+    var selectCheckedBoxes = document.querySelectorAll("input:checked");
 
     if(selectCheckedBoxes.lenght > 0) {
         selectCheckedBoxes.forEach(function (checkBox, indice) {
@@ -66,6 +66,7 @@ function prenota() {
 
 
     var nomeLido1 = document.querySelector("#nomeLido").value;
+        //document.getElementById("nomeLido").value;
 
     var prezzoTotale;
     for (const o in ombrelloni) {

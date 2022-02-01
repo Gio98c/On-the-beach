@@ -36,6 +36,27 @@ btnUpdateInfoLido.addEventListener("click", function () {
     });
 })
 
+var btnUpdateRecensione = document.querySelector("#btnUpdateRecensione");
+btnUpdateRecensione.addEventListener("click", function () {
+
+    $.ajax({
+        type: "POST",
+        url: "/updateRecensione",
+        //contentType: "application/json",
+        //data: JSON.stringify(utente),
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "Update Completato")
+                alert("Modifica dati, avvenuta con successo!");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+            //alert(xhr.responseText);
+        }
+
+    });
+
+});
 
 function promuovi(username) {
     console.log(username);

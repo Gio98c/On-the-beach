@@ -42,7 +42,7 @@ public class Dashboard {
         return "nonAutorizzato";
     }
 
-    @GetMapping("/promozione")
+    @GetMapping("/promozioneg")
     public String paginaProfiloPromozione(HttpServletRequest req) throws SQLException {
         if(req.getSession().getAttribute("username") != null) {
             //System.out.println(req.getSession().getAttribute("username"));

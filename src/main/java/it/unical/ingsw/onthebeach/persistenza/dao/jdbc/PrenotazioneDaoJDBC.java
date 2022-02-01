@@ -30,9 +30,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
-				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
-				prenotazione.setDataInizio(rs.getDate("data_inizio"));
-				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setDataPrenotazione(String.valueOf(rs.getDate("data_prenotazione")));
+				prenotazione.setDataInizio(String.valueOf(rs.getDate("data_inizio")));
+				prenotazione.setDataFine(String.valueOf(rs.getDate("data_fine")));
 				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
 				prenotazione.setNomeLido(rs.getString("nome_lido"));
 				prenotazioni.add(prenotazione);
@@ -61,9 +61,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
-				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
-				prenotazione.setDataInizio(rs.getDate("data_inizio"));
-				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setDataPrenotazione(String.valueOf(rs.getDate("data_prenotazione")));
+				prenotazione.setDataInizio(String.valueOf(rs.getDate("data_inizio")));
+				prenotazione.setDataFine(String.valueOf(rs.getDate("data_fine")));
 				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
 				prenotazione.setNomeLido(rs.getString("nome_lido"));
 			}
@@ -93,9 +93,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
-				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
-				prenotazione.setDataInizio(rs.getDate("data_inizio"));
-				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setDataPrenotazione(String.valueOf(rs.getDate("data_prenotazione")));
+				prenotazione.setDataInizio(String.valueOf(rs.getDate("data_inizio")));
+				prenotazione.setDataFine(String.valueOf(rs.getDate("data_fine")));
 				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
 				prenotazione.setNomeLido(rs.getString("nome_lido"));
 			}
@@ -123,9 +123,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
-				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
-				prenotazione.setDataInizio(rs.getDate("data_inizio"));
-				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setDataPrenotazione(String.valueOf(rs.getDate("data_prenotazione")));
+				prenotazione.setDataInizio(String.valueOf(rs.getDate("data_inizio")));
+				prenotazione.setDataFine(String.valueOf(rs.getDate("data_fine")));
 				prenotazione.setNomeLido(rs.getString("nome_lido"));
 				prenotazioni.add(prenotazione);
 			}
@@ -153,9 +153,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 				prenotazione.setIdPrenotazione(rs.getLong("id_prenotazione"));
 				prenotazione.setPrezzoTotale(rs.getFloat("prezzo_totale"));
 				prenotazione.setDescrizione(rs.getString("descrizione"));
-				prenotazione.setDataPrenotazione(rs.getDate("data_prenotazione"));
-				prenotazione.setDataInizio(rs.getDate("data_inizio"));
-				prenotazione.setDataFine(rs.getDate("data_fine"));
+				prenotazione.setDataPrenotazione(String.valueOf(rs.getDate("data_prenotazione")));
+				prenotazione.setDataInizio(String.valueOf(rs.getDate("data_inizio")));
+				prenotazione.setDataFine(String.valueOf(rs.getDate("data_fine")));
 				prenotazione.setUsernameCliente(rs.getString("username_cliente"));
 				prenotazioni.add(prenotazione);
 			}
@@ -179,9 +179,9 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 			st.setLong(1, prenotazione.getIdPrenotazione());
 			st.setFloat(2, prenotazione.getPrezzoTotale());
 			st.setString(3, prenotazione.getDescrizione());
-			st.setDate(4, prenotazione.getDataPrenotazione());
-			st.setDate(5, prenotazione.getDataInizio());
-			st.setDate(6,prenotazione.getDataFine());
+			st.setDate(4, Date.valueOf(prenotazione.getDataPrenotazione()));
+			st.setDate(5, Date.valueOf(prenotazione.getDataInizio()));
+			st.setDate(6, Date.valueOf(prenotazione.getDataFine()));
 			st.setString(7, prenotazione.getUsernameCliente());
 			st.setString(8, prenotazione.getNomeLido());
 			st.executeUpdate();

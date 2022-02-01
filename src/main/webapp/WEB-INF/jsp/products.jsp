@@ -164,7 +164,7 @@
                         <label class="label">Data Fine</label>
                         <input type="date" id="dataFine" /><br/>
 
-                        <a href="checkout?lido=${lido.nome}" class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota()">Prenota</button></a>
+                        <a class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota()">Prenota</button></a>
                     </div>
                 </div>
             </div>
