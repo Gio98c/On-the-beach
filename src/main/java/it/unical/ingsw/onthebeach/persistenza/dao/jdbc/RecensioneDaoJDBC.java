@@ -146,7 +146,6 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setLong(1, recensione.getIdRecensione());
                 st.setString(2, recensione.getTesto());
-                st.setInt(3, recensione.getStar());
                 st.setString(4, recensione.getUsernameCliente());
                 st.setLong(5, recensione.getIdPrenotazione());
                 st.executeUpdate();

@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Recensione {
     private String testo;
     private String usernameCliente;
-    private long idPrenotazione;
-    private long idRecensione;
+    private Long idPrenotazione;
+    private Long idRecensione;
 
     public Recensione(){}
 
@@ -27,7 +27,7 @@ public class Recensione {
         return Objects.hash(testo, usernameCliente, idPrenotazione, idRecensione);
     }
 
-    public Recensione(long idRecensione, String testo, int star, String usernameCliente, long idPrenotazione){
+    public Recensione(Long idRecensione, String testo, int star, String usernameCliente, Long idPrenotazione){
         this.idRecensione=idRecensione;
         this.testo=testo;
         this.usernameCliente=usernameCliente;
@@ -59,11 +59,11 @@ public class Recensione {
         this.idPrenotazione = idPrenotazione;
     }
 
-    public long getIdRecensione() {
+    public Long getIdRecensione() {
         return idRecensione;
     }
 
-    public void setIdRecensione(long idRecensione) {
+    public void setIdRecensione(Long idRecensione) {
         this.idRecensione = idRecensione;
     }
 }
