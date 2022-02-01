@@ -28,17 +28,17 @@ public class Product {
         }*/
 
         String nomeLido = req.getParameter("lido");
-
+        System.out.println(nomeLido);
         Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey(nomeLido);
         req.setAttribute("lido", lido);
         //System.out.println(lido.getNome());
-        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(lido.getNome());
+        List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByLido(nomeLido);
         req.setAttribute("recensioni", recensioni);
         for(Recensione r : recensioni){
             System.out.println(r.getTesto());
         }
 
-        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(lido.getNome());
+        List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(nomeLido);
         req.setAttribute("ombrelloni", ombrelloni);
         for(Ombrellone o : ombrelloni){
             System.out.println(o.getIdOmbrellone());
