@@ -10,8 +10,9 @@ import java.util.List;
 public class RecensioneDaoJDBC implements RecensioneDao {
     Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
             "postgres", "root");
+
     public RecensioneDaoJDBC(Connection conn) throws SQLException {
-        this.conn=conn;
+        this.conn = conn;
     }
 
 
@@ -23,7 +24,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Recensione r = new Recensione();
+                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
@@ -45,10 +46,10 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         String query = "select * from recensione where id_recensione = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1,id);
+            st.setLong(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                r = new Recensione();
+                r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
@@ -57,7 +58,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();}
+            e.printStackTrace();
+        }
         return r;
     }
 
@@ -67,10 +69,10 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         String query = "select * from recensione where id_prenotazione = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1,id);
+            st.setLong(1, id);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                r = new Recensione();
+                r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("cognome"));
@@ -79,7 +81,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();}
+            e.printStackTrace();
+        }
         return r;
     }
 
@@ -89,10 +92,10 @@ public class RecensioneDaoJDBC implements RecensioneDao {
         String query = "select * from recensione where username_cliente = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1,username);
+            st.setString(1, username);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                Recensione r = new Recensione();
+                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
@@ -102,7 +105,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();}
+            e.printStackTrace();
+        }
         return recensioni;
     }
 
@@ -118,10 +122,10 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 " where p.nome_lido = ? and r.id_prenotazione=p.id_prenotazione";
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1,nome);
+            st.setString(1, nome);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Recensione r = new Recensione();
+                Recensione r = new Recensione(testo, star, usernameCliente, idPrenotazione, idRecensione);
                 r.setIdRecensione(rs.getLong("id_recensione"));
                 r.setTesto(rs.getString("testo"));
                 r.setStar(rs.getInt("star"));
@@ -131,7 +135,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();}
+            e.printStackTrace();
+        }
         return recensioni;
     }
 
@@ -156,7 +161,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 e.printStackTrace();
                 return false;
             }
-        }else {
+        } else {
             //UPDATE
             try {
                 String query = "update recensione "
@@ -196,6 +201,26 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             e.printStackTrace();
             return false;
         }
+        return true;
+    }
+
+
+    @Override
+    public boolean updateText(Recensione recensione) {
+        try {
+            String query = "update recensione "
+                    + "set testo = ?"
+                    + "where id_recensione = ?";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, recensione.getTesto());
+            st.setLong(2, recensione.getIdRecensione());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+        }
+        // TODO Auto-generated method stub
         return true;
     }
 }
