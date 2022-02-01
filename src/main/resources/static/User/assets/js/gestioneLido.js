@@ -16,5 +16,4 @@ btnInsertLido.addEventListener("click", function () {
             //alert(xhr.responseText);
         }
     });
-
 });

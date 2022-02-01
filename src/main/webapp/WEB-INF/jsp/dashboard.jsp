@@ -875,9 +875,13 @@
                                 </c:forEach>
                                 </textarea>
                             </td>
-                            <form method="post" action="updateRecensione">
-                              <td><input type="submit" id="btnUpdateRecensione" value="publica"></td>
-                            </form>
+                            <c:forEach items="${recensioni}" var="rec">
+                              <c:if test="${rec.idPrenotazione == pren.idPrenotazione}">
+                                <form method="post" action="updateRecensione">
+                                  <td id="${rec.idRecensione}"><input type="submit" id="btnUpdateRecensione" value="Pubblica"></td>
+                                </form>
+                              </c:if>
+                            </c:forEach>
                           </tr>
                         </c:forEach>
                       </tbody>

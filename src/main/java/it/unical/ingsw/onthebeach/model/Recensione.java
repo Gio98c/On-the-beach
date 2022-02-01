@@ -11,7 +11,6 @@ public class Recensione {
     public Recensione(){}
 
     public Recensione(String testo,  String usernameCliente, long idPrenotazione, long idRecensione){
-
     }
 
     @Override

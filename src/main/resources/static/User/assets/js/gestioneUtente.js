@@ -36,24 +36,43 @@ btnUpdateInfoLido.addEventListener("click", function () {
     });
 })
 
-var btnPromuovi = document.querySelector("#btnUpdateInfoLido");
-btnPromuovi.addEventListener("click", function (){
+
 function promuovi(username) {
     console.log(username);
     $.ajax({
-        type: "POST",
-        url: "/promozione",
-        data: {"username": username},
-        success: function (risposta) {
-            console.log(risposta);
-            if (risposta === "utentePromosso")
-                alert("Utente promosso!");
-        },
-        error: function (xhr) {
-            console.log(xhr);
-            //alert(xhr.responseText);
+            type: "POST",
+            url: "/promozione",
+            data: {"username": username},
+            success: function (risposta) {
+                console.log(risposta);
+                if (risposta === "utentePromosso")
+                    alert("Utente promosso!");
+            },
+            error: function (xhr) {
+                console.log(xhr);
+                //alert(xhr.responseText);
+            }
         }
+    )}
 
-    });
-}
-}
+
+
+var btnUpdateRecensione = document.querySelector("#btnUpdateRecensione");
+btnUpdateRecensione.addEventListener("click", function (idRecensione, testo) {
+    $.ajax({
+        type: "POST", url: "/updateRecensione",
+data: {"idRecensione": idRecensione, "testo": testo},
+ success: function (risposta) {
+     console.log(risposta);
+     if (risposta === "Update Completato") {
+         alert("Modifica dati, avvenuta con successo!");
+     }
+ },
+    error: function (xhr) {
+        console.log(xhr);
+        //alert(xhr.responseText);
+    }
+});
+})
+
+
