@@ -41,6 +41,35 @@ public class Dashboard {
 
         return "nonAutorizzato";
     }
+
+    @GetMapping("/promozione")
+    public String paginaProfiloPromozione(HttpServletRequest req) throws SQLException {
+        if(req.getSession().getAttribute("username") != null) {
+            //System.out.println(req.getSession().getAttribute("username"));
+            Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
+            req.setAttribute("utente", utente);
+
+            Lido lido = Database.getInstance().getLidoDao().findByGestore((String) req.getSession().getAttribute("username"));
+            req.setAttribute("lido", lido);
+
+            List<Utente> utentiCliente = Database.getInstance().getUtenteDao().findAllFromTipoUtente("Cliente");
+            for(Utente u : utentiCliente) {
+                System.out.println(u.getUsername());
+            }
+            req.setAttribute("utenteCliente", utentiCliente);
+            List<Prenotazione> prenotazioni = Database.getInstance().getPrenotazioneDao().findByUsername((String) req.getSession().getAttribute("username"));
+            req.setAttribute("prenotazioni", prenotazioni);
+
+            List<Recensione> recensioni = Database.getInstance().getRecensioneDao().findByUtente(utente.getUsername());
+            req.setAttribute("recensioni", recensioni);
+
+            Database.getInstance().getUtenteDao().setAdmin((String) req.getAttribute("usrCliente"));
+
+            return "dashboard";
+        }
+
+        return "nonAutorizzato";
+    }
 /*
     @GetMapping("/logout")
     public void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
