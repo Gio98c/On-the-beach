@@ -39,7 +39,7 @@ function Prenotazione(prezzoTotale, descrizione, dataPrenotazione, dataInizio, d
 }
 
 
-function prenota(nomeLido) {
+function prenota() {
     var selectCheckedBoxes = document.querySelector("input:checked");
 
     if(selectCheckedBoxes.lenght > 0) {
