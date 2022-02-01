@@ -18,7 +18,7 @@ import java.util.List;
 public class RecensioneREST {
 
         @PostMapping("/updateRecensione")
-        public String modificaRecensione(Long idRecensione,  String testo , HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        public String modificaRecensione(String idRecensione,  String testo , HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
 
 String user= (String) req.getSession().getAttribute("username");
 Long id;
@@ -28,16 +28,17 @@ Recensione rec = new Recensione();
                         Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
                                 "postgres", "root");
                         List<Recensione> recensioni= Database.getInstance().getRecensioneDao().findByUtente(user);
+                        System.out.println("recensione: " + idRecensione);
                        for (Recensione tmp: recensioni) {
-                               if (tmp.getIdRecensione() == idRecensione) {
+                               if (tmp.getIdRecensione() == Long.parseLong(idRecensione)) {
                                        rec = tmp;
                                        break;
                                }
                        }
 
                         Statement st = conn.createStatement();
-
-                        if (Database.getInstance().getRecensioneDao().updateText(rec)) {
+                        if (Database.getInstance().getRecensioneDao().saveOrUpdate(rec)){
+                        //if (Database.getInstance().getRecensioneDao().updateText(rec)) {
 
                                 resp.sendRedirect("index");
                                 return "modifica Recensione completata";

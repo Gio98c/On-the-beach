@@ -51,9 +51,9 @@ function prenota() {
            //ombrelloni[indice] = checkBox.getAttribute("id");
 
         });
-    } else {
-        alert("Si prega di selezionare almeno un elemnto");
-    }
+    } //else {
+       // alert("Si prega di selezionare almeno un elemnto");
+    //}
 
     //var dataInizio = document.getElementById("dataInizio");
     //var dataFine = new Date(document.getElementById("dataFine"));
@@ -97,7 +97,6 @@ function prenota() {
         }
     });
 
-    delete ombrelloni;
 
 }
 
