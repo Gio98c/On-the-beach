@@ -37,7 +37,7 @@ Recensione rec = new Recensione();
 
                         Statement st = conn.createStatement();
 
-                        if (Database.getInstance().getRecensioneDao().saveOrUpdate(rec)) {
+                        if (Database.getInstance().getRecensioneDao().updateText(rec)) {
 
                                 resp.sendRedirect("index");
                                 return "modifica Recensione completata";
