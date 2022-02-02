@@ -100,7 +100,7 @@
 
                     <div class="col-12">
                       <label for="yourTipo_utente">Scegli un tipo di utente:</label>
-                      <select id="yourTipo_utente">
+                      <select id="yourTipo_utente" name="tipo_utente">
                         <option value="">--Scegli un tipo di utente--</option>
                         <option value="Cliente">cliente</option>
                         <option value="GestoreLido">gestore Lido</option>

@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class RegistrationREST {
 
     @PostMapping("/registrationServices")
-    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String cognome, String tipo_utente, Date dataNascita,   String passw) throws ServletException, IOException {
+    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome,  String cognome, String email, String username, String password, String tipo_utente, Date dataNascita) throws ServletException, IOException {
 
         //sql aggiunta di un utente nel database
 
@@ -28,7 +28,7 @@ public class RegistrationREST {
 
 
 
-            if(Database.getInstance().getUtenteDao().save (new Utente(username,nome,cognome,passw,email, tipo_utente, dataNascita))){
+            if(Database.getInstance().getUtenteDao().save (new Utente(username,nome,cognome,password,email, tipo_utente, dataNascita))){
                 resp.sendRedirect("login");
                 return "registrazioneEffettuata";
             }
@@ -42,9 +42,9 @@ public class RegistrationREST {
     }
 
     @PostMapping("/registrationServicesGoogle")
-    public String registratiGoogle(HttpServletResponse resp, String nome, String cognome, String email, String username , String passw, String tipo_utente, Date dataNascita) throws SQLException, IOException {
+    public String registratiGoogle(HttpServletResponse resp, String nome, String cognome, String email, String username , String password, String tipo_utente, Date dataNascita) throws SQLException, IOException {
 
-        Utente utente = new Utente(username, nome, cognome, email, passw, tipo_utente, dataNascita);
+        Utente utente = new Utente(username, nome, cognome, email, password, tipo_utente, dataNascita);
         if(Database.getInstance().getUtenteDao().save(utente)) {
             resp.sendRedirect("profile");
             return "registrazioneCompletata";
