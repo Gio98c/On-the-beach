@@ -98,13 +98,15 @@
                     </div>
 
                     <div class="col-12">
-                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                      <!--<div class="g-signin2" data-onsuccess="onSignIn"></div> -->
                       <div>
                       </div>
                     </div>
-                      <div>
+                    <!--
+                    <div>
                         <br/><button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
                       </div>
+                      -->
                     <div class="col-12">
                       <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
                     </div>
