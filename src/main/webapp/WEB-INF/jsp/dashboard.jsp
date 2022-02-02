@@ -876,7 +876,7 @@
                                 </textarea>
                             </td>
                             <form method="post" action="updateRecensione">
-                              <td><input type="submit" id="btnUpdateRecensione" value="pubblica"></td>
+                              <td><input type="submit" onclick="ricava" id="btnUpdateRecensione" value="pubblica"></td>
                             </form>
                           </tr>
                         </c:forEach>

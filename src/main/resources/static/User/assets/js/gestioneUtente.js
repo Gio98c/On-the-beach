@@ -57,6 +57,7 @@ function promuovi(username) {
 
 
 
+
 var btnUpdateRecensione = document.querySelector("#btnUpdateRecensione");
 btnUpdateRecensione.addEventListener("click", function (idRecensione, testo) {
     $.ajax({
