@@ -67,7 +67,7 @@
                   <form class="row g-3 needs-validation" novalidate action="registrationServices" method="post">
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nome</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <input type="text" name="nome" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Perfavore, insierisci il tuo nome</div>
                     </div>
 
