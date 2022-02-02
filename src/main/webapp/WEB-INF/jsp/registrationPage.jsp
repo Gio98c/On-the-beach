@@ -67,7 +67,7 @@
                   <form class="row g-3 needs-validation" novalidate action="registrationServices" method="post">
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nome</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <input type="text" name="nome" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Perfavore, inserisci il tuo nome</div>
                     </div>
 
@@ -94,7 +94,7 @@
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="passw" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Inserisci la tua password!</div>
                     </div>
 
