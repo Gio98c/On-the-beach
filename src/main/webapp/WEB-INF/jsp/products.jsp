@@ -160,11 +160,11 @@
 
                         <br/>
                         <label class="label">Data Inizio</label>
-                        <input type="date" id="dataInizio" /><br/><br/>
+                        <input type="date" id="dataInizio"><br/><br/>
                         <label class="label">Data Fine</label>
-                        <input type="date" id="dataFine" /><br/>
+                        <input type="date" id="dataFine"><br/>
 
-                        <a class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota('${lido.nome}')">Prenota</button></a>
+                        <a href="checkout" class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota('${lido.nome}')">Prenota</button></a>
                     </div>
                 </div>
             </div>

@@ -85,10 +85,14 @@ public class PrenotazioneREST {
 
 
     @PostMapping("/prenota")
-    public String creaPrenotazione(String nomeLido, String dataInizio, String dataFine, List<String> ombrelloni, HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
-
+    public String creaPrenotazione(String nomeLido, String dataInizio, String dataFine, String[] ombrelloni, HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        System.out.println("entrata for:");
+        for(String in : ombrelloni){
+            System.out.println("ombrelloni " + in);
+        }
         Date dataAttuale = Date.valueOf(LocalDate.now());
-
+        System.out.println("dataI: " + dataInizio);
+        System.out.println("dataF: " + dataFine);
 
         List<Ombrellone> ombrelloniLido = Database.getInstance().getOmbrelloneDao().findByLido(nomeLido);
         List<Ombrellone> tmp = new ArrayList<>();
@@ -103,9 +107,9 @@ public class PrenotazioneREST {
             prezzoTotale += o.getPrezzo();
         }
 
-        long intervalloGiorni = Duration.between((Temporal) Date.valueOf(dataInizio), (Temporal) Date.valueOf(dataFine)).toDays();
-        if(intervalloGiorni != 0)
-            prezzoTotale *= intervalloGiorni;
+        //long intervalloGiorni = Duration.between((Temporal) Date.valueOf(dataInizio), (Temporal) Date.valueOf(dataFine)).toDays();
+        //if(intervalloGiorni != 0)
+        //    prezzoTotale *= intervalloGiorni;
 
         Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, String.valueOf(dataAttuale), dataInizio, dataFine, (String) req.getSession().getAttribute("username"), nomeLido);
 
