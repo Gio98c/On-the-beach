@@ -39,7 +39,7 @@ function Prenotazione(prezzoTotale, descrizione, dataPrenotazione, dataInizio, d
 }
 
 
-function prenota() {
+/*function prenota() {
     var selectCheckedBoxes = document.querySelectorAll("input:checked");
 
     if(selectCheckedBoxes.lenght > 0) {
@@ -98,16 +98,39 @@ function prenota() {
     });
 
 
-}
+}*/
 
-/*
+
 function prenota(nomeLido) {
-    console.log(numOmbrelloni);
+    var selectCheckedBoxes = document.querySelectorAll("input:checked");
+
+    if(selectCheckedBoxes.lenght > 0) {
+        selectCheckedBoxes.forEach(function (checkBox, indice) {
+            console.log(checkBox);
+            checkBox.log(checkBox.getAttribute("id"));
+
+            ombrelloni.push(checkBox.getAttribute("id"));
+            //ombrelloni[indice] = checkBox.getAttribute("id");
+
+        });
+    } //else {
+    // alert("Si prega di selezionare almeno un elemnto");
+    //}
+
+
+    var dF = document.getElementById("dataFine").value = new Date();
+    var dI = document.getElementById("dataInizio").value = new Date();
+
+    var dataInizioFinish = dI.getFullYear()+'/'+dI.getMonth()+'/'+dI.getDate();
+    var dataFineFinish = dF.getFullYear()+'/'+dF.getMonth()+'/'+dF.getDate();
+
+
+    //console.log(numOmbrelloni);
 
     $.ajax({
         type: "POST",
         url: "/prenota",
-        data: {"nomeLido" : nomeLido},
+        data: {"nomeLido" : nomeLido, "dataInizioFinish" : dataInizioFinish, "dataFineFinish" : dataFineFinish, ombrelloni : ombrelloni},
         success: function (risposta) {
             console.log(risposta);
             if(risposta === "prenotazioneCreata")
@@ -118,7 +141,7 @@ function prenota(nomeLido) {
         }
     });
 }
-*/
+
 
 $('btnPagamentoInSede').click(function () {
 

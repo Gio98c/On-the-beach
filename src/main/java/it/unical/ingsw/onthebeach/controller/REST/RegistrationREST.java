@@ -2,6 +2,7 @@ package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Utente;
+import org.postgresql.util.PSQLException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,14 +16,14 @@ import java.sql.*;
 public class RegistrationREST {
 
     @PostMapping("/registrationServices")
-    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String passw) throws ServletException, IOException {
+    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String passw) throws ServletException, IOException, PSQLException {
 
         //sql aggiunta di un utente nel database
 
-        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ 0 +"');";
+        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ "Cliente" +"');";
 
         try {
-            Connection conn = DriverManager.getConnection("\"jdbc:postgresql://localhost:5432/GestoreLido2\", \"postgres\", \"root\"");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2", "postgres", "root");
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
