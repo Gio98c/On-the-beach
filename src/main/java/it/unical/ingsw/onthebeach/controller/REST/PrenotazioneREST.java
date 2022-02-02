@@ -115,13 +115,12 @@ public class PrenotazioneREST {
 
         if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
 
-            for(Ombrellone o : tmp) {
+            for (Ombrellone o : tmp) {
                 Database.getInstance().getOmbrelloneDao().switchOccupato(o);
-
-            resp.sendRedirect("checkout");
-            return "prenotazioneCreata";
-        }
-
+            }
+                resp.sendRedirect("checkout");
+                return "prenotazioneCreata";
+            }
 
         return "error";
 
