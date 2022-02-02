@@ -16,11 +16,11 @@ import java.sql.*;
 public class RegistrationREST {
 
     @PostMapping("/registrationServices")
-    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome, String email, String username, String passw) throws ServletException, IOException, PSQLException {
+    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome,  String cognome, String email, String username, String password, String tipo_utente, Date dataNascita) throws ServletException, IOException, PSQLException {
 
         //sql aggiunta di un utente nel database
 
-        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ username +"','"+ nome +"','"+ email +"','"+ passw +"','"+ "Cliente" +"');";
+        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ nome +"','"+ cognome +"','"+ email +"','"+ username +"','"+ "tipo_utente" +"','"+ dataNascita +"' ) ;";
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2", "postgres", "root");
