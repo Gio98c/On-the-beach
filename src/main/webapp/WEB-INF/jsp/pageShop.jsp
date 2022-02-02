@@ -181,9 +181,9 @@
                     <c:forEach items="${lidi}" var="lido">
                         <div class="col-lg-4 col-md-6">
                             <div class="single-latest-news">
-                                <a onclick="visualizzaProdotto(${lido.nome})"><div class="latest-news-bg" style="background-image: url('./imgPathh/${lido.foto}')"></div></a>
+                                <a onclick="visualizzaProdotto(${lido.nome})"><div class="latest-news-bg" style="background-image: url('./imgPath1/${lido.foto}')"></div></a>
                                 <div class="news-text-box">
-                                    <h3><a onclick="visualizzaProdotto(${lido.nome})">${lido.nome}</a></h3>
+                                    <h3><a href="product?lido=${lido.nome}">${lido.nome}</a></h3>
                                     <!-- <p class="blog-meta">
                                         <span class="author"><i class="fas fa-user"></i> Admin</span>
                                         <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
