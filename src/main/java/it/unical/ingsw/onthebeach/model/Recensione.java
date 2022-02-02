@@ -11,6 +11,10 @@ public class Recensione {
     public Recensione(){}
 
     public Recensione(String testo,  String usernameCliente, long idPrenotazione, long idRecensione){
+        this.testo = testo;
+        this.usernameCliente = usernameCliente;
+        this.idPrenotazione = idPrenotazione;
+        this.idRecensione = idRecensione;
     }
 
     @Override

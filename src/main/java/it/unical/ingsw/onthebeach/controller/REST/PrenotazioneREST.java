@@ -117,7 +117,7 @@ public class PrenotazioneREST {
 
             for(Ombrellone o : tmp) {
                 Database.getInstance().getOmbrelloneDao().switchOccupato(o);
-
+            }
             resp.sendRedirect("checkout");
             return "prenotazioneCreata";
         }

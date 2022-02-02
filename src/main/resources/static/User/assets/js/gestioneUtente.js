@@ -56,9 +56,26 @@ function promuovi(username) {
     )}
 
 
+function aggiornaRecensione(idPrenotazione, idRecensione) {
+    var testo = document.getElementById("textRecensioni");
+    var t = testo.value;
+
+    $.ajax({
+        type: "POST",
+        url: "/updateRecensione",
+        data: {"idRecensione" : idRecensione, "idPrenotazione" : idPrenotazione,"testo" : t},
+        success: function (risposta) {
+            if(risposta === "updateCompletato")
+                alert("Recensione aggiornata");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+}
 
 
-var btnUpdateRecensione = document.querySelector("#btnUpdateRecensione");
+/*var btnUpdateRecensione = document.querySelector("#btnUpdateRecensione");
 btnUpdateRecensione.addEventListener("click", function (idRecensione, testo) {
     $.ajax({
         type: "POST", url: "/updateRecensione",
@@ -74,6 +91,6 @@ data: {"idRecensione": idRecensione, "testo": testo},
         //alert(xhr.responseText);
     }
 });
-})
+})*/
 
 

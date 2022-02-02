@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 public class RecensioneREST {
 
+        /*
         @PostMapping("/updateRecensione")
         public String modificaRecensione(Long idRecensione,  String testo , HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
 
@@ -49,6 +50,18 @@ Recensione rec = new Recensione();
                         resp.sendRedirect("profile");
                         return "error";
                 }
+        }*/
+
+    @PostMapping("/updateRecensione")
+    public String modificaRecensione(String idRecensione, String idPrenotazione, String testo, HttpServletRequest req) throws SQLException {
+
+        Recensione rec = new Recensione(testo, (String) req.getSession().getAttribute("username"), Long.parseLong(idPrenotazione), Long.parseLong(idRecensione));
+
+        if(Database.getInstance().getRecensioneDao().saveOrUpdate(rec)) {
+            return "updateCompletato";
+        } else {
+            return "error";
         }
+    }
 }
 

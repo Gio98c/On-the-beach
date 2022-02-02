@@ -876,7 +876,13 @@
                                 </textarea>
                             </td>
                             <form method="post" action="updateRecensione">
-                              <td><input type="submit" onclick="ricava" id="btnUpdateRecensione" value="pubblica"></td>
+                              <td>
+                              <c:forEach items="${recensioni}" var="rec">
+                                <c:if test="${rec.idPrenotazione == pren.idPrenotazione}">
+                                  <input type="submit" onclick="aggiornaRecensione('${rec.idPrenotazione}', '${rec.idRecensione}')" id="btnUpdateRecensione" value="pubblica">
+                                </c:if>
+                              </c:forEach>
+                              </td>
                             </form>
                           </tr>
                         </c:forEach>
