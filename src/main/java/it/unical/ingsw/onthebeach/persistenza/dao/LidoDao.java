@@ -12,4 +12,5 @@ public interface LidoDao {
 	public boolean saveOrUpdate(Lido lido);
 	public boolean delete(Lido lido);
 	public Lido findByGestore(String username);
+	public byte[] trovaImmagine(String username);
 }

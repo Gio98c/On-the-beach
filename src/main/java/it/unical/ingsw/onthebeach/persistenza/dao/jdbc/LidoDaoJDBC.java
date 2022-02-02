@@ -1,5 +1,6 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -250,4 +251,28 @@ public class LidoDaoJDBC implements LidoDao{
 		}
 		return lido;
 	}
+
+
+	public byte[] trovaImmagine(String id) {
+		PreparedStatement st = null;
+		String query = "SELECT foto FROM lido WHERE nome = ?";
+
+		try {
+			st = conn.prepareStatement(query);
+			st.setString(1, id);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				byte[] imgBytes = rs.getBytes("foto");
+				return imgBytes;
+			}
+
+			rs.close();
+			conn.close();
+		} catch (Exception var6) {
+			var6.printStackTrace();
+		}
+
+		return null;
+	}
+
 }
