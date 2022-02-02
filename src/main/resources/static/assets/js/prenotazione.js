@@ -133,6 +133,8 @@ function prenota(nomeLido) {
     //console.log(dataInizioFinish);
     //console.log(dataFineFinish);
 
+    var d = document.querySelector("#dataInizio")
+
     //console.log(numOmbrelloni);
 
     $.ajax({

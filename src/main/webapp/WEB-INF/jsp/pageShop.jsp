@@ -133,7 +133,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
+                        <a href="product?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -189,11 +189,13 @@
                                         <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                                     </p> -->
                                     <p class="excerpt">${lido.descrizione}</p>
-                                    <c:forEach items="${ombrelloni}" var="omb">
+                                    <!--<c:forEach items="${ombrelloni}" var="omb">
                                         <c:if test="${omb.nomeLido == lido.nome}">
                                             <p class="product-price"><span>1 giorno</span> ${omb.prezzo} </p>
                                         </c:if>
-                                    </c:forEach>
+                                    </c:forEach>-->
+
+                                    <p class="product-price"><span>1 giorno</span> ${ombrelloni.prezzo}</p>
                                     <a href="product?lido=${lido.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                                 </div>
                             </div>
