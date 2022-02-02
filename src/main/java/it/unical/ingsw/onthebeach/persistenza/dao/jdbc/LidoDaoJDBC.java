@@ -255,21 +255,23 @@ public class LidoDaoJDBC implements LidoDao{
 
 	public byte[] trovaImmagine(String id) {
 		PreparedStatement st = null;
+		ResultSet rs = null;
 		String query = "SELECT foto FROM lido WHERE nome = ?";
 
 		try {
 			st = conn.prepareStatement(query);
 			st.setString(1, id);
-			ResultSet rs = st.executeQuery();
+			rs = st.executeQuery();
 			if (rs.next()) {
 				byte[] imgBytes = rs.getBytes("foto");
 				return imgBytes;
 			}
 
-			rs.close();
-			conn.close();
-		} catch (Exception var6) {
-			var6.printStackTrace();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResult(rs);
+			closeStatement(st);
 		}
 
 		return null;

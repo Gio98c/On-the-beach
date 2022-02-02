@@ -195,7 +195,7 @@
                                         </c:if>
                                     </c:forEach>
 
-                                    <!--<p class="product-price"><span>1 giorno</span> ${ombrelloni.prezzo}</p>-->
+
                                     <a href="product?lido=${lido.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
                                 </div>
                             </div>
