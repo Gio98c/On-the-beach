@@ -258,7 +258,7 @@
 							<tbody class="checkout-details">
 								<tr>
 									<td>Total</td>
-									<td>${prenotazioneCheckOut.prezzoTotale}</td>
+									<td>${prenotazioneCheckOut.prezzoTotale} €</td>
 								</tr>
 							</tbody>
 						</table>

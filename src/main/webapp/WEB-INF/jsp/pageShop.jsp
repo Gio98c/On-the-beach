@@ -191,7 +191,7 @@
                                     <p class="excerpt">${lido.descrizione}</p>
                                     <c:forEach items="${ombrelloni}" var="omb">
                                         <c:if test="${omb.nomeLido == lido.nome}">
-                                            <p class="product-price"><span>1 giorno</span> ${omb.prezzo} </p>
+                                            <p class="product-price"><span>1 giorno</span> ${omb.prezzo} € </p>
                                         </c:if>
                                     </c:forEach>
 
