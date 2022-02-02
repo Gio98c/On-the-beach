@@ -38,7 +38,7 @@ public class PrenotazioneREST {
 
 
     //vedere che ombrelloni che cos'è: int o String?
-    @PostMapping("/prenota")
+    /*@PostMapping("/prenota")
     public String creaPrenotazione(HttpServletRequest req, HttpServletResponse resp, @RequestParam Prenotazione prenotazioneCreata) throws SQLException, IOException, ParseException {
         //System.out.println("sono in preRest" + prenotazioneCreata.getNomeLido());
         //System.out.println(numOmbrelloni);
@@ -66,7 +66,7 @@ public class PrenotazioneREST {
 
 
         Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, dataAttuale, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataInizio), (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataFine), (String) req.getSession().getAttribute("username"), nomeLido1);
-        */
+
 
         prenotazioneCreata.setUsernameCliente((String) req.getSession().getAttribute("username"));
         System.out.println(prenotazioneCreata.getDataInizio());
@@ -74,14 +74,52 @@ public class PrenotazioneREST {
 
             /*for(Ombrellone o : ombrelloniList) {
                 Database.getInstance().getOmbrelloneDao().switchOccupato(o);
-            }*/
+            }
 
             resp.sendRedirect("checkout");
             return "prenotazioneCreata";
         } else {
             return "error";
         }
+    }*/
+
+
+    @PostMapping("/prenota")
+    public String creaPrenotazione(String nomeLido, String dataInizio, String dataFine, List<String> ombrelloni, HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+
+        Date dataAttuale = Date.valueOf(LocalDate.now());
+
+
+        List<Ombrellone> ombrelloniLido = Database.getInstance().getOmbrelloneDao().findByLido(nomeLido);
+        List<Ombrellone> tmp = new ArrayList<>();
+        for(Ombrellone o : ombrelloniLido) {
+            for(String in : ombrelloni)
+                if(o.getIdOmbrellone() == Long.parseLong(in))
+                    tmp.add(o);
+        }
+
+        float prezzoTotale = 0;
+        for(Ombrellone o : tmp) {
+            prezzoTotale += o.getPrezzo();
+        }
+
+        long intervalloGiorni = Duration.between((Temporal) Date.valueOf(dataInizio), (Temporal) Date.valueOf(dataFine)).toDays();
+        if(intervalloGiorni != 0)
+            prezzoTotale *= intervalloGiorni;
+
+        Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, String.valueOf(dataAttuale), dataInizio, dataFine, (String) req.getSession().getAttribute("username"), nomeLido);
+
+        if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
+            resp.sendRedirect("checkout");
+            return "prenotazioneCreata";
+        }
+
+
+        return "error";
+
     }
+
+
 
     @PostMapping("/pagamentoInSede")
     public String pagamentoInSedeInvioEmail(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
