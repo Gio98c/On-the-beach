@@ -9,7 +9,7 @@ import it.unical.ingsw.onthebeach.persistenza.dao.PrenotazioneDao;
 
 public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 
-	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
 			"postgres", "root");
 	
 	public PrenotazioneDaoJDBC(Connection conn) throws SQLException {

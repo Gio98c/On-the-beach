@@ -130,7 +130,7 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <img src="./imgPathh/${lido.foto}" >
+                    <img src="./imgPath1/${lido.foto}" height="200" width="250" >
                 </div>
             </div>
             <div class="col-md-7">
