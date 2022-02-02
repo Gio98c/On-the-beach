@@ -104,33 +104,41 @@ function Prenotazione(prezzoTotale, descrizione, dataPrenotazione, dataInizio, d
 function prenota(nomeLido) {
     var selectCheckedBoxes = document.querySelectorAll("input:checked");
 
-    if(selectCheckedBoxes.lenght > 0) {
+    //if(selectCheckedBoxes.lenght < 0) {
+    console.log('dentroprenota');
         selectCheckedBoxes.forEach(function (checkBox, indice) {
             console.log(checkBox);
-            checkBox.log(checkBox.getAttribute("id"));
+            console.log(checkBox.getAttribute("id"));
 
             ombrelloni.push(checkBox.getAttribute("id"));
             //ombrelloni[indice] = checkBox.getAttribute("id");
 
         });
-    } //else {
+    //} //else {
     // alert("Si prega di selezionare almeno un elemnto");
     //}
+    jQuery.ajaxSettings.traditional=true;
+
+    var dF = document.getElementById("dataFine").value;
+    var dI = document.getElementById("dataInizio").value;
+
+    var d = document.querySelector("#dataInizio");
+    console.log(dI);
+    console.log(dF);
 
 
-    var dF = document.getElementById("dataFine").value = new Date();
-    var dI = document.getElementById("dataInizio").value = new Date();
+    //var dataInizioFinish = dI.getFullYear()+'/'+(dI.getMonth()+1)+'/'+dI.getDate();
+    //var dataFineFinish = dF.getFullYear()+'/'+(dF.getMonth()+1)+'/'+dF.getDate();
 
-    var dataInizioFinish = dI.getFullYear()+'/'+dI.getMonth()+'/'+dI.getDate();
-    var dataFineFinish = dF.getFullYear()+'/'+dF.getMonth()+'/'+dF.getDate();
-
+    //console.log(dataInizioFinish);
+    //console.log(dataFineFinish);
 
     //console.log(numOmbrelloni);
 
     $.ajax({
         type: "POST",
         url: "/prenota",
-        data: {"nomeLido" : nomeLido, "dataInizioFinish" : dataInizioFinish, "dataFineFinish" : dataFineFinish, ombrelloni : ombrelloni},
+        data: {"nomeLido" : nomeLido, "dataInizio" : dI, "dataFine" : dF, ombrelloni : ombrelloni},
         success: function (risposta) {
             console.log(risposta);
             if(risposta === "prenotazioneCreata")
