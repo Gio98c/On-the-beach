@@ -114,6 +114,10 @@ public class PrenotazioneREST {
         Prenotazione prenotazione = new Prenotazione(prezzoTotale, null, String.valueOf(dataAttuale), dataInizio, dataFine, (String) req.getSession().getAttribute("username"), nomeLido);
 
         if(Database.getInstance().getPrenotazioneDao().save(prenotazione)) {
+
+            for(Ombrellone o : tmp) {
+                Database.getInstance().getOmbrelloneDao().switchOccupato(o);
+
             resp.sendRedirect("checkout");
             return "prenotazioneCreata";
         }
