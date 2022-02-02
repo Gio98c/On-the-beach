@@ -2,6 +2,7 @@ package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Utente;
+import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.UtenteDaoJDBC;
 import org.postgresql.util.PSQLException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,20 +21,21 @@ public class RegistrationREST {
 
         //sql aggiunta di un utente nel database
 
-        String sql = "insert into utente (username, nome, email, password, tipo_utente) values ('"+ nome +"','"+ cognome +"','"+ email +"','"+ username +"','"+ "tipo_utente" +"','"+ dataNascita +"' ) ;";
+        //String sql = "insert into utente (username, nome, cognome, email, password, tipo_utente, data_nascita) values (" + "username" +", "+ nome +", "+ cognome +", "+ email +", "+ password + ", " + tipo_utente +", "+ dataNascita + ") ;";
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2", "postgres", "root");
+            Utente temp = new Utente (username,nome,cognome,email,password, tipo_utente, dataNascita);
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
 
-            if(rs.next()) {
+            UtenteDaoJDBC utenteDaoJdbc = new UtenteDaoJDBC(conn);
+            if(utenteDaoJdbc.save(temp)) {
+
+
                 resp.sendRedirect("login");
                 return "registrazioneEffettuata";
-            }
-            else
-                return "error";
+            } else {
+                return "error";}
         } catch (SQLException | IOException e) {
             e.printStackTrace();
             resp.sendRedirect("login");
