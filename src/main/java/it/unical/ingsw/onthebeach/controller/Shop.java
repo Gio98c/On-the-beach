@@ -21,7 +21,7 @@ public class Shop{
         req.setAttribute("lidi", allLidi);
 
         List<Ombrellone> allOmbrelloni = Database.getInstance().getOmbrelloneDao().findAll();
-        req.setAttribute("ombrelloni", allOmbrelloni);
+        req.setAttribute("ombrelloni", allOmbrelloni.get(0));
 
         return "pageShop";
     }
