@@ -161,18 +161,7 @@
 <div class="product-section mt-150 mb-150">
     <div class="container">
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-filters">
-                    <ul>
-                        <li class="active" data-filter="*">ALL</li>
-                        <li data-filter=".strawberry">Prezzo </li>
-                        <li data-filter=".berry">Recensioni</li>
-                        <li data-filter=".lemon">Localita' vicine</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
 
         <div class="latest-news mt-150 mb-150">
             <div class="container">
@@ -272,19 +261,7 @@
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="pagination-wrap">
-                    <ul>
-                        <li><a href="#">Prev</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a class="active" href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 <!-- end products -->

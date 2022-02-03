@@ -163,7 +163,6 @@
                 <input type="file"
                        id="inputFoto" name="foto"
                        accept="image/png, image/jpeg" multiple>
-
                 </p>
                         <p><textarea name="descrizione" id="inputDescrizione" cols="100" rows="7" placeholder="Descrizione"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">

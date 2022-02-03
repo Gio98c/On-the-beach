@@ -1,16 +1,15 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
-import java.io.IOException;
+import it.unical.ingsw.onthebeach.model.Lido;
+import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unical.ingsw.onthebeach.model.Lido;
-import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
-
 public class LidoDaoJDBC implements LidoDao{
 
-	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
+	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
 			"postgres", "root");
 	public LidoDaoJDBC(Connection conn) throws SQLException {
 		this.conn = conn;
@@ -32,7 +31,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 				lido.setUsernameGestore(rs.getString("username_gestore"));
 				lidi.add(lido);
@@ -63,7 +62,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 				lido.setUsernameGestore(rs.getString("username_gestore"));
 			}
@@ -97,7 +96,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 				lido.setUsernameGestore(rs.getString("username_gestore"));
 				lidi.add(lido);
@@ -127,7 +126,7 @@ public class LidoDaoJDBC implements LidoDao{
 				st.setString(3, lido.getNumero());
 				st.setString(4, lido.getEmail());
 				st.setString(5, lido.getDescrizione());
-				st.setString(6, lido.getFoto());
+				st.setBytes(6, lido.getFoto());
 				st.setInt(7, lido.getNumeroOmbrelloni());
 				st.setString(8, lido.getUsernameGestore());
 				st.executeUpdate();
@@ -146,7 +145,7 @@ public class LidoDaoJDBC implements LidoDao{
 				st.setString(2, lido.getNumero());
 				st.setString(3, lido.getEmail());
 				st.setString(4, lido.getDescrizione());
-				st.setString(5, lido.getFoto());
+				st.setBytes(5, lido.getFoto());
 				st.setInt(6, lido.getNumeroOmbrelloni());
 				st.setString(7, lido.getUsernameGestore());
 				st.setString(8, lido.getNome());
@@ -240,7 +239,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setNumero(rs.getString("numero"));
 				lido.setEmail(rs.getString("email"));
 				lido.setDescrizione(rs.getString("descrizione"));
-				lido.setFoto(rs.getString("foto"));
+				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
 			}
 		} catch(SQLException e) {

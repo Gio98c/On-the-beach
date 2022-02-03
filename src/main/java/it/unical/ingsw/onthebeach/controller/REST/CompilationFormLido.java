@@ -18,7 +18,7 @@ public class CompilationFormLido {
 
 
     @PostMapping("InsertLido")
-    public String aggiungiLido(HttpServletRequest req, HttpServletResponse resp, String nome, String usernameGestore, String posizione, String numero, String email, int numeroOmbrelloni, String foto, String descrizione) throws SQLException, IOException {
+    public String aggiungiLido(HttpServletRequest req, HttpServletResponse resp, String nome, String usernameGestore, String posizione, String numero, String email, int numeroOmbrelloni, byte[] foto, String descrizione) throws SQLException, IOException {
 
 
         try {

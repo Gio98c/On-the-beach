@@ -1,8 +1,8 @@
 package it.unical.ingsw.onthebeach.persistenza.dao;
 
-import java.util.List;
-
 import it.unical.ingsw.onthebeach.model.Lido;
+
+import java.util.List;
 
 public interface LidoDao {
 
@@ -13,4 +13,5 @@ public interface LidoDao {
 	public boolean delete(Lido lido);
 	public Lido findByGestore(String username);
 	public byte[] trovaImmagine(String username);
+
 }
