@@ -21,6 +21,19 @@ import java.util.List;
 @Controller
 public class Product {
 
+    @RequestMapping(value="/imgPath")
+    public void fotoLido(HttpServletResponse resp, HttpServletRequest req) throws SQLException, IOException {
+
+        String nomeLido = req.getParameter("lido");
+
+        Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey(nomeLido);
+
+        byte[] immagineLido = Database.getInstance().getLidoDao().trovaImmagine(lido.getNome());
+        resp.setContentType("image/jpeg");
+        resp.setContentLength(immagineLido.length);
+        resp.getOutputStream().write(immagineLido);
+    }
+
     @GetMapping("/product")
     public String paginaProdotti(HttpServletRequest req) throws SQLException {
         /*if (req.getSession().getAttribute("username") != null) {
@@ -47,7 +60,6 @@ public class Product {
         for(Ombrellone o : ombrelloni){
             System.out.println(o.getIdOmbrellone());
         }
-
 
         return "products";
         //return "nonAutorizzato";

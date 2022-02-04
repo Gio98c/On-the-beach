@@ -99,7 +99,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
                         <input type="text" placeholder="Parola chiave">
-                        <a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
+                        <a href="product?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <img src="./imgPath1/${lido.nome}">
+                    <img src="./imgPath">
                 </div>
             </div>
             <div class="col-md-7">
