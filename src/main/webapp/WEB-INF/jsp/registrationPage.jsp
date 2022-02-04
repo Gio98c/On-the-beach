@@ -99,6 +99,12 @@
                     </div>
 
                     <div class="col-12">
+                      <label for="yourCognome" class="form-label">Genere</label>
+                      <input type="genere" name="genere" class="form-control" id="yourGenere" required>
+                      <div class="invalid-feedback">tuo genere</div>
+                    </div>
+
+                    <div class="col-12">
                       <label for="yourTipo_utente">Scegli un tipo di utente:</label>
                       <select id="yourTipo_utente" name="tipo_utente">
                         <option value="">--Scegli un tipo di utente--</option>

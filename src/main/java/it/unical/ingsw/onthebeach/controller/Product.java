@@ -4,7 +4,6 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Recensione;
-import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.*  ;
 import java.util.List;
 
 
@@ -70,6 +68,8 @@ public class Product {
     public void profilo(HttpServletRequest req, HttpServletResponse res) throws SQLException, IOException, ServletException, IOException {
 
         String username = (String) req.getSession().getAttribute("username");
+
+
 
         byte[]img= Database.getInstance().getLidoDao().trovaImmagine(username);
         res.setContentType("image/jpeg");

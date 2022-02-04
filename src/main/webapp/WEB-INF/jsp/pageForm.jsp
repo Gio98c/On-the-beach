@@ -137,7 +137,7 @@
                 </div>
                 <div id="form_status"></div>
                 <p class="contact-form">
-                    <form method="post" action="InsertLido">
+                    <form method="post" action="InsertLido" enctype="multipart/form-data">
                         <p>
                             <input type="text" placeholder="Nome Lido" name="nome" id="inputNome" required>
                     </p>

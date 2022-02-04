@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -58,10 +59,12 @@ public class ProfileREST {
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
+            byte[] bytes = foto.getBytes(StandardCharsets.UTF_8);
+
             ps.setString(1, telefono);
             ps.setString(2, email);
             ps.setString(3, descrizione);
-            ps.setString(4, foto);
+            ps.setBytes(4, bytes);
             ps.setInt(5, numOmbrelloni);
             ps.setString(6, lido.getNome());
 
