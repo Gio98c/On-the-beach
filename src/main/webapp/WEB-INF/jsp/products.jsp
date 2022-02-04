@@ -130,7 +130,7 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <img src="./imgPath">
+                    <img src="data:image/png;base64,${foto}">
                 </div>
             </div>
             <div class="col-md-7">
