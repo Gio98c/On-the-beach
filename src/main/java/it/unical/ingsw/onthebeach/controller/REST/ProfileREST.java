@@ -19,24 +19,27 @@ public class ProfileREST {
     @PostMapping("/updateInfoUtente")
     public String modificaInfoUtente(HttpServletRequest req, HttpServletResponse resp, String nome, String cognome, String email) {
 
-        String sql = "UPDATE utente "
-                + "set nome = ?, cognome = ?, email = ? "
-                + "WHERE username = ?;";
-
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
                     "postgres", "root");
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+            Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
 
-            ps.setString(1, nome);
-            ps.setString(2, cognome);
-            ps.setString(3, email);
-            ps.setString(4, (String) req.getSession().getAttribute("username"));
+            if(nome==null || !nome.isEmpty() ){
+                utente.setNome(nome);
+            }
+            if(cognome==null || !cognome.isEmpty()){
+                utente.setCognome(cognome);
+            }
+            if(email==null || !email.isEmpty()){
+                utente.setEmail(email);
+            }
 
-            ps.executeUpdate();
+            if (Database.getInstance().getUtenteDao().update(utente)) {
+                return "Update Completato";
+            } else {
+                return "Error";}
 
-            return "Update Completato";
         } catch (SQLException e) {
             resp.setStatus(500);
             e.printStackTrace();
@@ -60,13 +63,13 @@ public class ProfileREST {
 
             Statement st = conn.createStatement();
 
-            if(!telefono.isEmpty()){
+            if(telefono==null || !telefono.isEmpty()){
                 lido.setNumero(telefono);
             }
-            if(!email.isEmpty()){
+            if(email==null || !email.isEmpty()){
                 lido.setEmail(email);
             }
-            if(!descrizione.isEmpty()){
+            if(descrizione==null || !descrizione.isEmpty()){
                 lido.setDescrizione(descrizione);
             }
             if(!(numOmbrelloni ==null)){
