@@ -152,7 +152,6 @@ function prenota(nomeLido) {
     });
 }
 
-
 $('btnPagamentoInSede').click(function () {
 
     $.ajax({

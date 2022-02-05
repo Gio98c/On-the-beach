@@ -161,7 +161,7 @@
 <div class="product-section mt-150 mb-150">
     <div class="container">
 
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12">
                 <div class="product-filters">
                     <ul>
@@ -172,16 +172,16 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="latest-news mt-150 mb-150">
             <div class="container">
                 <div class="row">
                     <!--<jsp:useBean id="lidi" scope="request" type="java.util.List"/>-->
-                    <c:forEach items="${lidi}" var="lido">
+                    <c:forEach items="${lidi}" var="lido" varStatus="status">
                         <div class="col-lg-4 col-md-6">
                             <div class="single-latest-news">
-                                <a onclick="visualizzaProdotto(${lido.nome})"><div class="latest-news-bg" style="background-image: url('./imgPath1/${lido.foto}')"></div></a>
+                                <a onclick="visualizzaProdotto(${lido.nome})"><div class="latest-news-bg" style="background-image: url('data:image/png;base64,${fotoLidi[status.index]}')"></div></a>
                                 <div class="news-text-box">
                                     <h3><a href="product?lido=${lido.nome}">${lido.nome}</a></h3>
                                     <!-- <p class="blog-meta">
@@ -272,7 +272,7 @@
 
             </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div class="col-lg-12 text-center">
                 <div class="pagination-wrap">
                     <ul>
@@ -284,7 +284,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 <!-- end products -->

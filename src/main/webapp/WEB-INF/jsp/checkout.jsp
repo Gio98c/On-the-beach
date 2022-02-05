@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -261,10 +262,18 @@
 									<td>${prenotazioneCheckOut.prezzoTotale} €</td>
 								</tr>
 							</tbody>
-						</table>
+						</table><br/>
 						<form method="post" action="pagamentoInSede">
-							<a href="#" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico </a> <br/>
+							<a onclick="function x() {
+							  alert('Pagamento in sede approvato');
+							  window.location.href='index';
+							}" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico </a> <br/>
 						</form>
+						<!--<form method="get" action="annullaPrenotazione">
+							<a class="boxed-btn" id="cancelPrenotazione" onclick="function x() {
+							  alert('Prenotazione annullata');
+							}">Annulla prenotazione</a>
+						</form>-->
 						<br/>
 						<!--PULSANTE PAYPAL -->
 						<div id="smart-button-container">

@@ -159,12 +159,13 @@
                         </form>
 
                         <br/>
-                        <label class="label">Data Inizio</label>
-                        <input type="date" id="dataInizio"><br/><br/>
-                        <label class="label">Data Fine</label>
+                        <h2 class="label col-form-label">Data Inizio</h2>
+                        <input type="date" id="dataInizio" class="dataTable-input bi-clipboard-data"><br/><br/>
+                        <h2 class="label col-form-label">Data Fine</h2>
                         <input type="date" id="dataFine"><br/>
 
-                        <a href="checkout" class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota('${lido.nome}')">Prenota</button></a>
+                        <br/>
+                        <a href="checkout" class="cart-btn" onclick="prenota('${lido.nome}')">Prenota</a>
                     </div>
                 </div>
             </div>

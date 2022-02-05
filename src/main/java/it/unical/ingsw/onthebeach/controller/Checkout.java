@@ -25,4 +25,11 @@ public class Checkout {
         return "checkout";
     }
 
+    @GetMapping("/annullaPrenotazione")
+    public String annullaPrenotazione(HttpServletRequest req) throws SQLException {
+
+        Database.getInstance().getPrenotazioneDao().delete(Database.getInstance().getPrenotazioneDao().findLastPrenotazione((String) req.getSession().getAttribute("username")));
+        return "index";
+    }
+
 }
