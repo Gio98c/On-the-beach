@@ -4,15 +4,14 @@ import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
 import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.nio.charset.StandardCharsets;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.io.IOException;
+import java.sql.*;
 
 @RestController
 public class ProfileREST {
@@ -47,31 +46,43 @@ public class ProfileREST {
     }
 
     @PostMapping("/updateInfoLido")
-    public String modificaInfoLido(HttpServletRequest req, HttpServletResponse resp, String telefono, String email, String descrizione, int numOmbrelloni, String foto) throws SQLException {
+    public String modificaInfoLido(HttpServletRequest req, HttpServletResponse resp, String telefono, String email, String descrizione, Integer numOmbrelloni, @RequestParam("foto") MultipartFile file) throws SQLException {
 
-        Lido lido = Database.getInstance().getLidoDao().findByGestore((String) req.getSession().getAttribute("username"));
-        String sql = "UPDATE lido "
-                + "SET numero = ?, email = ?, descrizione = ?, foto = ?, numero_ombrelloni = ? where nome = ?;";
 
         try {
+
+
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
                     "postgres", "root");
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+            Lido lido = Database.getInstance().getLidoDao().findByGestore((String) req.getSession().getAttribute("username"));
 
-            byte[] bytes = foto.getBytes(StandardCharsets.UTF_8);
 
-            ps.setString(1, telefono);
-            ps.setString(2, email);
-            ps.setString(3, descrizione);
-            ps.setBytes(4, bytes);
-            ps.setInt(5, numOmbrelloni);
-            ps.setString(6, lido.getNome());
+            Statement st = conn.createStatement();
 
-            ps.executeUpdate();
+            if(!telefono.isEmpty()){
+                lido.setNumero(telefono);
+            }
+            if(!email.isEmpty()){
+                lido.setEmail(email);
+            }
+            if(!descrizione.isEmpty()){
+                lido.setDescrizione(descrizione);
+            }
+            if(!(numOmbrelloni ==null)){
+                lido.setNumeroOmbrelloni(numOmbrelloni);
+            }
+            if(!(file ==null)){
+                lido.setFoto(file.getBytes());
+            }
 
-            return "Update Completato";
-        } catch (SQLException e) {
+
+            if (Database.getInstance().getLidoDao().saveOrUpdate(lido)) {
+                return "Update Completato";
+            } else {
+                return "Error";}
+
+        } catch (SQLException | IOException e) {
             resp.setStatus(500);
             e.printStackTrace();
         }

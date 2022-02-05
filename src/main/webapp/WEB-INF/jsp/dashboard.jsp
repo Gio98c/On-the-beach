@@ -802,7 +802,7 @@
                   <div class="tab-pane fade lido-edit pt-3" id="lido-edit">
 
                     <!-- Profile Edit Form -->
-                    <form method="post" action="updateInfoLido">
+                    <form method="post" action="updateInfoLido" enctype="multipart/form-data">
 
                       <div class="row mb-3">
                         <label for="inputTelefono" class="col-md-4 col-lg-3 col-form-label">Numero di telefono</label>
@@ -835,7 +835,7 @@
                       <div class="row mb-3">
                         <label for="inputFoto" class="col-md-4 col-lg-3 col-form-label">Foto</label>
                         <div class="col-md-8 col-lg-9">
-                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" multiple accept="image/png, image/jpeg"></i>
+                          <i class="bi bi-upload"><input type="file" class="btn btn-primary" id="inputFoto" name="foto" multiple accept="image/png, image/jpeg"></i>
                         </div>
                       </div>
 

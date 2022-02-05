@@ -24,7 +24,7 @@ public class CompilationFormLido {
 
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
                     "postgres", "root");
 
             Statement st = conn.createStatement();

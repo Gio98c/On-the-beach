@@ -241,6 +241,7 @@ public class LidoDaoJDBC implements LidoDao{
 				lido.setDescrizione(rs.getString("descrizione"));
 				lido.setFoto(rs.getBytes("foto"));
 				lido.setNumeroOmbrelloni(rs.getInt("numero_ombrelloni"));
+				lido.setUsernameGestore(rs.getString("username_gestore"));
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
