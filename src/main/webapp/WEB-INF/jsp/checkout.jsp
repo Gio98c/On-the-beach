@@ -91,7 +91,7 @@
 								</li>-->
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+										<a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -263,20 +263,12 @@
 								</tr>
 							</tbody>
 						</table><br/>
-						<form method="post" action="pagamentoInSede">
-							<a onclick="function x() {
-							  alert('Pagamento in sede approvato');
-							  window.location.href='index';
-							}" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico </a> <br/>
-						</form>
-						<!--<form method="get" action="annullaPrenotazione">
-							<a class="boxed-btn" id="cancelPrenotazione" onclick="function x() {
-							  alert('Prenotazione annullata');
-							}">Annulla prenotazione</a>
-						</form>-->
-						<br/>
+
+						<a onclick="pagamentoInLoco()" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico</a><br/>
+						<a class="boxed-btn" id="cancelPrenotazione" onclick="annulla()">Annulla prenotazione</a><br/>
+
 						<!--PULSANTE PAYPAL -->
-						<div id="smart-button-container">
+						<br/><div id="smart-button-container">
 							<div style="text-align: center;">
 								<div id="paypal-button-container"></div>
 							</div>

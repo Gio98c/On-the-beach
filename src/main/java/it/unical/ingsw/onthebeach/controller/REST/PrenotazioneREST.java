@@ -157,4 +157,14 @@ public class PrenotazioneREST {
 
         return "error";
     }
+
+    @PostMapping("/annullaPrenotazione")
+    public String annullaPrenotazione(HttpServletRequest req) throws SQLException {
+
+        System.out.println("sono qua "+ (String) req.getSession().getAttribute("username"));
+        Database.getInstance().getPrenotazioneDao().delete(Database.getInstance().getPrenotazioneDao().findLastPrenotazione((String) req.getSession().getAttribute("username")));
+        //dobbiamo rendere disponibile l'ombrellone
+        return "prenotazioneAnnullata";
+    }
+
 }
