@@ -25,13 +25,13 @@ public class ProfileREST {
 
             Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
 
-            if(nome==null || !nome.isEmpty() ){
+            if(nome!=null || !nome.isEmpty() ){
                 utente.setNome(nome);
             }
-            if(cognome==null || !cognome.isEmpty()){
+            if(cognome!=null || !cognome.isEmpty()){
                 utente.setCognome(cognome);
             }
-            if(email==null || !email.isEmpty()){
+            if(email!=null || !email.isEmpty()){
                 utente.setEmail(email);
             }
 
@@ -63,13 +63,13 @@ public class ProfileREST {
 
             Statement st = conn.createStatement();
 
-            if(telefono==null || !telefono.isEmpty()){
+            if(telefono!=null || !telefono.isEmpty()){
                 lido.setNumero(telefono);
             }
-            if(email==null || !email.isEmpty()){
+            if(email!=null || !email.isEmpty()){
                 lido.setEmail(email);
             }
-            if(descrizione==null || !descrizione.isEmpty()){
+            if(descrizione!=null || !descrizione.isEmpty()){
                 lido.setDescrizione(descrizione);
             }
             if(!(numOmbrelloni ==null)){
