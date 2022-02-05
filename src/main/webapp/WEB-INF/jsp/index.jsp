@@ -99,7 +99,7 @@
 										</c:if>
 										<c:if test="${username != null}">
 											<!-- questo va tolto -->
-											<a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+											<a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
 										</c:if>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
