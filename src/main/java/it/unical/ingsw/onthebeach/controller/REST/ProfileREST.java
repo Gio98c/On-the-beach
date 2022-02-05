@@ -25,14 +25,20 @@ public class ProfileREST {
 
             Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
 
-            if(nome!=null || !nome.isEmpty() ){
-                utente.setNome(nome);
+            if(nome!=null){
+                if (!nome.isEmpty()) {
+                    utente.setNome(nome);
+                }
             }
-            if(cognome!=null || !cognome.isEmpty()){
-                utente.setCognome(cognome);
+            if(cognome!=null){
+                if (!cognome.isEmpty()) {
+                    utente.setCognome(cognome);
+                }
             }
-            if(email!=null || !email.isEmpty()){
-                utente.setEmail(email);
+            if(email!=null){
+                if(!email.isEmpty()) {
+                    utente.setEmail(email);
+                }
             }
 
             if (Database.getInstance().getUtenteDao().update(utente)) {
@@ -63,20 +69,28 @@ public class ProfileREST {
 
             Statement st = conn.createStatement();
 
-            if(telefono!=null || !telefono.isEmpty()){
-                lido.setNumero(telefono);
+            if(telefono!=null){
+                if(!telefono.isEmpty()) {
+                    lido.setNumero(telefono);
+                }
             }
-            if(email!=null || !email.isEmpty()){
-                lido.setEmail(email);
+            if(email!=null){
+                if(!email.isEmpty()) {
+                    lido.setEmail(email);
+                }
             }
-            if(descrizione!=null || !descrizione.isEmpty()){
-                lido.setDescrizione(descrizione);
+            if(descrizione!=null){
+                if(!descrizione.isEmpty()) {
+                    lido.setDescrizione(descrizione);
+                }
             }
             if(!(numOmbrelloni ==null)){
                 lido.setNumeroOmbrelloni(numOmbrelloni);
             }
-            if(!(file ==null)){
-                lido.setFoto(file.getBytes());
+            if(file!=null){
+                if(!file.isEmpty()) {
+                    lido.setFoto(file.getBytes());
+                }
             }
 
 
