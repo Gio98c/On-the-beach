@@ -195,7 +195,7 @@
                             <c:forEach items="${recensioni}" var="rec">
                                 <div class="single-testimonial-slider">
                                     <div class="client-meta">
-                                        <h3 id="headRecensione" onload="stelline('${rec.star}')">${rec.usernameCliente} </h3>
+                                        <h3 id="headRecensione" >${rec.usernameCliente} <span onload="stelline('${rec.star}')"></span></h3>
                                         <p class="testimonial-body">
                                             " ${rec.testo} "
                                         </p>
