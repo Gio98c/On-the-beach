@@ -180,35 +180,32 @@
                 </div>
             </div>
         </div>
-            <div class="testimonail-section mt-150 mb-150">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 offset-lg-1 text-center">
-                            <div class="testimonial-sliders">
-                                <c:forEach items="${recensioni}" var="rec">
-                                    <div class="single-testimonial-slider">
-                                        <div class="client-meta">
-                                            <h3>${rec.usernameCliente} <span>stelline</span></h3>
-                                            <p class="testimonial-body">
-                                                " ${rec.testo} "
-                                            </p>
-                                            <div class="last-icon">
-                                                <i class="fas fa-quote-right"></i>
-                                            </div>
+        <div class="testimonail-section mt-150 mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 text-center">
+                        <div class="testimonial-sliders">
+                            <c:forEach items="${recensioni}" var="rec">
+                                <div class="single-testimonial-slider">
+                                    <div class="client-meta">
+                                        <h3>${rec.usernameCliente} <span>stelline</span></h3>
+                                        <p class="testimonial-body">
+                                            " ${rec.testo} "
+                                        </p>
+                                        <div class="last-icon">
+                                            <i class="fas fa-quote-right"></i>
                                         </div>
                                     </div>
-                                </c:forEach>
-                            </div>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
-<!-- end more products -->
 
-
-<!-- footer -->
 <div class="footer-area">
     <div class="container">
         <div class="row">
