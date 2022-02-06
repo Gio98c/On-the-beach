@@ -68,9 +68,8 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li ><a href="index">Home</a></li>
+                            <li><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
-
                             <li><a href="contactPage">Contatti</a></li>
                             <li>
                                 <div class="header-icons">
@@ -78,8 +77,7 @@
                                         <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
                                     </c:if>
                                     <c:if test="${username != null}">
-                                        <!-- questo va tolto -->
-                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
                                     </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
@@ -251,7 +249,7 @@
                 <div class="footer-box subscribe">
                     <h2 class="widget-title">Subscribe</h2>
                     <p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
-                    <form action="index.html">
+                    <form action="index">
                         <input type="email" placeholder="Email">
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>

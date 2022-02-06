@@ -71,8 +71,7 @@
                                         <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
                                     </c:if>
                                     <c:if test="${username != null}">
-                                        <!-- questo va tolto -->
-                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
                                     </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
@@ -139,9 +138,6 @@
                     <p class="single-product-pricing"><span>1 giorno</span></p>
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
-                        <!--<form action="index">
-                            <input type="number" placeholder="0" id="numeroOmbrDaPren">
-                        </form>-->
                         <form method="get" action="product">
                             <table class="table table-responsive" id="tabellaOmbrelloni">
                                 <tbody>
@@ -181,7 +177,6 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h3><span class="orange-text">Recensioni</span></h3>
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>-->
                 </div>
             </div>
         </div>
@@ -208,38 +203,6 @@
                     </div>
                 </div>
             </div>
-        <!--<div class="row">
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
-                    </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>Per Kg</span> 85$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
-                    </div>
-                    <h3>Berry</h3>
-                    <p class="product-price"><span>Per Kg</span> 70$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
-                    </div>
-                    <h3>Lemon</h3>
-                    <p class="product-price"><span>Per Kg</span> 35$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>-->
     </div>
 </div>
 <!-- end more products -->

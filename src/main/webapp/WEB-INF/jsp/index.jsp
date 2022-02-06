@@ -66,39 +66,13 @@
 							<ul>
 								<li class="current-list-item"><a href="index">Home</a></li>
 								<li><a href="pageShop">Prenota Qui</a></li>
-								<!--<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.jsp">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
-								</li>-->
 								<li><a href="contactPage">Contatti</a></li>
-								<!--<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>-->
 								<li>
 									<div class="header-icons">
 										<c:if test="${username == null}">
 											<a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
 										</c:if>
 										<c:if test="${username != null}">
-											<!-- questo va tolto -->
 											<a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
 										</c:if>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -234,37 +208,18 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/san-domenico.jpg" alt=""></a>
+				<c:forEach items="${lidi}" var="l" varStatus="status">
+					<div class="col-lg-4 col-md-6 text-center">
+						<div class="single-product-item">
+							<div class="product-image">
+								<a href="product?lido=${l.nome}"><img width="300" height="200" src="data:image/png;base64,${fotoLidi[status.index]}" alt=""></a>
+							</div>
+							<h3>${l.nome}</h3>
+							<p class="product-price"><span>1 giorno</span> ${ombrelloni[status.index].prezzo} €</p>
+							<a href="product?lido=${l.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 						</div>
-						<h3>San Domenico</h3>
-						<p class="product-price"><span>1 giorno</span> 30€ </p>
-						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/el-sombrero.jpg" alt=""></a>
-						</div>
-						<h3>El Sombrero</h3>
-						<p class="product-price"><span>1 giorno</span> 25€ </p>
-						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/spox.jpg" alt=""></a>
-						</div>
-						<h3>Spox</h3>
-						<p class="product-price"><span>1 giorno</span> 35€</p>
-						<a href="pageShop" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
-					</div>
-				</div>
-			</div>
+				</c:forEach>
 		</div>
 	</div>
 	<!-- end product section -->
@@ -286,74 +241,12 @@
 					<h3><span class="orange-text">Lido</span> del mese</h3>
                     <h4>SPOX</h4>
                     <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
-                	<a href="pageShop" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
+                	<a href="product?lido=Spox" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- end cart banner section -->
-
-	<!-- testimonail-section
-		RECENSIONI TOLTE
-
-	<div class="testimonail-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1 text-center">
-					<div class="testimonial-sliders">
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar1.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Saira Hakim <span>Local shop owner</span></h3>
-								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar2.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>David Niph <span>Local shop owner</span></h3>
-								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="${pageContext.request.contextPath }/resources/assets/img/avaters/avatar3.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
-								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	-->
-
-	<!-- end testimonail-section -->
-
-
-
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -379,9 +272,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pagine</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index">Home</a></li>
 							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Contatti</a></li>
+							<li><a href="contactPage">Contatti</a></li>
 						</ul>
 					</div>
 				</div>

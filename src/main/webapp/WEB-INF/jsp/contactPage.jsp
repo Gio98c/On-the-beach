@@ -5,6 +5,7 @@
   Time: 18:36
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,37 +65,17 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="index">Home</a></li>
+                            <li><a href="index">Home</a></li>
                             <li><a href="pageShop">Prenota Qui</a></li>
-                            <!--<li><a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="404.jsp">404 page</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Check Out</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="news.html">News</a>
-                                <ul class="sub-menu">
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="single-news.html">Single News</a></li>
-                                </ul>
-                            </li>-->
-                            <li><a href="contactPage">Contatti</a></li>
-                            <!--<li><a href="shop.html">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="checkout.html">Check Out</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                </ul>
-                            </li>-->
+                            <li class="current-list-item"><a href="contactPage">Contatti</a></li>
                             <li>
                                 <div class="header-icons">
-                                    <a class="shopping-cart" href="loginPage"><i class="fas fa-shopping-bag"></i></a>
+                                    <c:if test="${username == null}">
+                                        <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
+                                    </c:if>
+                                    <c:if test="${username != null}">
+                                        <a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
+                                    </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
                             </li>
@@ -107,7 +88,7 @@
             </div>
         </div>
     </div>
-</div></div>
+</div>
 <!-- end header -->
 
 <!-- search area -->
@@ -120,7 +101,7 @@
                     <div class="search-bar-tablecell">
                         <h3>Search For:</h3>
                         <input type="text" placeholder="Keywords">
-                        <a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
+                        <a href="product?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -250,7 +231,7 @@
                 <div class="footer-box subscribe">
                     <h2 class="widget-title">Subscribe</h2>
                     <p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
-                    <form action="index.html">
+                    <form action="index">
                         <input type="email" placeholder="Email">
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
