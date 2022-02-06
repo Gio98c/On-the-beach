@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -57,6 +58,20 @@ public class Product {
         for(Ombrellone o : ombrelloni){
             System.out.println(o.getIdOmbrellone());
         }
+
+        List<List<Integer> > stelle = new ArrayList<>();
+        List<Integer> tmp = new ArrayList<>();
+        for(Recensione s : recensioni) {
+            for (int i = 0; i < s.getStar(); ++i) {
+                tmp.add(1);
+            }
+
+            stelle.add(tmp);
+            tmp.clear();
+        }
+        req.setAttribute("stelle", stelle);
+
+
 
         return "products";
         //return "nonAutorizzato";

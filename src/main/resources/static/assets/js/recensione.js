@@ -6,5 +6,5 @@ function stelline(star) {
     tag.className = "fa fa-star checked";*/
     var takeFather = document.getElementById("headRecensione");
     for(let i=0; i<star; ++i)
-        takeFather.appendChild("<span className='fa fa-star checked'></span>");
+        takeFather.appendChild("<span class='fa fa-star checked'></span>");
 }
