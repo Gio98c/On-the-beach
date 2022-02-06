@@ -34,6 +34,13 @@
     <!-- responsive -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/responsive.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -180,7 +187,7 @@
                 </div>
             </div>
         </div>
-        <div class="testimonial-section mt-150 mb-150 testi">
+        <div class="testimonial-section mt-150 mb-150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 text-center">
@@ -188,7 +195,7 @@
                             <c:forEach items="${recensioni}" var="rec">
                                 <div class="single-testimonial-slider">
                                     <div class="client-meta">
-                                        <h3>${rec.usernameCliente} <span>stelline</span></h3>
+                                        <h3 id="headRecensione" onload="stelline('${rec.star}')">${rec.usernameCliente} </h3>
                                         <p class="testimonial-body">
                                             " ${rec.testo} "
                                         </p>
@@ -291,5 +298,6 @@
 
 <script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
+<script src="${pageContext.request.contextPath }/resources/assets/js/recensione.js"></script>
 
 </body></html>
