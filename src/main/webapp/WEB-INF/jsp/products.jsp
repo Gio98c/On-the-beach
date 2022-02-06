@@ -192,7 +192,7 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 text-center">
                         <div class="testimonial-sliders">
-                            < items="${recensioni}" var="rec">
+                            <c:forEach items="${recensioni}" var="rec">
                                 <div class="single-testimonial-slider">
                                     <div class="client-meta">
                                         <h3>${rec.usernameCliente}
