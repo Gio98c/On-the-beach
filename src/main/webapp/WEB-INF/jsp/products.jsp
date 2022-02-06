@@ -192,14 +192,12 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 text-center">
                         <div class="testimonial-sliders">
-                            <c:forEach items="${recensioni}" var="rec">
+                            < items="${recensioni}" var="rec">
                                 <div class="single-testimonial-slider">
                                     <div class="client-meta">
-                                        <h3 id="headRecensione" >${rec.usernameCliente}
-                                            <span onload="stelline('${rec.star}')">
-                                                <c:forEach items="${rec.star}">
-                                                    <span class="fa fa-star checked"></span>
-                                                </c:forEach>
+                                        <h3>${rec.usernameCliente}
+                                            <span onload="stelline('${rec.star}')" id="headRecensione">
+
                                             </span>
                                         </h3>
                                         <p class="testimonial-body">
