@@ -1,11 +1,11 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
+import it.unical.ingsw.onthebeach.model.Prenotazione;
+import it.unical.ingsw.onthebeach.persistenza.dao.PrenotazioneDao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import it.unical.ingsw.onthebeach.model.Prenotazione;
-import it.unical.ingsw.onthebeach.persistenza.dao.PrenotazioneDao;
 
 public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 
@@ -81,7 +81,7 @@ public class PrenotazioneDaoJDBC implements PrenotazioneDao {
 		Prenotazione prenotazione = null;
 		String query = "SELECT *" +
 				" FROM prenotazione" +
-				" WHERE username_cliente = ? order by data_prenotazione desc limit 1;";
+				" WHERE username_cliente = ? order by id_prenotazione desc limit 1;";
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
