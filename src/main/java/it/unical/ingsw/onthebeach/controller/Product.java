@@ -59,7 +59,7 @@ public class Product {
             System.out.println(o.getIdOmbrellone());
         }
 
-        List<List<Integer> > stelle = new ArrayList<>();
+        /*List<List<Integer> > stelle = new ArrayList<>();
         List<Integer> tmp = new ArrayList<>();
         for(Recensione s : recensioni) {
             for (int i = 0; i < s.getStar(); ++i) {
@@ -69,7 +69,7 @@ public class Product {
             stelle.add(tmp);
             tmp.clear();
         }
-        req.setAttribute("stelle", stelle);
+        req.setAttribute("stelle", stelle);*/
 
 
 
