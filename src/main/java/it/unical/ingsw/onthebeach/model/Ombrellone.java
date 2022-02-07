@@ -1,26 +1,30 @@
 package it.unical.ingsw.onthebeach.model;
 
+import java.util.Objects;
+
 public class Ombrellone {
 
-    private int id_ombrellone;
+    private long idOmbrellone;
     private boolean occupato;
-    private String nome_lido;
+    private String nomeLido;
+    private float prezzo;
 
     public Ombrellone(){
     }
 
-    public Ombrellone(int id_ombrellone, boolean occupato, String nome_lido){
-        this.id_ombrellone=id_ombrellone;
+    public Ombrellone(long idOmbrellone, boolean occupato, String nomeLido, float prezzo){
+        this.idOmbrellone=idOmbrellone;
         this.occupato=occupato;
-        this.nome_lido=nome_lido;
+        this.nomeLido=nomeLido;
+        this.prezzo=prezzo;
     }
 
-    public int getId_ombrellone() {
-        return id_ombrellone;
+    public long getIdOmbrellone() {
+        return idOmbrellone;
     }
 
-    public void setId_ombrellone(int id_ombrellone) {
-        this.id_ombrellone = id_ombrellone;
+    public void setIdOmbrellone(long idOmbrellone) {
+        this.idOmbrellone = idOmbrellone;
     }
 
     public boolean getOccupato() {
@@ -31,13 +35,32 @@ public class Ombrellone {
         this.occupato = occupato;
     }
 
-    public String getNome_lido() {
-        return nome_lido;
+    public String getNomeLido() {
+        return nomeLido;
     }
 
-    public void setNome_lido(String nome_lido) {
-        this.nome_lido = nome_lido;
+    public void setNomeLido(String nomeLido) {
+        this.nomeLido = nomeLido;
     }
 
+    public float getPrezzo() {
+        return prezzo;
+    }
 
+    public void setPrezzo(float prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ombrellone that = (Ombrellone) o;
+        return idOmbrellone == that.idOmbrellone && occupato == that.occupato && Float.compare(that.prezzo, prezzo) == 0 && nomeLido.equals(that.nomeLido);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idOmbrellone, occupato, nomeLido, prezzo);
+    }
 }

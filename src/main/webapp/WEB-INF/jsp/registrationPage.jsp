@@ -5,18 +5,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="google-signin-client_id"
-        content="830725355780-7pbqkus16mkl9lgbmarskpiathgtt9e1.apps.googleusercontent.com">
 
-  <!-- Google SignIn -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-  <title>Login</title>
+  <title>Registrazione</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="${pageContext.request.contextPath }/resources/User/assets/img/logo.png" rel="icon">
+  <link href="${pageContext.request.contextPath }/resources/User/assets/img/favicon.png" rel="icon">
   <link href="${pageContext.request.contextPath }/resources/User/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -48,7 +43,7 @@
   <main>
     <div class="container">
 
-      <div class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
@@ -65,18 +60,35 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Accedi al tuo Account</h5>
-                    <p class="text-center small">Inserisci Username & password</p>
+                    <h5 class="card-title text-center pb-0 fs-4">Crea un account</h5>
+                    <p class="text-center small">Inserisci i tuoi dati personali per creare un account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="loginServices" method="post">
+                  <form class="row g-3 needs-validation" novalidate action="registrationServices" method="post">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Nome</label>
+                      <input type="text" name="nome" class="form-control" id="yourName" required>
+                      <div class="invalid-feedback">Perfavore, inserisci il tuo nome</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourCognome" class="form-label">Cognome</label>
+                      <input type="cognome" name="cognome" class="form-control" id="yourCognome" required>
+                      <div class="invalid-feedback">Inserisci il tuo cognome!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Email</label>
+                      <input type="email" name="email" class="form-control" id="yourEmail" required>
+                      <div class="invalid-feedback">Inserisci un indirizzo email valido!</div>
+                    </div>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Inserisci il tuo username</div>
+                        <div class="invalid-feedback">Perfavore scegli un username!</div>
                       </div>
                     </div>
 
@@ -87,21 +99,41 @@
                     </div>
 
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <label for="yourGenere" class="form-label">Genere</label>
+                      <select class="form-select" id="yourGenere" name="genere">
+                        <option value="maschio">Maschio</option>
+                        <option value="femmina">Femmina</option>
+                        <option value="altro">Altro</option>
+                      </select>
+                      <div class="invalid-feedback">Inserisci il tuo genere!</div>
                     </div>
-
-                    <!--<div class="col-12">
-                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                      <div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <br/><button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
-                    </div>-->
 
                     <div class="col-12">
-                      <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
+                      <label for="yourTipo_utente" class="form-label">Scegli un tipo di utente:</label>
+                      <select id="yourTipo_utente" name="tipo_utente" class="form-select">
+                        <option value="">--Scegli un tipo di utente--</option>
+                        <option value="Cliente">Cliente</option>
+                        <option value="GestoreLido">Gestore Lido</option>
+                      </select>
+                      <div class="invalid-feedback">Scegli il tuo tipo di utente</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="dataNascita" class="col-form-label">Inserisci la tua data di nascita:</label>
+                      <input type="date" id="dataNascita" name="dataNascita"
+                             value="2001-01-01"
+                             min="2001-01-01" max="2018-12-31" class="form-control">
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">Acconsento e accetto i <a href="#">termini e condizioni</a></label>
+                        <div class="invalid-feedback">Devi accettare prima di proseguire.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit" id="btnReg">Registrati</button>
                     </div>
                   </form>
 
@@ -119,7 +151,9 @@
             </div>
           </div>
         </div>
-      </div>
+
+      </section>
+
     </div>
   </main><!-- End #main -->
 
@@ -137,8 +171,6 @@
 
   <!-- Template Main JS File -->
   <script src="${pageContext.request.contextPath }/resources/User/assets/js/main.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/User/assets/js/google.js"></script>
-
 
 </body>
 

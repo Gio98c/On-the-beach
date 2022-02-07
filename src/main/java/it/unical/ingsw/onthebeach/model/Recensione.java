@@ -1,20 +1,40 @@
 package it.unical.ingsw.onthebeach.model;
 
+import java.util.Objects;
+
 public class Recensione {
     private String testo;
-    private int star;
-    private String username_cliente;
-    private long id_prenotazione;
+    private String usernameCliente;
+    private Long idPrenotazione;
+    private Long idRecensione;
 
-    public Recensione(){
+    public Recensione(){}
 
+    public Recensione(String testo,  String usernameCliente, long idPrenotazione, long idRecensione){
+        this.testo = testo;
+        this.usernameCliente = usernameCliente;
+        this.idPrenotazione = idPrenotazione;
+        this.idRecensione = idRecensione;
     }
 
-    public Recensione(String testo, int star, String usernameCliente, long idPrenotazione){
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recensione that = (Recensione) o;
+        return idPrenotazione == that.idPrenotazione && idRecensione == that.idRecensione && Objects.equals(testo, that.testo) && usernameCliente.equals(that.usernameCliente);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(testo, usernameCliente, idPrenotazione, idRecensione);
+    }
+
+    public Recensione(Long idRecensione, String testo, int star, String usernameCliente, Long idPrenotazione){
+        this.idRecensione=idRecensione;
         this.testo=testo;
-        this.star=star;
-        this.username_cliente=usernameCliente;
-        this.id_prenotazione=idPrenotazione;
+        this.usernameCliente=usernameCliente;
+        this.idPrenotazione=idPrenotazione;
     }
 
     public String getTesto() {
@@ -25,27 +45,28 @@ public class Recensione {
         this.testo = testo;
     }
 
-    public int getStar() {
-        return star;
+
+    public String getUsernameCliente() {
+        return usernameCliente;
     }
 
-    public void setStar(int star) {
-        this.star = star;
+    public void setUsernameCliente(String usernameCliente) {
+        this.usernameCliente = usernameCliente;
     }
 
-    public String getUsername_cliente() {
-        return username_cliente;
+    public long getIdPrenotazione() {
+        return idPrenotazione;
     }
 
-    public void setUsername_cliente(String username_cliente) {
-        this.username_cliente = username_cliente;
+    public void setIdPrenotazione(long idPrenotazione) {
+        this.idPrenotazione = idPrenotazione;
     }
 
-    public long getId_prenotazione() {
-        return id_prenotazione;
+    public Long getIdRecensione() {
+        return idRecensione;
     }
 
-    public void setId_prenotazione(long id_prenotazione) {
-        this.id_prenotazione = id_prenotazione;
+    public void setIdRecensione(Long idRecensione) {
+        this.idRecensione = idRecensione;
     }
 }

@@ -1,6 +1,7 @@
 package it.unical.ingsw.onthebeach.model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Utente {
 
@@ -9,21 +10,36 @@ public class Utente {
     private String cognome;
     private String email;
     private String password;
-    private String tipo_utente;
-    private Date data_nascita;
+    private String tipoUtente;
+    private Date dataNascita;
+    private String genere;
 
     public Utente(){
     }
 
-    public Utente(String username, String nome, String cognome, String email, String password, String tipo_utente, Date data_nascita){
+    public Utente(String username, String nome, String cognome, String email, String password, String tipoUtente, Date dataNascita, String genere){
         super();
         this.username=username;
         this.nome=nome;
         this.cognome=cognome;
         this.email=email;
         this.password=password;
-        this.tipo_utente=tipo_utente;
-        this.data_nascita=data_nascita;
+        this.tipoUtente=tipoUtente;
+        this.dataNascita=dataNascita;
+        this.genere=genere;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Utente utente = (Utente) o;
+        return username.equals(utente.username) && Objects.equals(nome, utente.nome) && Objects.equals(cognome, utente.cognome) && email.equals(utente.email) && password.equals(utente.password) && Objects.equals(tipoUtente, utente.tipoUtente) && Objects.equals(dataNascita, utente.dataNascita);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, nome, cognome, email, password, tipoUtente, dataNascita);
     }
 
     public String getUsername() {
@@ -66,19 +82,27 @@ public class Utente {
         this.password = password;
     }
 
-    public String getTipo_utente() {
-        return tipo_utente;
+    public String getTipoUtente() {
+        return tipoUtente;
     }
 
-    public void setTipo_utente(String tipo_utente) {
-        this.tipo_utente = tipo_utente;
+    public void setTipoUtente(String tipo_utente) {
+        this.tipoUtente = tipo_utente;
     }
 
-    public Date getData_nascita() {
-        return data_nascita;
+    public Date getDataNascita() {
+        return dataNascita;
     }
 
-    public void setData_nascita(Date data_nascita) {
-        this.data_nascita = data_nascita;
+    public void setDataNascita(Date dataNascita) {
+        this.dataNascita = dataNascita;
+    }
+
+    public String getGenere() {
+        return genere;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
     }
 }

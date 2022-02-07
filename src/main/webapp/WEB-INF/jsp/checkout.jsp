@@ -1,8 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page isELIgnored="false"%>
-
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +9,7 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>On The Beach</title>
+	<title>Check Out</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath }/resources/assets/img/favicon2.png">
@@ -45,9 +43,8 @@
         </div>
     </div>
     <!--PreLoader Ends-->
-	
-	<!-- header -->
 
+	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
 			<div class="row">
@@ -55,7 +52,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.jsp">
+							<a href="/">
 								<img src="${pageContext.request.contextPath }/resources/assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -64,7 +61,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="index">Home</a></li>
+								<li><a href="index">Home</a></li>
 								<li><a href="pageShop">Prenota Qui</a></li>
 								<li><a href="contactPage">Contatti</a></li>
 								<li>
@@ -89,7 +86,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-	
+
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -98,8 +95,8 @@
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Cerca per:</h3>
-							<input type="text" placeholder="Parola chiave">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
 							<a href="pageShopSearch?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
 						</div>
 					</div>
@@ -108,145 +105,131 @@
 		</div>
 	</div>
 	<!-- end search area -->
-
-	<!-- home page slider -->
-	<div class="homepage-slider">
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Per un soggiorno speciale</p>
-								<h1>Stabilimenti Balneari</h1>
-								<div class="hero-btns">
-									<a href="pageShop" class="boxed-btn">Prenota ora</a>
-									<a href="contactPage" class="bordered-btn">Contattaci</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-center">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Per una prenotazione 100% sicura</p>
-								<h1>Controlla le nostre recensioni</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visita Lidi</a>
-									<a href="contactPage" class="bordered-btn">Contattaci</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-right">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">*SOLO* per proprietari di stabilimenti balneari</p>
-								<h1>Inserisci un nuovo lido</h1>
-								<div class="hero-btns">
-									<a href="pageForm"class="boxed-btn">Richiedi Form</a>
-									<a href="contactPage" class="bordered-btn">Contattaci</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end home page slider -->
-
-	<!-- features list section -->
-	<div class="list-section pt-80 pb-80">
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					<div class="list-box d-flex align-items-center">
-						<div class="list-icon">
-							<i class="fas fa-phone-volume"></i>
-						</div>
-						<div class="content">
-							<h3>24/7 Supporto</h3>
-							<p>Supporto disponibile ogni giorno</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-	<!-- end features list section -->
-
-	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">I nostri Stabilimenti Balneari</span></h3>
-						<p>Per la tua vacanza ideale, in sicurezza, nei nostri migliori stabilimenti balneari.</p>
+					<div class="breadcrumb-text">
+						<p>Procedi al</p>
+						<h1>Check Out</h1>
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<c:forEach items="${lidi}" var="l" varStatus="status">
-					<div class="col-lg-4 col-md-6 text-center">
-						<div class="single-product-item">
-							<div class="product-image">
-								<a href="product?lido=${l.nome}"><img width="300" height="200" src="data:image/png;base64,${fotoLidi[status.index]}" alt=""></a>
-							</div>
-							<h3>${l.nome}</h3>
-							<p class="product-price"><span>1 giorno</span> ${ombrelloni[status.index].prezzo} €</p>
-							<a href="product?lido=${l.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
-						</div>
-					</div>
-				</c:forEach>
 		</div>
 	</div>
-	<!-- end product section -->
+	<!-- end breadcrumb section -->
 
-	<!-- cart banner section -->
-	<section class="cart-banner pt-100 pb-100">
-    	<div class="container">
-        	<div class="row clearfix">
-            	<!--Image Column-->
-            	<div class="image-column col-lg-6">
-                	<div class="image">
-							<div class="inner-price">
+	<!-- check out section -->
+	<div class="checkout-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="checkout-accordion-wrap">
+						<div class="accordion" id="accordionExample">
+						  <div class="card single-accordion">
+							<div class="card-header" id="headingFour">
+							  <h5 class="mb-0">
+								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+									Info
+								</button>
+							  </h5>
 							</div>
-                    	<img src="${pageContext.request.contextPath }/resources/assets/img/spox3.jpg" alt="">
-                    </div>
-                </div>
-                <!--Content Column-->
-                <div class="content-column col-lg-6">
-					<h3><span class="orange-text">Lido</span> del mese</h3>
-                    <h4>SPOX</h4>
-                    <div class="text">Lo SPOX è uno degli stabilimenti balneari più famosi di Soverato. L'attività è aperta dal 2013 ed è situato in una posizione strategica sul lungomare. La prenotazione può essere composta da sdraio e lettino. E' incluso il servizio dj dalle 18 in poi, per vivere un'happy hour in riva al mare.</div>
-                	<a href="product?lido=Spox" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Prenota</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end cart banner section -->
+							<div id="collapseFour" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+							  <div class="card-body">
+								  <div class="card-details">
+									  <p>${utenteCheckOut.nome} ${utenteCheckOut.cognome}</p>
+									  <p><label>Data inizio:</label> ${prenotazioneCheckOut.dataInizio}</p>
+									  <p><label>Data fine:</label> ${prenotazioneCheckOut.dataFine}</p>
+									  <p><label>Descrizione: </label></p>
+									  <p>${prenotazioneCheckOut.descrizione}</p>
+								  </div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="order-details-wrap">
+						<table class="order-details">
+							<thead>
+								<tr>
+									<th>Riepilogo del tuo ordine</th>
+									<th>Prezzo</th>
+								</tr>
+							</thead>
+							<tbody class="order-details-body">
+							</tbody>
+							<tbody class="checkout-details">
+								<tr>
+									<td>Total</td>
+									<td>${prenotazioneCheckOut.prezzoTotale} €</td>
+								</tr>
+							</tbody>
+						</table><br/>
+
+						<a onclick="pagamentoInLoco()" class="boxed-btn" id="btnPagamentoInSede">Pagamento fisico</a><br/>
+						<a class="boxed-btn" id="cancelPrenotazione" onclick="annulla()">Annulla prenotazione</a><br/>
+
+						<!--PULSANTE PAYPAL -->
+						<br/><div id="smart-button-container">
+							<div style="text-align: center;">
+								<div id="paypal-button-container"></div>
+							</div>
+						</div>
+						<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
+						<script>
+							function initPayPalButton() {
+								paypal.Buttons({
+									style: {
+										shape: 'rect',
+										color: 'blue',
+										layout: 'horizontal',
+										label: 'pay',
+
+									},
+
+									createOrder: function(data, actions) {
+										return actions.order.create({
+											<!--CAMBIARE 25 CON IL PREZZO DELLA PRENOTAZIONE,fatto -->
+											purchase_units: [{"amount":{"currency_code":"EUR","value":${prenotazioneCheckOut.prezzoTotale}}}]
+										});
+									},
+
+									onApprove: function(data, actions) {
+										return actions.order.capture().then(function(orderData) {
+
+											// Full available details
+											console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+											// Show a success message within this page, e.g.
+											const element = document.getElementById('paypal-button-container');
+											element.innerHTML = '';
+											element.innerHTML = '<h3>Grazie per il tuo ordine</h3>';
+
+											// Or go to another URL:  actions.redirect('thank_you.html');
+
+										});
+									},
+
+									onError: function(err) {
+										console.log(err);
+									}
+								}).render('#paypal-button-container');
+							}
+							initPayPalButton();
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end check out section -->
+
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -273,17 +256,26 @@
 						<h2 class="widget-title">Pagine</h2>
 						<ul>
 							<li><a href="index">Home</a></li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="pageShop">Negozio</a></li>
 							<li><a href="contactPage">Contatti</a></li>
 						</ul>
 					</div>
 				</div>
-
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Iscriviti con la tua mail per ottenere i prossimi aggiornamenti.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
@@ -323,5 +315,8 @@
 	<!-- main js -->
 	<script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
+	<script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
+
+	<script src="${pageContext.request.contextPath }/resources/assets/js/jquery.min.map.js"></script>
 </body>
 </html>
