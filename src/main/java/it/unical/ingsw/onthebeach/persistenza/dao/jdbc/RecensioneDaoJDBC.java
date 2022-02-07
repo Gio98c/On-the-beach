@@ -29,6 +29,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r.setTesto(rs.getString("testo"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
+                r.setStar(rs.getInt("star"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -53,6 +54,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r.setUsernameCliente(rs.getString("cognome"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
+                r.setStar(rs.getInt("star"));
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -75,6 +77,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r.setUsernameCliente(rs.getString("cognome"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
+                r.setStar(rs.getInt("star"));
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -97,6 +100,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
                 r.setIdRecensione(rs.getLong("id_recensione"));
+                r.setStar(rs.getInt("star"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -110,10 +114,8 @@ public class RecensioneDaoJDBC implements RecensioneDao {
     @Override
     public List<Recensione> findByLido(String nome) {
         List<Recensione> recensioni = new ArrayList<Recensione>();
-        //String query = "select testo,star,username_cliente from recensione LEFT JOIN prenotazione on ";
-        //String query = "SELECT * FROM recensione r INNER JOIN prenotazione p ON p.id_prenotazione = r.id_prenotazione WHERE p.nome_lido = ?";
-        //String query = "SELECT * FROM recensione WHERE id_prenotazione = (SELECT id_prenotazione FROM prenotazione WHERE nome_lido = ?)";
-        String query = "select r.id_recensione, r.testo,r.username_cliente,r.id_prenotazione" +
+
+        String query = "select r.id_recensione, r.testo,r.username_cliente,r.id_prenotazione, r.star" +
                 " from recensione r, prenotazione p" +
                 " where p.nome_lido = ? and r.id_prenotazione=p.id_prenotazione";
         try {
@@ -126,6 +128,7 @@ public class RecensioneDaoJDBC implements RecensioneDao {
                 r.setTesto(rs.getString("testo"));
                 r.setUsernameCliente(rs.getString("username_cliente"));
                 r.setIdPrenotazione(rs.getLong("id_prenotazione"));
+                r.setStar(rs.getInt("star"));
                 recensioni.add(r);
             }
         } catch (SQLException e) {
@@ -142,12 +145,14 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             try {
                 recensione.setIdRecensione(IdBroker.getId(conn));
                 String query = "insert into recensione "
-                        + "values (?, ?, ?, ?)";
+                        + "values (?, ?, ?, ?,?)";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setLong(1, recensione.getIdRecensione());
                 st.setString(2, recensione.getTesto());
-                st.setString(3, recensione.getUsernameCliente());
-                st.setLong(4, recensione.getIdPrenotazione());
+                st.setInt(3, recensione.getStar());
+                st.setString(4, recensione.getUsernameCliente());
+                st.setLong(5, recensione.getIdPrenotazione());
+
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -159,13 +164,14 @@ public class RecensioneDaoJDBC implements RecensioneDao {
             //UPDATE
             try {
                 String query = "update recensione "
-                        + "set testo = ?, username_cliente = ?, id_prenotazione = ? "
+                        + "set testo = ?, star = ?, username_cliente = ?, id_prenotazione = ? "
                         + "where id_recensione = ?";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, recensione.getTesto());
-                st.setString(2, recensione.getUsernameCliente());
-                st.setLong(3, recensione.getIdPrenotazione());
-                st.setLong(4, recensione.getIdRecensione());
+                st.setInt(2, recensione.getStar());
+                st.setString(3, recensione.getUsernameCliente());
+                st.setLong(4, recensione.getIdPrenotazione());
+                st.setLong(5, recensione.getIdRecensione());
 
                 st.executeUpdate();
 

@@ -7,15 +7,10 @@ public class Recensione {
     private String usernameCliente;
     private Long idPrenotazione;
     private Long idRecensione;
+    private int star;
 
     public Recensione(){}
 
-    public Recensione(String testo,  String usernameCliente, long idPrenotazione, long idRecensione){
-        this.testo = testo;
-        this.usernameCliente = usernameCliente;
-        this.idPrenotazione = idPrenotazione;
-        this.idRecensione = idRecensione;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -35,6 +30,7 @@ public class Recensione {
         this.testo=testo;
         this.usernameCliente=usernameCliente;
         this.idPrenotazione=idPrenotazione;
+        this.star=star;
     }
 
     public String getTesto() {
@@ -68,5 +64,13 @@ public class Recensione {
 
     public void setIdRecensione(Long idRecensione) {
         this.idRecensione = idRecensione;
+    }
+
+    public void setStar(int star){
+        this.star=star;
+    }
+
+    public int getStar(){
+        return star;
     }
 }

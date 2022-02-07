@@ -6,13 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
 
 @RestController
 public class RecensioneREST {
@@ -55,7 +49,7 @@ Recensione rec = new Recensione();
     @PostMapping("/updateRecensione")
     public String modificaRecensione(String idRecensione, String idPrenotazione, String testo, HttpServletRequest req) throws SQLException {
 
-        Recensione rec = new Recensione(testo, (String) req.getSession().getAttribute("username"), Long.parseLong(idPrenotazione), Long.parseLong(idRecensione));
+        Recensione rec = new Recensione(Long.parseLong(idRecensione), testo, 3, (String) req.getSession().getAttribute("username"), Long.parseLong(idPrenotazione));
 
         if(Database.getInstance().getRecensioneDao().saveOrUpdate(rec)) {
             return "updateCompletato";
