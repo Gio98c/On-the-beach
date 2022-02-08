@@ -21,7 +21,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
             try {
                 ombrellone.setIdOmbrellone(IdBroker.getId(conn));
                 String query = "insert into ombrellone "
-                        + "values (?,?, ?, ?)";
+                        + "values (?, ?, ?, ?)";
                 st = conn.prepareStatement(query);
                 st.setLong(1, ombrellone.getIdOmbrellone());
                 st.setBoolean(2, ombrellone.getOccupato());

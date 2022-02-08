@@ -16,6 +16,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class ProfileREST {
@@ -93,6 +95,14 @@ public class ProfileREST {
                     int temp=numOmbrelloni-lido.getNumeroOmbrelloni();
                     for (int i = 0; i < temp; i++) {
                         Database.getInstance().getOmbrelloneDao().saveOrUpdate(new Ombrellone(0,false, lido.getNome(), 2));
+                    }
+                }
+                if(numOmbrelloni<lido.getNumeroOmbrelloni()){
+                    int temp=lido.getNumeroOmbrelloni()-numOmbrelloni;
+                    List<Ombrellone> ombrelloni = Database.getInstance().getOmbrelloneDao().findByLido(lido.getNome());
+                    Collections.reverse(ombrelloni);
+                    for (int i = 0; i < temp; i++) {
+                        Database.getInstance().getOmbrelloneDao().delete(ombrelloni.get(i));
                     }
 
                 }
