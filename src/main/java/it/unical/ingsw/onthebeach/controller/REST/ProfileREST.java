@@ -2,6 +2,7 @@ package it.unical.ingsw.onthebeach.controller.REST;
 
 import it.unical.ingsw.onthebeach.Database;
 import it.unical.ingsw.onthebeach.model.Lido;
+import it.unical.ingsw.onthebeach.model.Ombrellone;
 import it.unical.ingsw.onthebeach.model.Utente;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +12,10 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @RestController
 public class ProfileREST {
@@ -85,6 +89,13 @@ public class ProfileREST {
                 }
             }
             if(!(numOmbrelloni ==null)){
+                if(numOmbrelloni>lido.getNumeroOmbrelloni()){
+                    int temp=numOmbrelloni-lido.getNumeroOmbrelloni();
+                    for (int i = 0; i < temp; i++) {
+                        Database.getInstance().getOmbrelloneDao().saveOrUpdate(new Ombrellone(0,false, lido.getNome(), 1));
+                    }
+
+                }
                 lido.setNumeroOmbrelloni(numOmbrelloni);
             }
             if(file!=null){

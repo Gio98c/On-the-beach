@@ -1,11 +1,11 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
+import it.unical.ingsw.onthebeach.model.Ombrellone;
+import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import it.unical.ingsw.onthebeach.model.Ombrellone;
-import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
 public class OmbrelloneDaoJDBC implements OmbrelloneDao{
     Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2",
             "postgres", "root");
@@ -15,17 +15,19 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
 
     @Override
     public boolean saveOrUpdate(Ombrellone ombrellone) {
+        PreparedStatement st = null;
         if (ombrellone.getIdOmbrellone() == 0) {
             //INSERT
             try {
                 ombrellone.setIdOmbrellone(IdBroker.getId(conn));
                 String query = "insert into ombrellone "
                         + "values (?, ?, ?, ?)";
-                PreparedStatement st = conn.prepareStatement(query);
+                st = conn.prepareStatement(query);
                 st.setLong(1, ombrellone.getIdOmbrellone());
                 st.setBoolean(2, ombrellone.getOccupato());
-                st.setFloat(4, ombrellone.getPrezzo());
-                st.setString(3, ombrellone.getNomeLido());
+                st.setFloat(3, ombrellone.getPrezzo());
+                st.setString(4, ombrellone.getNomeLido());
+
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -39,7 +41,7 @@ public class OmbrelloneDaoJDBC implements OmbrelloneDao{
                 String query = "update ombrellone "
                         + "set occupato = ?, nome_lido = ?, prezzo = ?"
                         + "where id_ombrellone = ?";
-                PreparedStatement st = conn.prepareStatement(query);
+                st = conn.prepareStatement(query);
                 st.setBoolean(1, ombrellone.getOccupato());
                 st.setString(2, ombrellone.getNomeLido());
                 st.setFloat(3, ombrellone.getPrezzo());
