@@ -54,7 +54,6 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <!--<a href="../../../../../../../../Desktop/index.html" class="logo d-flex align-items-center w-auto">-->
                 <a href="/" class="logo d-flex align-items-center w-auto">
                   <img src="${pageContext.request.contextPath }/resources/User/assets/img/logo.png" alt="">
                   <span class="d-none d-lg-block">On The Beach</span>
@@ -87,26 +86,20 @@
                       <div class="invalid-feedback">Inserisci la tua password!</div>
                     </div>
 
-                    <!--<div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                      </div>
-                    </div>-->
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
 
-                    <div class="col-12">
-                      <!--<div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                    <!--<div class="col-12">
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
                       <div>
                       </div>
                     </div>
-                    <!--
+
                     <div>
-                        <br/><button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
-                      </div>
-                      -->
+                      <br/><button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+                    </div>-->
+
                     <div class="col-12">
                       <p class="small mb-0">Non hai un account? <a href="registration">Crea un account</a></p>
                     </div>
@@ -125,6 +118,7 @@
 
             </div>
           </div>
+        </div>
       </div>
     </div>
   </main><!-- End #main -->

@@ -152,6 +152,42 @@ function prenota(nomeLido) {
     });
 }
 
+function annulla() {
+    $.ajax({
+        type: "POST",
+        url: "/annullaPrenotazione",
+        success: function (risposta) {
+            if(risposta === "prenotazioneAnnullata") {
+                alert("Prenotazione annullata");
+                window.location.href = "index";
+            }
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+}
+
+
+function pagamentoInLoco() {
+    alert("Pagamento che avverà nel loco.");
+    window.location.href="index";
+
+
+    /*$.ajax({
+        type: "POST",
+        url: "/pagamentoInSede",
+        success: function (risposta) {
+            console.log(risposta);
+            if(risposta === "emailInviata")
+                alert("Pagamento in sede approvato!");
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });*/
+}
+
 
 $('btnPagamentoInSede').click(function () {
 

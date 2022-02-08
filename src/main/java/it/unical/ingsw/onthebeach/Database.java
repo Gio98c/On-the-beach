@@ -1,19 +1,11 @@
 package it.unical.ingsw.onthebeach;
 
+import it.unical.ingsw.onthebeach.persistenza.dao.*;
+import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import it.unical.ingsw.onthebeach.persistenza.dao.UtenteDao;
-import it.unical.ingsw.onthebeach.persistenza.dao.RecensioneDao;
-import it.unical.ingsw.onthebeach.persistenza.dao.LidoDao;
-import it.unical.ingsw.onthebeach.persistenza.dao.OmbrelloneDao;
-import it.unical.ingsw.onthebeach.persistenza.dao.PrenotazioneDao;
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.UtenteDaoJDBC;
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.RecensioneDaoJDBC;
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.LidoDaoJDBC;
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.OmbrelloneDaoJDBC;
-import it.unical.ingsw.onthebeach.persistenza.dao.jdbc.PrenotazioneDaoJDBC;
 
 public class Database {
 

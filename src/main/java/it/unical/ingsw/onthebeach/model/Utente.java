@@ -12,11 +12,12 @@ public class Utente {
     private String password;
     private String tipoUtente;
     private Date dataNascita;
+    private String genere;
 
     public Utente(){
     }
 
-    public Utente(String username, String nome, String cognome, String email, String password, String tipoUtente, Date dataNascita){
+    public Utente(String username, String nome, String cognome, String email, String password, String tipoUtente, Date dataNascita, String genere){
         super();
         this.username=username;
         this.nome=nome;
@@ -25,6 +26,7 @@ public class Utente {
         this.password=password;
         this.tipoUtente=tipoUtente;
         this.dataNascita=dataNascita;
+        this.genere=genere;
     }
 
     @Override
@@ -94,5 +96,13 @@ public class Utente {
 
     public void setDataNascita(Date dataNascita) {
         this.dataNascita = dataNascita;
+    }
+
+    public String getGenere() {
+        return genere;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
     }
 }

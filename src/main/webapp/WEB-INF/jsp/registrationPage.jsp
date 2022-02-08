@@ -99,20 +99,30 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourTipo_utente">Scegli un tipo di utente:</label>
-                      <select id="yourTipo_utente" name="tipo_utente">
+                      <label for="yourGenere" class="form-label">Genere</label>
+                      <select class="form-select" id="yourGenere" name="genere">
+                        <option value="maschio">Maschio</option>
+                        <option value="femmina">Femmina</option>
+                        <option value="altro">Altro</option>
+                      </select>
+                      <div class="invalid-feedback">Inserisci il tuo genere!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourTipo_utente" class="form-label">Scegli un tipo di utente:</label>
+                      <select id="yourTipo_utente" name="tipo_utente" class="form-select">
                         <option value="">--Scegli un tipo di utente--</option>
-                        <option value="Cliente">cliente</option>
-                        <option value="GestoreLido">gestore Lido</option>
+                        <option value="Cliente">Cliente</option>
+                        <option value="GestoreLido">Gestore Lido</option>
                       </select>
                       <div class="invalid-feedback">Scegli il tuo tipo di utente</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="dataNascita">Inserisci la tua data di nascita:</label>
+                      <label for="dataNascita" class="col-form-label">Inserisci la tua data di nascita:</label>
                       <input type="date" id="dataNascita" name="dataNascita"
                              value="2001-01-01"
-                             min="2001-01-01" max="2018-12-31">
+                             min="2001-01-01" max="2018-12-31" class="form-control">
                     </div>
 
                     <div class="col-12">
@@ -124,17 +134,7 @@
                     </div>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" id="btnReg">Registrati</button>
-
-                      <!--<script type="text/javascript">
-                        document.getElementById("btnReg").addEventListener("click", function () {
-                          alert("Registrazione effettuata!");
-                          window.location.href="login";
-                        })
-                      </script>-->
                     </div>
-                    <!--<div class="col-12">
-                      <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
-                    </div>-->
                   </form>
 
                 </div>

@@ -1,6 +1,7 @@
 package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
-import it.unical.ingsw.onthebeach.persistenza.dao.UtenteDao;
+
 import it.unical.ingsw.onthebeach.model.Utente;
+import it.unical.ingsw.onthebeach.persistenza.dao.UtenteDao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -114,7 +115,7 @@ public class UtenteDaoJDBC implements UtenteDao {
         //INSERT
         try {
             String query = "insert into utente "
-                    + "values (?, ?, ?, ?, ?, ?, ?)";
+                    + "values (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, utente.getUsername());
             st.setString(2, utente.getNome());
@@ -123,6 +124,7 @@ public class UtenteDaoJDBC implements UtenteDao {
             st.setString(5, utente.getPassword());
             st.setDate(6, utente.getDataNascita());
             st.setString(7, utente.getTipoUtente());
+            st.setString(8, utente.getGenere());
             st.executeUpdate();
 
         } catch (SQLException e) {

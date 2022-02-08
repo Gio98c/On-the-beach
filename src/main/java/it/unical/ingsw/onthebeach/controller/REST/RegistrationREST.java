@@ -17,7 +17,7 @@ import java.sql.*;
 public class RegistrationREST {
 
     @PostMapping("/registrationServices")
-    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome,  String cognome, String email, String username, String password, String tipo_utente, Date dataNascita) throws ServletException, IOException, PSQLException {
+    public String registrati(HttpServletRequest req, HttpServletResponse resp, String nome,  String cognome, String email, String username, String password, String tipo_utente, Date dataNascita, String genere) throws ServletException, IOException, PSQLException {
 
         //sql aggiunta di un utente nel database
 
@@ -25,7 +25,7 @@ public class RegistrationREST {
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestoreLido2", "postgres", "root");
-            Utente temp = new Utente (username,nome,cognome,email,password, tipo_utente, dataNascita);
+            Utente temp = new Utente (username,nome,cognome,email,password, tipo_utente, dataNascita, genere);
 
 
             UtenteDaoJDBC utenteDaoJdbc = new UtenteDaoJDBC(conn);
@@ -46,7 +46,7 @@ public class RegistrationREST {
     @PostMapping("/registrationServicesGoogle")
     public String registratiGoogle(HttpServletResponse resp, String username, String email, String nome) throws SQLException, IOException {
 
-        Utente utente = new Utente(username, nome, null, email, null, "Cliente", null);
+        Utente utente = new Utente(username, nome, null, email, null, "Cliente", null, null);
         if(Database.getInstance().getUtenteDao().save(utente)) {
             resp.sendRedirect("profile");
             return "registrazioneCompletata";

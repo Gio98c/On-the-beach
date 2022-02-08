@@ -34,6 +34,13 @@
     <!-- responsive -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/assets/css/responsive.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -71,8 +78,7 @@
                                         <a class="shopping-cart" href="login"><i class="fas fa-shopping-bag"></i></a>
                                     </c:if>
                                     <c:if test="${username != null}">
-                                        <!-- questo va tolto -->
-                                        <a class="shopping-cart" href="logout"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="shopping-cart" href="profile"><i class="fas fa-shopping-cart"></i></a>
                                     </c:if>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
@@ -130,7 +136,7 @@
             <div class="col-md-5">
                 <div class="single-product-img">
                     <!-- da controllare le foto -->
-                    <img src="./imgPath">
+                    <img src="data:image/png;base64,${foto}">
                 </div>
             </div>
             <div class="col-md-7">
@@ -139,9 +145,6 @@
                     <p class="single-product-pricing"><span>1 giorno</span></p>
                     <p>${lido.descrizione}</p>
                     <div class="single-product-form">
-                        <!--<form action="index">
-                            <input type="number" placeholder="0" id="numeroOmbrDaPren">
-                        </form>-->
                         <form method="get" action="product">
                             <table class="table table-responsive" id="tabellaOmbrelloni">
                                 <tbody>
@@ -159,12 +162,13 @@
                         </form>
 
                         <br/>
-                        <label class="label">Data Inizio</label>
-                        <input type="date" id="dataInizio"><br/><br/>
-                        <label class="label">Data Fine</label>
+                        <h2 class="label col-form-label">Data Inizio</h2>
+                        <input type="date" id="dataInizio" class="dataTable-input bi-clipboard-data"><br/><br/>
+                        <h2 class="label col-form-label">Data Fine</h2>
                         <input type="date" id="dataFine"><br/>
 
-                        <a href="checkout" class="cart-btn"><button class="fas fa-shopping-cart" onclick="prenota('${lido.nome}')">Prenota</button></a>
+                        <br/>
+                        <a href="checkout" class="cart-btn" onclick="prenota('${lido.nome}')">Prenota</a>
                     </div>
                 </div>
             </div>
@@ -180,71 +184,41 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <h3><span class="orange-text">Recensioni</span></h3>
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>-->
                 </div>
             </div>
         </div>
-            <div class="testimonail-section mt-150 mb-150">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 offset-lg-1 text-center">
-                            <div class="testimonial-sliders">
-                                <c:forEach items="${recensioni}" var="rec">
-                                    <div class="single-testimonial-slider">
-                                        <div class="client-meta">
-                                            <h3>${rec.usernameCliente} <span>stelline</span></h3>
-                                            <p class="testimonial-body">
-                                                " ${rec.testo} "
-                                            </p>
-                                            <div class="last-icon">
-                                                <i class="fas fa-quote-right"></i>
-                                            </div>
+        <div class="testimonial-section mt-150 mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 text-center">
+                        <div class="testimonial-sliders">
+                            <c:forEach items="${recensioni}" var="rec" varStatus="status">
+                                <div class="single-testimonial-slider">
+                                    <div class="client-meta">
+                                        <h3>${rec.usernameCliente}
+                                            <span onload="stelline('${rec.star}')" id="headRecensione">
+                                                <c:forEach items="${stelle[status.index]}" var="s">
+                                                    <span class="fa fa-star checked"></span>
+                                                </c:forEach>
+                                            </span>
+                                        </h3>
+                                        <p class="testimonial-body">
+                                            " ${rec.testo} "
+                                        </p>
+                                        <div class="last-icon">
+                                            <i class="fas fa-quote-right"></i>
                                         </div>
                                     </div>
-                                </c:forEach>
-                            </div>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
             </div>
-        <!--<div class="row">
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-1.jpg" alt=""></a>
-                    </div>
-                    <h3>Strawberry</h3>
-                    <p class="product-price"><span>Per Kg</span> 85$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-2.jpg" alt=""></a>
-                    </div>
-                    <h3>Berry</h3>
-                    <p class="product-price"><span>Per Kg</span> 70$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="${pageContext.request.contextPath }/resources/assets/img/products/product-img-3.jpg" alt=""></a>
-                    </div>
-                    <h3>Lemon</h3>
-                    <p class="product-price"><span>Per Kg</span> 35$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>-->
+        </div>
     </div>
 </div>
-<!-- end more products -->
 
-
-<!-- footer -->
 <div class="footer-area">
     <div class="container">
         <div class="row">
@@ -330,5 +304,6 @@
 
 <script src="${pageContext.request.contextPath }/resources/assets/js/prenotazione.js"></script>
 
+<script src="${pageContext.request.contextPath }/resources/assets/js/recensione.js"></script>
 
 </body></html>
