@@ -35,6 +35,10 @@ public class Product {
         System.out.println("nome lido: " + nomeLido);
         Lido lido = Database.getInstance().getLidoDao().findByPrimaryKey(nomeLido);
 
+        if(lido == null)
+            return "notFound";
+
+
         byte[] encodeBase64 = Base64.encodeBase64(lido.getFoto());
         String base64Encoded = new String(encodeBase64, "UTF-8");
 

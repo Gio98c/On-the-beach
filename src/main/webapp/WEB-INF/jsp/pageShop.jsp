@@ -106,8 +106,8 @@
                 <div class="search-bar">
                     <div class="search-bar-tablecell">
                         <h3>Cerca per:</h3>
-                        <input type="text" placeholder="Parola chiave">
-                        <a href="product?lido=${lido.nome}"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
+                        <input type="text" placeholder="Parola chiave" id="testoRicerca">
+                        <a onclick="cerca()"><button type="submit">Cerca <i class="fas fa-search"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -250,5 +250,6 @@
 <!-- main js -->
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
+<script src="${pageContext.request.contextPath }/resources/assets/js/ricercaLido.js"></script>
 
 </body></html>
