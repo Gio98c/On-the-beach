@@ -60,6 +60,7 @@ function aggiornaRecensione(idPrenotazione, idRecensione) {
     var testo = document.getElementById("textRecensioni");
     var t = testo.value;
 
+    jQuery.ajaxSettings.traditional=true;
     $.ajax({
         type: "POST",
         url: "/updateRecensione",
