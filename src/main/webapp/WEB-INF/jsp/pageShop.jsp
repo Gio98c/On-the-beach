@@ -189,11 +189,13 @@
                                         <span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
                                     </p> -->
                                     <p class="excerpt">${lido.descrizione}</p>
+                                    <div class = "box">
                                     <c:forEach items="${ombrelloni}" var="omb">
                                         <c:if test="${omb.nomeLido == lido.nome}">
                                             <p class="product-price"><span>1 giorno</span> ${omb.prezzo} € </p>
                                         </c:if>
                                     </c:forEach>
+                                    </div>
 
 
                                     <a href="product?lido=${lido.nome}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Prenota</a>
