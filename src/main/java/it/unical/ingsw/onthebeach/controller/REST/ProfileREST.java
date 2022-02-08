@@ -92,7 +92,7 @@ public class ProfileREST {
                 if(numOmbrelloni>lido.getNumeroOmbrelloni()){
                     int temp=numOmbrelloni-lido.getNumeroOmbrelloni();
                     for (int i = 0; i < temp; i++) {
-                        Database.getInstance().getOmbrelloneDao().saveOrUpdate(new Ombrellone(0,false, lido.getNome(), 1));
+                        Database.getInstance().getOmbrelloneDao().saveOrUpdate(new Ombrellone(0,false, lido.getNome(), 2));
                     }
 
                 }
