@@ -147,7 +147,7 @@
                         </p>
                         <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Messaggio"></textarea></p>
                         <input type="hidden" name="token" value="FsWga4&amp;@f6aw">
-                        <p><input type="submit" value="Invia"></p>
+                        <p><input type="submit" value="Invia" id="btnInvia"></p>
                     </form>
                 </div>
             </div>
@@ -284,6 +284,13 @@
 <script src="${pageContext.request.contextPath }/resources/assets/js/main.js"></script>
 
 <script src="${pageContext.request.contextPath }/resources/assets/js/ricercaLido.js"></script>
+
+<script>
+    document.getElementById("btnInvia").addEventListener("click", function () {
+        alert("Segnalazione inviata");
+        //window.location.href="index";
+    });
+</script>
 
 </body></html>
 

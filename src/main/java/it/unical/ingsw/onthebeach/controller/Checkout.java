@@ -20,7 +20,6 @@ public class Checkout {
         Utente utente = Database.getInstance().getUtenteDao().findByPrimaryKey((String) req.getSession().getAttribute("username"));
         req.setAttribute("utenteCheckOut", utente);
 
-        //TODO aggiunggere ora alla data della prenotazione per poter prendere proprio l'ultima
         Prenotazione prenotazione = Database.getInstance().getPrenotazioneDao().findLastPrenotazione((String) req.getSession().getAttribute("username"));
         req.setAttribute("prenotazioneCheckOut", prenotazione);
 

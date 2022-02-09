@@ -28,7 +28,7 @@ public class Login {
     @PostMapping("/loginServices")
     public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String password) throws IOException {
 
-        String sql = "SELECT * FROM utente WHERE username = '"+ username +"'";
+        String sql = "SELECT * FROM utente WHERE username = '"+ username +"' and password = '"+ password +"'";
         HttpSession session = req.getSession(true);
 
         //ERRORE: la relazione "utente" non esiste

@@ -675,7 +675,7 @@
                             <td>${pren.dataInizio}</td>
                             <td>${pren.dataFine}</td>
                             <td><textarea class="form-control" style="height: 100px" name="textRecensioni" id="textRecensioni">
-                                <c:forEach items="${recensioni}" var="rec">
+                                <c:forEach items="${recensioni}" var="rec" varStatus="status">
                                   <c:if test="${rec.idPrenotazione == pren.idPrenotazione}">
                                     ${rec.testo}
                                   </c:if>
@@ -684,11 +684,7 @@
                             </td>
                             <form method="post" action="updateRecensione">
                               <td>
-                              <c:forEach items="${recensioni}" var="rec">
-                                <c:if test="${rec.idPrenotazione == pren.idPrenotazione}">
-                                  <input type="submit" onclick="aggiornaRecensione('${rec.idPrenotazione}', '${rec.idRecensione}')" id="btnUpdateRecensione" value="pubblica">
-                                </c:if>
-                              </c:forEach>
+                                <a class="btn btn-secondary" onclick="aggiornaRecensione('${recensioni[status.index].idPrenotazione}', '${rec.idRecensione}')" id="btnUpdateRecensione">Pubblica</a>
                               </td>
                             </form>
                           </tr>
