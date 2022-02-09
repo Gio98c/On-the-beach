@@ -55,6 +55,23 @@ function promuovi(username) {
         }
     )}
 
+function rimuovi(username) {
+    console.log(username);
+    $.ajax({
+            type: "POST",
+            url: "/rimozione",
+            data: {"username": username},
+            success: function (risposta) {
+                console.log(risposta);
+                if (risposta === "utenteRimosso")
+                    alert("Utente rimosso!");
+            },
+            error: function (xhr) {
+                console.log(xhr);
+                //alert(xhr.responseText);
+            }
+        }
+    )}
 
 function aggiornaRecensione(idPrenotazione, idRecensione) {
     var testo = document.getElementById("textRecensioni");

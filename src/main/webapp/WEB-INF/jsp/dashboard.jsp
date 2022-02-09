@@ -701,7 +701,9 @@
                       <tr>
                         <td>${cliente.username}</td>
                         <td><button class="btn btn-primary" onclick="promuovi('${cliente.username}')">Promuovi</button></td>
+                        <td><button class="btn btn-primary" onclick="rimuovi('${cliente.username}')">Rimuovi</button></td></br></br>
                       </tr>
+
                   </c:forEach>
                   </div>
                 </c:if>

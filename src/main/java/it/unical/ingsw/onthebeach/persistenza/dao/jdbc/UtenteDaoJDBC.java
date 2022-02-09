@@ -164,12 +164,12 @@ public class UtenteDaoJDBC implements UtenteDao {
     }
 
     @Override
-    public boolean delete(Utente utente) {
+    public boolean delete(String username) {
         try {
             String query = "delete from utente "
                     + "where username = ?";
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1, utente.getUsername());
+            st.setString(1, username);
             st.executeUpdate();
         } catch (SQLException e) {
 

@@ -166,5 +166,14 @@ public class ProfileREST {
 
         return "errore";
     }
+
+    @PostMapping("/rimozione")
+    public String rimozioneUtente(String username) throws SQLException {
+        System.out.println(username);
+        if(Database.getInstance().getUtenteDao().delete(username))
+            return "utenteRimosso";
+
+        return "errore";
+    }
 }
 
