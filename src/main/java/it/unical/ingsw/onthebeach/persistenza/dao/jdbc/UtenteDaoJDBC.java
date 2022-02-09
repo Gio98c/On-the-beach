@@ -2,6 +2,7 @@ package it.unical.ingsw.onthebeach.persistenza.dao.jdbc;
 
 import it.unical.ingsw.onthebeach.model.Utente;
 import it.unical.ingsw.onthebeach.persistenza.dao.UtenteDao;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -121,7 +122,7 @@ public class UtenteDaoJDBC implements UtenteDao {
             st.setString(2, utente.getNome());
             st.setString(3, utente.getCognome());
             st.setString(4, utente.getEmail());
-            st.setString(5, utente.getPassword());
+            st.setString(5, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
             st.setDate(6, utente.getDataNascita());
             st.setString(7, utente.getTipoUtente());
             st.setString(8, utente.getGenere());
@@ -147,7 +148,7 @@ public class UtenteDaoJDBC implements UtenteDao {
             st.setString(1, utente.getNome());
             st.setString(2, utente.getCognome());
             st.setString(3, utente.getEmail());
-            st.setString(4, utente.getPassword());
+            st.setString(4, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
             st.setDate(5, utente.getDataNascita());
             st.setString(6, utente.getTipoUtente());
             st.setString(7, utente.getUsername());
